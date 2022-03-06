@@ -22,18 +22,6 @@ input:focus{
 button:focus, button:active{
   outline: none;
 }
-.btn-outline-dark{
-  background-color: #fff;
-  color: #2e4e85;
-}
-.button-blue{
-  background-color: #355A9B;
-  color: #fff;
-}
-.button-blue:hover{
-  background-color: #2e4e85;
-  color: #fff;
-}
 
 /* DEVICE BREAKPOINTS */
 @media only screen and (max-width: 1200px){
@@ -46,15 +34,6 @@ button:focus, button:active{
   #keyfeatures-cont .row{
     width: 90%;
   }
-  /* .hero-search{
-    width: 80% !important;
-  }
-  .hero-text h1{
-    font-size: 6vw !important;
-  }
-  .hero-text p{
-    font-size: 20px !important;
-  } */
   .f-slider{
     width: 90%;
     margin: auto;
@@ -87,30 +66,6 @@ button:focus, button:active{
     width: 300px;
     height: 125px;
   }
-  /* #hero-container{
-    width: 90% !important;
-  }
-  .hero-text p{
-    font-size: 16px !important;
-  }
-  .hero-search .form-control .button-blue{
-    display: none;
-  }
-  .hero-search input{
-  flex-grow: none;
-  }
-  .hero-search .search{
-    width: 200px !important;
-  }
-  #hero-container{
-    height: 60vh !important;
-  } */
-  #defiloss-cont .btn{
-    position: relative !important;
-    top: 0 !important;
-    right: 0 !important;
-    margin-bottom: 15px;
-  }
   #team-cont .row{
     width: 90% !important;
   }
@@ -126,10 +81,6 @@ button:focus, button:active{
     padding-top: 25px;
     width: 100% !important;
   }
-  /* .roadmap-content h2, .roadmap-content p{
-    width: 90% !important;
-    text-align: start;
-  } */
   .navbar-toggler{
     display: none;
   }
@@ -140,12 +91,6 @@ button:focus, button:active{
   }
   .copyright{
     padding-bottom: 80px !important;
-  }
-  .roadmap{
-    display: none;
-  }
-  .mobmap-cont{
-    display: block !important;
   }
   .sidebar{
     display: none !important;
@@ -224,9 +169,6 @@ button:focus, button:active{
   .safepage-listing{
     padding-left: 25px !important;
     justify-content: start !important;
-  }
-  .hero-search .search{
-    width: 120px !important;
   }
   .rating-slider{
     width: 100% !important;

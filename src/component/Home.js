@@ -5,10 +5,11 @@ import Navbar from '../component/Navbar';
 import Hero from '../component/Hero';
 import Keyfeatures from '../component/Keyfeatures';
 import CarouselHome from '../component/CarouselHome';
-import Defiloss from '../component/Defiloss';
 import Team from './Team';
 import About from './About';
 import BuyBBT from './BuyBBT';
+import Tokenomics from './Tokenomics';
+import TaxationExplained from './TaxationExplained';
 // import Mobmap from '../component/Mobmap';
 
 export default function Home() {
@@ -21,10 +22,13 @@ export default function Home() {
             <hr />
             <About/>
             <BuyBBT/>
-            <CarouselHome />
-            <Defiloss />
-            <Team/>
+            <hr />
+            <Tokenomics/>
+            <hr />
+            <TaxationExplained/>
             <Roadmap />
+            <CarouselHome />
+            <Team/>
             {/* <Mobmap/> */}
             {/* <News/> */}
         </div>
