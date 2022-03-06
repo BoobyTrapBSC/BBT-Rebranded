@@ -9,7 +9,7 @@ export default function PromoterScam() {
 
     useEffect(() => {
       client.fetch(
-          `*[_type=="amagroups" && trappoints > 5] {
+          `*[_type=="amagroups" && trappoints > 5] | order(trapPoints asc) {
               name,
               alias,
               id,

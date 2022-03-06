@@ -1,7 +1,6 @@
 import './App.css';
 import Bottomnav from './component/Bottomnav';
 import Faqs from './component/Faqs';
-import Footer from './component/Footer';
 import React, {useEffect, useState} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './component/Home';
@@ -114,7 +113,6 @@ function App() {
           <Route path="ineligible" element={<InEligible/>} />
           <Route path="*" element={<Page404/>} />
         </Routes>
-        <Footer />
       </Router>
     </div>
   );

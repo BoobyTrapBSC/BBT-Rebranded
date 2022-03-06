@@ -5,20 +5,20 @@ export default function Tokenomics() {
     <div id='tokenomics-cont'>
         <div className="row py-3">
             <div className="col-md-3">
-                <h2>$10m+</h2>
-                <p>Market Cap</p>    
+                <h2>911911911</h2>
+                <p>Total Supply</p>    
             </div>
             <div className="col-md-3">
-                <h2>10k+</h2>
-                <p>Holders Worlwide</p>    
+                <h2>10x</h2>
+                <p>from Bottom</p>    
             </div>
             <div className="col-md-3">
-                <h2>25k+</h2>
-                <p>Followers on SM platfoms</p>
+                <h2>1k+</h2>
+                <p>Holders Worlwide</p>
             </div>
             <div className="col-md-3">
-                <h2>24/7</h2>
-                <p>Support</p>
+                <h2>17k+</h2>
+                <p>Followers on SM Platforms</p>
             </div>
         </div>
     </div>

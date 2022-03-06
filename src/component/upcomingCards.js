@@ -18,7 +18,7 @@ export default function UpcomingCards() {
 
     useEffect(() => {
       client.fetch(
-          `*[_type=="uprojects" && trappoints > 0 && trappoints < 6] {
+          `*[_type=="uprojects" && trappoints > 0 && trappoints < 6] | order(trapPoints asc) {
               name,
               id,
               email,

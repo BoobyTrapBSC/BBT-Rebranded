@@ -9,7 +9,7 @@ export default function DevScam() {
 
     useEffect(() => {
       client.fetch(
-          `*[_type=="developers" && trappoints > 5] {
+          `*[_type=="developers" && trappoints > 5] | order(trapPoints asc) {
               name,
               alias,
               id,

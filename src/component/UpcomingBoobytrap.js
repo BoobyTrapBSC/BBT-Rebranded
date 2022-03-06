@@ -21,7 +21,7 @@ export default function UpcomingBoobytrap() {
   useEffect(() => {
     client
       .fetch(
-        `*[_type=="uprojects" && trappoints > 5] {
+        `*[_type=="uprojects" && trappoints > 5] | order(trapPoints asc) {
               name,
               tracker,
               slug,

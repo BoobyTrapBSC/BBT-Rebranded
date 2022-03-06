@@ -117,7 +117,7 @@ body.active-modal {
   max-width: 500px;
   transform: translateY(0px);
   animation-name: floatVerticle;
-  animation-duration: 5s;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
 }
 @keyframes floatVerticle {
@@ -232,6 +232,79 @@ body.active-modal {
 }
 
 /* ROADMAP */
+#roadmap-cont{
+  max-width: 1150px;
+  width: 100%;
+  margin: auto;
+  padding: 25px 0;
+}
+
+/* HOME FAQs */
+#faqs-cont{
+  max-width: 1150px;
+  width: 100%;
+  margin: auto;
+  padding: 25px 0;
+}
+#faqs-cont h2{
+  font-weight: 300;
+  font-size: 36px;
+  text-align: center;
+  color: #fff;
+}
+#faqs-cont .accordion-button{
+  background-color: #12141D !important;
+  color: #fff;
+  font-weight: 500;
+}
+#faqs-cont .accordion-button::after{
+  filter: grayscale(1);
+}
+#faqs-cont .accordion-item{
+  border: none;
+}
+#faqs-cont .accordion-flush .accordion-collapse{
+  background-color: #12141D;
+}
+#faqs-cont .accordion-button:focus{
+  outline: none;
+}
+
+/* CONTACT FORM */
+#contact-cont{
+  width: 100%;
+  max-width: 1150px;
+  margin: auto;
+  padding: 25px 0;
+}
+#contact-cont h2{
+  font-weight: 300;
+  color: #fff;
+  font-size: 36px;
+  text-align: center;
+}
+#contact-cont p{
+  text-align: center;
+}
+.contactForm{
+  width: 100%;
+}
+#formName input, #formMail input{
+  width: 100%;
+  height: 40px;
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 2px;
+  background-color: #2A2C34;
+  border: none;
+}
+#formMsg textarea{
+  background-color: #2A2C34;
+  width: 100%;
+  border: none;
+  border-radius: 2px;
+  padding: 15px;
+}
 
 /* NEWS */
 #news-container {
@@ -249,17 +322,11 @@ body.active-modal {
 
 /* FOOTER */
 #footer-container {
-  background-color: #0a1c1c;
   color: #fff;
   text-align: start;
-  margin-top: 25px;
-}
-.footer-main {
+  margin: 25px auto 0 auto;
+  max-width: 1150px;
   width: 100%;
-  max-width: 1440px;
-}
-.f-graphic img {
-  width: 500px;
 }
 .copyright {
   max-width: 1440px;

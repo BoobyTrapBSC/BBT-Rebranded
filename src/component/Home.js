@@ -4,12 +4,13 @@ import Roadmap from '../component/Roadmap';
 import Navbar from '../component/Navbar';
 import Hero from '../component/Hero';
 import Keyfeatures from '../component/Keyfeatures';
-import CarouselHome from '../component/CarouselHome';
-import Team from './Team';
 import About from './About';
 import BuyBBT from './BuyBBT';
 import Tokenomics from './Tokenomics';
 import TaxationExplained from './TaxationExplained';
+import SectionFAQs from './SectionFAQs';
+import Contact from './Contact';
+import Footer from './Footer'
 // import Mobmap from '../component/Mobmap';
 
 export default function Home() {
@@ -27,10 +28,11 @@ export default function Home() {
             <hr />
             <TaxationExplained/>
             <Roadmap />
-            <CarouselHome />
-            <Team/>
-            {/* <Mobmap/> */}
-            {/* <News/> */}
+            <hr />
+            <SectionFAQs/>
+            <Contact/>
+            <hr />
+            <Footer/>
         </div>
     )
 }

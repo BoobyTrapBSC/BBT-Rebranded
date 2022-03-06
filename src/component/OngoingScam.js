@@ -20,7 +20,7 @@ export default function OngoingScam() {
   useEffect(() => {
     client
       .fetch(
-        `*[_type=="lprojects" && trappoints > 5] {
+        `*[_type=="lprojects" && trappoints > 5] | order(trapPoints asc) {
               name,
               id,
               tracker,

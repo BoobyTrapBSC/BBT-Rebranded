@@ -8,7 +8,7 @@ export default function InfluencerScam() {
     const [influencer, setInfluencer] = useState([]);
     useEffect(() => {
       client.fetch(
-          `*[_type=="influencers" && trappoints > 5] {
+          `*[_type=="influencers" && trappoints > 5] | order(trapPoints asc) {
               name,
               alias,
               trappoints,

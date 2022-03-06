@@ -9,7 +9,7 @@ export default function Promoters() {
 
     useEffect(() => {
       client.fetch(
-          `*[_type=="amagroups" && trappoints < 6] {
+          `*[_type=="amagroups" && trappoints < 6] | order(trapPoints asc) {
               name,
               alias,
               id,
