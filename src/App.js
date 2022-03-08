@@ -22,6 +22,9 @@ import {getBBTBalance} from './Web3_connection/ContractMethods';
 import client from './client';
 import InEligible from './component/InEligible';
 import Platform from './component/Platform';
+import SafeHaven from './component/SafeHaven';
+import Safecards from './component/Safecards';
+import SafeOwners from './component/SafeOwners';
 
 function App() {
 
@@ -82,7 +85,14 @@ function App() {
           <Route path="/boobytrap/scampromoter/:slug/:id/" element={<PromoterProfile/>}/>
 
           {/* Routes for Platform */}
-          <Route path="/platform" element={<Platform/>}/>
+          <Route path="/platform" element={<Platform/>}>
+            <Route path='safehaven' element={<SafeHaven/>}>
+              <Route path='safuprojects' element={<Safecards/>}/>
+              <Route path='safeowners' element={<SafeOwners/>}/>
+            </Route>
+            <Route path="safeheaven/:slug/:id" element={<Projectpage balance={<Projectpage/>}/>}/>
+            <Route path="safeheaven/:slug/:id" element={<Projectpage balance={<Ownerprofile/>}/>}/>
+          </Route>
           
           {/* <Route path="/safehaven/boobytrap/:slug/:id" element={<Projectpage/>}/> */}
           <Route path="ineligible" element={<InEligible/>} />

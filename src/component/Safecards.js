@@ -18,7 +18,7 @@ export default function Safecards() {
   useEffect(() => {
     client
       .fetch(
-        `*[_type in ["lprojects", "uprojects"] && trappoints == 0] {
+        `*[_type in ["lprojects", "uprojects"] && trappoints < 3] {
               name,
               tracker,
               slug,
@@ -147,7 +147,7 @@ export default function Safecards() {
         </div>
         <Link
           className="btn shadow-sm"
-          to={{ pathname: `/safehaven/safuprojects/${project.slug.current}/${project.id}`, state:{id:project.id}}}
+          to={{ pathname: `/platform/safeheaven/${project.slug.current}/${project.id}`, state:{id:project.id}}}
         >
           Details
         </Link>

@@ -4,7 +4,7 @@ import { FaTelegramPlane, FaTwitter } from "react-icons/fa";
 import {Link} from 'react-router-dom'
 
 
-export default function Ownercards() {
+export default function SafeOwners() {
 
     const [owner, setOwner] = useState([]);
 

@@ -343,6 +343,12 @@ body.active-modal {
 }
 
 /* PLATFORM */
+#platform-cont .topBar a, #platform-cont .topBar button{
+  padding: 8px 25px;
+  color: #fff;
+  margin: auto 15px;
+  border: 1px solid #fff;
+}
 #platform-cont .container{
   width: 100%;
 }
@@ -357,8 +363,22 @@ body.active-modal {
   color: #fff;
 }
 
-/* SIDEBAR SLIDER */
-
+/* SAFE CARDS */
+.projectTable .nav-link{
+  color: #fff;
+}
+.projectTable .nav-link:hover{
+  color: rgb(148, 148, 148);
+}
+.projectTable .nav-item{
+  width: 50%;
+  text-align: center;
+}
+.projectTable .nav-item .active{
+  background-color: #292B33;
+  color: #fff !important;
+  border: none;
+}
 
 /*Owner Cards*/
 #owner-card-cont, .safuCards{
@@ -410,7 +430,7 @@ body.active-modal {
 .ownerCard .btn:hover, .projectCard .btn:hover {
   background-color: #264b8c;
   color: #fff;
-}
+} 
 .safe-content .content {
   width: 85%;
 }
@@ -646,52 +666,13 @@ body.active-modal {
 }
 
 /* Project Page */
+#pagesafe-cont{
+  margin-top: 25px;
+}
 .projectImg{
   border-radius: 50%;
-  height: 175px;
-  width: 175px;
-  z-index: 1;
-  outline: 7px solid #fff;
-  outline-offset: 1px;
-}
-.circleSocial{
-  width: 100%;
-  height: 25px;
-}
-#circleIco{
-  font-size: 25px;
-  margin: auto 2px;
-  text-decoration: none;
-  color: #fff;
-  z-index: 2;
-  position: absolute;
-}
-#circleIco:hover{
-  color: #000;
-}
-.circle1{
-  top: 45%;
-  left: -30px;
-}
-.circle2{
-  top: 70%;
-  left: -9px;
-}
-.circle3{
-  top: 86%;
-  left: 35px;
-}
-.circle4{
-  top: 45%;
-  left: 200px;
-}
-.circle5{
-  top: 70%;
-  left: 178px;
-}
-.circle6{
-  top: 86%;
-  left: 130px;
+  height: 50px;
+  width: 50px;
 }
 .marquee p {
   position: absolute;

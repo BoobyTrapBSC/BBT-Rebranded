@@ -107,7 +107,7 @@ export default function Projectpage() {
     document.body.classList.remove("active-modal");
   }
 
-  const giveRating = async(rate) => {
+  const giveRating = async (rate) => {
     toggleModal();
     try {
       if (rate.includes("Safu")) {
@@ -178,24 +178,33 @@ export default function Projectpage() {
 
   return (
     <div id="pagesafe-cont" className="owner-prof-cont projectpage-cont">
-      <div style={window.location.pathname.includes("/boobytrap/") === true? {backgroundColor:"#A82323"}:{backgroundColor:"#204788"}} className="safe-head py-3 position-relative container-fluid">
-        <div className="head-content row">
+      <div style={window.location.pathname.includes("/boobytrap/") === true ? { backgroundColor: "#A82323" } : { backgroundColor: "#204788" }} className="safe-head py-3 position-relative container-fluid">
+        <div className="head-content">
           <Breadcrumb>
             <AiFillLeftCircle size={25} color="#fff" />
             <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
-            <Breadcrumb.Item href="/safehaven/safuprojects">
-            Safe Haven
+            <Breadcrumb.Item href="/platform/safehaven/safuprojects">
+              Safe Haven
             </Breadcrumb.Item>
             <Breadcrumb.Item active>{singleProject.name}</Breadcrumb.Item>
           </Breadcrumb>
           <div className="col-lg-8">
-            <div className="dev-main">
-              <h1>{singleProject.name}</h1>
+            <div className="project-main">
+              <div className="d-flex">
+              {singleProject.image && singleProject.image.asset && (
+                <img
+                  className="projectImg me-3"
+                  src={singleProject.image.asset.url}
+                  alt={singleProject.name}
+                />
+              )}
+              <h1 className="fs-4 my-auto text-light">{singleProject.name}</h1>
+              </div>
+              <h3 className="text-light mt-2">{singleProject.trappoints} Trap Points</h3>
               <div className="fs-6">
                 <span className="review-star fs-5"> {start(avgRating)} </span> (
                 {countreview} Reviews)
               </div>
-              <p className="my-1">{singleProject.trappoints} Trap Points</p>
               <p>
                 0 Trap Points means the safest! lower trap points means safer!
                 Read more about{" "}
@@ -212,59 +221,6 @@ export default function Projectpage() {
               >
                 {bnbBal ? "Insufficient BNB Balance" : "Give Rating"}
               </button>
-            </div>
-          </div>
-          <div className="col-lg-2 position-relative">
-            {singleProject.image && singleProject.image.asset && (
-              <img
-                className="projectImg"
-                src={singleProject.image.asset.url}
-                alt={singleProject.name}
-              />
-            )}
-            <div className="circleSocial">
-              <a
-                href={singleProject.telegram}
-                id="circleIco"
-                className="circle1"
-              >
-                <FaTelegramPlane />
-              </a>
-              <a
-                href={singleProject.twitter}
-                id="circleIco"
-                className="circle2"
-              >
-                <FaTwitter />
-              </a>
-              <a
-                href={singleProject.website}
-                id="circleIco"
-                className="circle3"
-              >
-                <FaGlobe />
-              </a>
-              <a
-                href={singleProject.discord}
-                id="circleIco"
-                className="circle4"
-              >
-                <FaDiscord />
-              </a>
-              <a
-                href={singleProject.instagram}
-                id="circleIco"
-                className="circle5"
-              >
-                <FaInstagram />
-              </a>
-              <a
-                href={singleProject.facebook}
-                id="circleIco"
-                className="circle6"
-              >
-                <FaFacebookSquare />
-              </a>
             </div>
           </div>
         </div>
@@ -318,9 +274,6 @@ export default function Projectpage() {
       )}
 
       <div className="safe-content row w-100 mt-3">
-        <div className={`sidebar col-lg-3`}>
-          {window.location.pathname.includes("/boobytrap/") === true? <ScamSidebar/>:<Sidebar />}
-        </div>
         <div className="content col">
           <Projectdetails />
         </div>
