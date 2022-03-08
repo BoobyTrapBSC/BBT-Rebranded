@@ -342,107 +342,22 @@ body.active-modal {
   text-align: start !important;
 }
 
-/* SAFE DEFI PAGE */
-#pagesafe-cont {
-  display: flex;
-  align-content: center;
-  flex-direction: column;
+/* PLATFORM */
+#platform-cont .container{
+  width: 100%;
 }
-.safe-head {
-  background-color: #2d4e85;
+#platform-cont .row .col-md-3{
+  background-color: #292B33;
+  width: 25%;
+  min-width: 225px;
+  max-width: 300px;
+  padding: 8px 15px;
 }
-.head-content {
-  max-width: 1440px;
-  margin: auto;
+#platform-cont .row .col-md-3 h3{
   color: #fff;
-  text-align: start;
-}
-.head-content h1 {
-  font-size: 34px;
-}
-.head-content h2 {
-  font-weight: 400;
-  font-size: 26px;
-}
-.side-categories,
-.filter-points {
-  width: fit-content;
-  background-color: #eaedf3;
-  text-align: start;
-}
-.safe-content {
-  margin: auto;
-  max-width: 1440px;
-}
-#menu-icon {
-  border: 1px solid rgb(123, 160, 228);
-  font-size: 25px;
-  padding: 2px;
-  color: #fff;
-}
-.safe-collapse {
-  display: none;
-  position: absolute;
-  color: #264b8c;
-  margin: 5px;
-}
-.sidebar {
-  min-width: 238px;
-  display: block;
-}
-.side-categories .nav-link,
-.filter-points .nav-link {
-  text-decoration: none;
-  color: #cecfd2;
-  font-size: 18px;
-}
-.side-categories .active,
-.filter-points .active {
-  color: #264b8c;
 }
 
 /* SIDEBAR SLIDER */
-.bm-item {
-  display: inline-block;
-  /* Sidebar item styling */
-  text-decoration: none;
-  margin-bottom: 10px;
-  color: #fff;
-  transition: color 0.2s;
-}
-.bm-burger-button {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -28px;
-  top: 7px;
-}
-.bm-burger-bars {
-  background: #2D4E85;
-}
-.bm-cross-button {
-  height: 20px;
-  width: 20px;
-}
-.bm-cross {
-  background: #bdc3c7;
-}
-.bm-menu {
-  background: linear-gradient(to bottom left, #06154c 0%, #254b8c 100%);
-  padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
-}
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-  fill: #373a47;
-}
-.bm-item-list {
-  color: #b8b7ad;
-  overflow: scroll;
-}
-.bm-overlay {
-  background: rgba(0, 0, 0, 0.466);
-}
 
 
 /*Owner Cards*/

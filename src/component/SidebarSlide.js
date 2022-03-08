@@ -1,21 +1,66 @@
 import React, {useState} from 'react';
-import { slide as Menu } from 'react-burger-menu'
+import { scaleRotate as Menu } from 'react-burger-menu'
 import {Link} from 'react-router-dom'
 
 export default function SidebarSlide() {
 
-  const [isOpen, setOpen] = useState(false)
+  const [isOpen, setOpen] = useState(true)
 
   const handleIsOpen = () => {
     setOpen(!isOpen)
   }
 
   const closeSideBar = () => {
-    setOpen(false)
+    setOpen(true)
+  }
+
+  let styles = {
+    bmBurgerButton: {
+      position: 'fixed',
+      width: '36px',
+      height: '30px',
+      left: '36px',
+      top: '36px'
+    },
+    bmBurgerBars: {
+      background: '#373a47'
+    },
+    bmBurgerBarsHover: {
+      background: '#a90000'
+    },
+    bmCrossButton: {
+      height: '24px',
+      width: '24px'
+    },
+    bmCross: {
+      background: '#bdc3c7'
+    },
+    bmMenuWrap: {
+      position: 'fixed',
+      height: '100%'
+    },
+    bmMenu: {
+      background: '#373a47',
+      padding: '2.5em 1.5em 0',
+      fontSize: '1.15em'
+    },
+    bmMorphShape: {
+      fill: '#373a47'
+    },
+    bmItemList: {
+      color: '#b8b7ad',
+      padding: '0.8em'
+    },
+    bmItem: {
+      display: 'inline-block'
+    },
+    bmOverlay: {
+      background: 'rgba(0, 0, 0, 0.3)'
+    }
   }
 
   return <div>
-      <Menu isOpen={isOpen} onOpen={handleIsOpen} onClose={handleIsOpen} right outerContainerId={"App"}>
+      <Menu isOpen={isOpen} onOpen={handleIsOpen} onClose={handleIsOpen} pageWrapId={ "sidebarWrapper" } outerContainerId={ "platform-cont" } styles={ styles }>
         <h4><u>Safe Haven</u></h4>
         <Link id="home" onClick={closeSideBar} className="menu-item" to="/safehaven/safuprojects">Safu Projects</Link>
         <Link id="about" onClick={closeSideBar} className="menu-item" to="/safehaven/upcomingprojects">Upcoming Projects</Link>
@@ -39,5 +84,5 @@ export default function SidebarSlide() {
         <a className="menu-item" target="_blank" rel="noreferrer" onClick={closeSideBar} href="https://yachtpad.club/launchpad/BoobyTrap">Claim Presale</a>
         <a className="menu-item" target="_blank" rel="noreferrer" onClick={closeSideBar} href="https://privatesale.boobytrap.live/">Claim Pvt Sale</a>
       </Menu>
-  </div>;
+  </div>
 }

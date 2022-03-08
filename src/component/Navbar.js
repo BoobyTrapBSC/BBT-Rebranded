@@ -42,12 +42,11 @@ export default function Navbar() {
                         </ul>
                         <a href="https://t.me/boobytrapbsc" target="_blank" rel="noreferrer" className="nav-socials"><FaTelegramPlane/></a>
                         <a href="https://twitter.com/BoobyTrapBsc" target="_blank" rel="noreferrer" className="nav-socials"><FaTwitter/></a>
-                        <Link to="/" className="btn m-1">Platform</Link>
+                        <Link to="/platform" className="btn m-1">Platform</Link>
 
                     </div>
                     <div className="mob-nav">
                         <a href="https://t.me/boobytrapbsc" target="_blank" rel="noreferrer" className="btn btn-sm btn-outline-dark m-1"><FaTelegramPlane/></a>
-                        <SidebarSlide right />
                     </div>
                 </div>
             </nav>
