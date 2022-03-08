@@ -1,4 +1,4 @@
-import { getAccount, getContract,initInstance } from "./web3_methods";
+import { getAccount, getContract, initInstance } from "./web3_methods";
 import { ABI } from './../ABI/Rating';
 import { TokenABI } from "../ABI/TokenABI";
 import {BBT} from '../ABI/BBTToken'

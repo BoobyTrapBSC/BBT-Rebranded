@@ -1,16 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import SafeHaven from "./SafeHaven";
+import {initInstance, loginProcess, getAccount} from './../Web3_connection/web3_methods'
 import SidebarSlide from "./SidebarSlide";
 
 export default function Platform() {
+  const [userAddress, setUserAddress] = useState()
+  useEffect(()=>{
+    const ConnectWallet =async()=> {
+      await initInstance();
+      window.ethereum.enable();
+      const address = await getAccount();
+      setUserAddress(address);
+  }
+  ConnectWallet();
+  },[])
+
+
+  const ConnectWallet =async()=> {
+      await initInstance();
+      window.ethereum.enable();
+      const address = await getAccount();
+      setUserAddress(address);
+  }
+  console.log("address is ", userAddress,window.ethereum.isConnected())
+
   return (
     <div id="platform-cont">
       <SidebarSlide />
       <div id="sidebarWrapper">
         <div className="container-fluid">
           <div className="topBar d-flex flex-row-reverse pt-3">
-            <button className="btn">Connect Wallet</button>
+            <button className="btn" onClick={()=>ConnectWallet()}>Connect Wallet</button>
             <a target="_blank" rel="noreferrer" href="https://pancakeswap.finance/swap?outputCurrency=0x609b88f5a4aBB7A55bA0c6d255C3F1b1bC7A4D76" className="btn">BUY $BBT</a>
           </div>
           <div className="container">
