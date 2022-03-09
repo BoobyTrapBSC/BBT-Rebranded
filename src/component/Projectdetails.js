@@ -54,18 +54,28 @@ export default function Projectdetails() {
                 devStatus,
                 description,
             }`
-        ).then((data) => setSingleProject(data[0]))
+        ).then((data) => ownername(data[0]))
     }, [slug])
-    
+    console.log("singleProject",singleProject)
     // Fetch owner
+
     const [ownerName, setOwnerName] = useState([])
     useEffect(async() => {
-        client.fetch(
+    //    await client.fetch(
+    //         `*[_id == "${singleProject.owner._ref}"] {
+    //             name,
+    //         }`
+    //     ).then((data) => setOwnerName(data[0]))
+    }, [])
+
+    const ownername =async(singleProject)=>{
+        setSingleProject(singleProject)
+        await client.fetch(
             `*[_id == "${singleProject.owner._ref}"] {
                 name,
             }`
         ).then((data) => setOwnerName(data[0]))
-    }, [])
+    }
     
     return (
         <div className="row justify-content-center">

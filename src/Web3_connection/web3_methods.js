@@ -222,6 +222,7 @@ export const clearInstance = () => {
 }
 
 export const getAccount = async () => {
+    await initInstance();
     const account = await web3Instance.eth.getAccounts();
     return account[0];
 }

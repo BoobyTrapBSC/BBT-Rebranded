@@ -36,7 +36,16 @@ export default function Platform() {
   // }
   // },[])
 
- 
+  const ConnectWalletMetaMask = async()=> {
+    await initInstance()
+    const isConnect = await loginProcess()
+    if (isConnect) {
+      const address = await getAccount()
+      setUserAddress(address)
+      fetchBal();
+      TokenDetails();
+    }
+  }
 
   const authButton = document.getElementById('btn-auth');
   const resultBox = document.getElementById('result');
@@ -112,7 +121,9 @@ export default function Platform() {
         await fetchBal();
         await TokenDetails();
         console.log("connected")
+
       }
+      await enableWeb3();
       await fetchBal();
       await TokenDetails();
      
@@ -135,11 +146,12 @@ export default function Platform() {
 
   async function enableWeb3() {
     try {
-      web3 = await Moralis.Web3.enable({ provider });
+      web3 = await Moralis.Web3.enableWeb3({ provider });
+      console.log(web3)
     } catch (error) {
       console.log('testCall failed', error);
     }
-    renderApp();
+    // renderApp();
   }
 
   return (
@@ -148,15 +160,16 @@ export default function Platform() {
       <div id="sidebarWrapper">
         <div className="container-fluid">
           <div className="topBar d-flex flex-row-reverse pt-3">
-            {/* <main>
-              <section class="buttons">
-                <button id="btn-auth" onClick={()=>ConnectWallet()}>Login</button>
-                <button id="btn-call" onClick={()=>logout()}>Logout</button>
-              
-              </section>
-              <section class="result" id="result"></section>
-            </main> */}
-            {userAddress ? <button id='btn-auth' className="btn" onClick={() => logout()}>
+          <button id='btn-auth' className="btn" onClick={() => ConnectWalletMetaMask()}>
+              {userAddress ? Slicing(userAddress) : 'Connect Wallet'}{' '}
+              {userAddress ? (
+                <img className="mr-1" src={Logo} width={30} height={30} />
+              ) : (
+                ''
+              )}
+             
+            </button>
+            {/* {userAddress ? <button id='btn-auth' className="btn" onClick={() => logout()}>
               {userAddress ? Slicing(userAddress) : 'Connect Wallet'}{' '}
               {userAddress ? (
                 <img className="mr-1" src={Logo} width={30} height={30} />
@@ -173,7 +186,7 @@ export default function Platform() {
                 ''
               )}
              
-            </button>}
+            </button>} */}
             <a
               target="_blank"
               rel="noreferrer"
