@@ -10,7 +10,7 @@ export default function OwnerScam() {
 
     useEffect(() => {
       client.fetch(
-          `*[_type=="owners" && trappoints > 5] | order(trapPoints asc) {
+          `*[_type=="owners" && trappoints > 7] | order(trapPoints asc) {
               name,
               alias,
               trappoints,

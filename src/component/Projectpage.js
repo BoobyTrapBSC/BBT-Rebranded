@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from "react";
 import client from "../client";
 import { Link, useParams } from "react-router-dom";
-import {
-  FaTelegramPlane,
-  FaTwitter,
-  FaGlobe,
-  FaDiscord,
-  FaInstagram,
-  FaFacebookSquare,
-} from "react-icons/fa";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import { AiFillLeftCircle } from "react-icons/ai";
 import { BsStarFill, BsStarHalf } from "react-icons/bs";
@@ -20,8 +12,6 @@ import {
   getProfile,
 } from "./../Web3_connection/ContractMethods";
 import { initInstance } from "./../Web3_connection/web3_methods";
-import Sidebar from "./Sidebar";
-import ScamSidebar from "./ScamSidebar";
 
 export default function Projectpage() {
   const [singleProject, setSingleProject] = useState([]);

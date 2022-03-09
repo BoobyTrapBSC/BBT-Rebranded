@@ -1,12 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import logo from "../images/logo.png"
 import trapsheetpdf from '../whitepaper/BBT _TrapSheet_V3.pdf'
 import { Link } from 'react-router-dom'
-import { loginProcess, initInstance, getAccount } from "./../Web3_connection/web3_methods"
-import { getTokenBalance, symbol } from './../Web3_connection/ContractMethods'
-import SidebarSlide from './SidebarSlide'
-import client from '../client';
-import {getBBTBalance} from '../Web3_connection/ContractMethods'
 import { FaTelegramPlane, FaTwitter } from "react-icons/fa";
 
 export default function Navbar() {

@@ -13,9 +13,7 @@ import { BsStarFill } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 import { addReview, getProfile } from "./../Web3_connection/ContractMethods";
 import { initInstance } from "./../Web3_connection/web3_methods";
-import Sidebar from "./Sidebar";
 import PromoterDetails from "./PromoterDetails";
-import ScamSidebar from "./ScamSidebar";
 
 export default function PromoterProfile() {
   const [singlePromoter, setSinglePromoter] = useState([]);
@@ -234,9 +232,6 @@ export default function PromoterProfile() {
         </div>
       )}
       <div className="safe-content row mt-3 w-100">
-        <div className={`sidebar col-lg-3`}>
-          {window.location.pathname.includes("/boobytrap/") == true? <ScamSidebar/>:<Sidebar />}
-        </div>
         <div className="content col">
           <PromoterDetails />
         </div>

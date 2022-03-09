@@ -12,7 +12,6 @@ import Ownerdetails from "./Ownerdetails";
 import { addReview, getProfile, BNBBalance } from "./../Web3_connection/ContractMethods"
 import { initInstance } from './../Web3_connection/web3_methods'
 import { TokenABI } from '../ABI/TokenABI';
-import Sidebar from './Sidebar';
 import ScamSidebar from './ScamSidebar';
 
 export default function Ownerprofile() {
@@ -217,9 +216,6 @@ export default function Ownerprofile() {
                 </div>
             )}
             <div className="safe-content row mt-3">
-                <div className={`sidebar col-lg-3`}>
-          {window.location.pathname.includes("/boobytrap/") == true? <ScamSidebar/>:<Sidebar />}
-                </div>
                 <div className="content col">
                     <Ownerdetails />
                 </div>

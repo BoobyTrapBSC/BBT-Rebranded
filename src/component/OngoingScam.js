@@ -20,7 +20,7 @@ export default function OngoingScam() {
   useEffect(() => {
     client
       .fetch(
-        `*[_type=="lprojects" && trappoints > 5] | order(trapPoints asc) {
+        `*[_type=="lprojects" && trappoints > 7] | order(trapPoints asc) {
               name,
               id,
               tracker,
@@ -132,11 +132,8 @@ export default function OngoingScam() {
           </div>
           
           {/* RIBBON CONTAINER FOR NEWLY LAUNCHED PROJECTS */}
-          <div id="bbt-ribbon-container" style={project.trappoints < 9 ? { display: "block" } : { display: "none" }}>
-            <img src={probably} alt="" />
-          </div>
           <div id="bbt-ribbon-container" style={project.trappoints >= 9 ? { display: "block" } : { display: "none" }}>
-            <img src={scam} alt="" />
+            <img src={scam} alt="" width="100px" />
           </div>
           <img
             className="shadow bg-light"

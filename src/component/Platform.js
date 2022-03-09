@@ -190,7 +190,7 @@ export default function Platform() {
                 <span>Your $BBT Balance</span>
               </div>
               <div className="col-md-3">
-                <h3>$10,000,000,000</h3>
+                <h3>${(price*881909880.6534261).toFixed(2)}</h3>
                 <span>Market Cap</span>
               </div>
               <div className="col-md-3">
@@ -198,7 +198,7 @@ export default function Platform() {
                 <span>Token Price</span>
               </div>
               <div className="col-md-3">
-                <h3>${bbtian} </h3>
+                <h3>{bbtian} </h3>
                 <span>$BBTians</span>
               </div>
             </div>

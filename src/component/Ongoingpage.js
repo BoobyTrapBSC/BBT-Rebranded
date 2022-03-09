@@ -17,7 +17,6 @@ import { BsStarFill, BsStarHalf } from 'react-icons/bs'
 import Projectdetails from "./Projectdetails";
 import { toast } from 'react-toastify';
 import { initInstance } from './../Web3_connection/web3_methods'
-import Sidebar from './Sidebar';
 import { addReview, getProfile, BNBBalance } from "./../Web3_connection/ContractMethods"
 
 export default function Ongoingpage() {
@@ -247,9 +246,6 @@ export default function Ongoingpage() {
             )}
             
             <div className="safe-content row w-100 mt-3">
-                <div className={`sidebar col-lg-3`}>
-                    <Sidebar/>
-                </div>
                 <div className="content col">
                     <Projectdetails />
                 </div>
