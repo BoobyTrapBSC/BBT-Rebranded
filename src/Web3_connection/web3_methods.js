@@ -22,6 +22,9 @@ export const loginProcess = async () => {
         if(chainId !== envprod.React_App_chain_Id){
             alert("Please Switch to BSC Mainnet")
         }
+        else{
+            return true;
+        }
     }
     catch (err) {
         console.log('check chain error:', err);

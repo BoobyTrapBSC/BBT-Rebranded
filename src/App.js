@@ -18,7 +18,8 @@ import OwnerScam from './component/OwnerScam';
 import DevScam from './component/DevScam';
 import InfluencerScam from './component/InfluencerScam';
 import PromoterScam from './component/PromoterScam';
-import {getBBTBalance} from './Web3_connection/ContractMethods';
+import {getBBTBalance,} from './Web3_connection/ContractMethods';
+import { loginProcess} from './Web3_connection/web3_methods'
 import client from './client';
 import InEligible from './component/InEligible';
 import Platform from './component/Platform';
@@ -42,10 +43,11 @@ function App() {
   const [BBTBal, setBBTBal] = useState(0)
   useEffect(() => {
     const fetchBal = async() => {
+      await loginProcess();
       let currentBal = await getBBTBalance()
       setBBTBal(currentBal)
     }
-    fetchBal()
+    // fetchBal()
   }, [])
 
   if(BBTLimit){
@@ -53,7 +55,7 @@ function App() {
   }
   try{
     window.ethereum.on('accountsChanged', function (accounts) {
-      window.location.reload();
+      // window.location.reload();
     })
   }
   catch(e){

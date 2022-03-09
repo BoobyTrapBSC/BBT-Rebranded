@@ -28,7 +28,7 @@ export default function Bottomnav() {
       let currentBal = await getBBTBalance()
       setBBTBal(currentBal)
     }
-    fetchBal()
+    // fetchBal()
   }, [])
 
   return (
