@@ -54,7 +54,7 @@ export default function SidebarSlide() {
     bmItem: {
       display: 'block',
       color: "#fff",
-      textDecoration:"none"
+      textDecoration:"none",
     },
     bmOverlay: {
       background: 'rgba(0, 0, 0, 0.3)'
@@ -64,12 +64,12 @@ export default function SidebarSlide() {
   return <div>
       <Menu isOpen={isOpen} onOpen={handleIsOpen} onClose={handleIsOpen} pageWrapId={ "sidebarWrapper" } outerContainerId={ "platform-cont" } styles={ styles }>
         <Link id="home" onClick={closeSideBar} className="menu-item" to="/platform/safehaven/safuprojects">SAFE HAVEN</Link>
-        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/boobytrap">BOOBY TRAP</Link>
-        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/boobytrap">DYOR PROJECTS</Link>
-        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/boobytrap">UPCOMING PROJECTS</Link>
-        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/boobytrap">DEVELOPERS</Link>
-        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/boobytrap">INFLUENCERS</Link>
-        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/boobytrap">AMA/CALL CHANNELS</Link>
+        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/boobytrap/scamprojects">BOOBY TRAP</Link>
+        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/ongoing">DYOR PROJECTS</Link>
+        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/ongoing/upcoming">UPCOMING PROJECTS</Link>
+        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/developers">DEVELOPERS</Link>
+        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/influencers">INFLUENCERS</Link>
+        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/promoters">AMA/CALL CHANNELS</Link>
         <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/boobytrap">OTHER SERVICES</Link>
         <Link id="contact" onClick={closeSideBar} className="menu-item" to="/safehaven/ongoingprojects">BBT SQUARE</Link>
         <Link className="menu-item" onClick={closeSideBar} to="/safehaven/projectowner">INSURANCE DAO</Link>

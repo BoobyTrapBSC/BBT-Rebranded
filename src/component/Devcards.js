@@ -9,7 +9,7 @@ export default function Devcards() {
 
     useEffect(() => {
       client.fetch(
-          `*[_type=="developers" && trappoints < 6] | order(trapPoints asc) {
+          `*[_type=="developers"] | order(trapPoints asc) {
               name,
               alias,
               trappoints,

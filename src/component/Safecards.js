@@ -147,7 +147,7 @@ export default function Safecards() {
         </div>
         <Link
           className="btn shadow-sm"
-          to={{ pathname: `/platform/safeheaven/${project.slug.current}/${project.id}`, state:{id:project.id}}}
+          to={{ pathname: `/platform/safehaven/safuprojects/${project.slug.current}/${project.id}`, state:{id:project.id}}}
         >
           Details
         </Link>
