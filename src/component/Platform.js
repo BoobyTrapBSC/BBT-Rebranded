@@ -1,24 +1,32 @@
-import React, { useEffect, useState } from 'react'
-import { Link, Outlet } from 'react-router-dom'
-import SafeHaven from './SafeHaven'
+import React, { useEffect, useState } from "react";
+import { Link, Outlet } from "react-router-dom";
+import SafeHaven from "./SafeHaven";
 import {
   initInstance,
   loginProcess,
   getAccount,
-} from './../Web3_connection/web3_methods'
-import WalletConnect from "@walletconnect/client";
-import QRCodeModal from "@walletconnect/qrcode-modal";
-import { convertUtf8ToHex } from "@walletconnect/utils";
-import { getBBTBalance,getTokenBalance } from './../Web3_connection/ContractMethods'
-import SidebarSlide from './SidebarSlide'
-import Logo from './../images/badge.png'
-import axios from 'axios'
+} from "./../Web3_connection/web3_methods";
+import "./style.css";
+import {
+  getBBTBalance,
+  getTokenBalance,
+} from "./../Web3_connection/ContractMethods";
+import SidebarSlide from "./SidebarSlide";
+import Logo from "./../images/badge.png";
+import axios from "axios";
+const Moralis = require("moralis");
+Moralis.initialize("3Amct4xq6AlkAngmYLPFJSJeFRe4nxbbyvzlIcOC");
+Moralis.serverURL = "https://4bffcvuqchek.usemoralis.com:2053/server";
+const provider = "walletconnect";
+let user;
+let web3;
+let result = "";
 
 export default function Platform() {
-  const [userAddress, setUserAddress] = useState()
+  const [userAddress, setUserAddress] = useState();
   const [BBTBal, setBBTBal] = useState(0);
-  const [price, setPrice] = useState(0)
-  const [bbtian, setBBTian] = useState(0)
+  const [price, setPrice] = useState(0);
+  const [bbtian, setBBTian] = useState(0);
   // useEffect(()=>{
   //   const ConnectWallet =async()=> {
   //     await initInstance();
@@ -28,43 +36,110 @@ export default function Platform() {
   // }
   // },[])
 
+ 
+
+  const authButton = document.getElementById('btn-auth');
+  const resultBox = document.getElementById('result');
+
   const ConnectWallet = async () => {
     try {
-      await initInstance()
-      const isConnect = await loginProcess()
-      if (isConnect) {
-        const address = await getAccount()
-        setUserAddress(address)
-        fetchBal();
-        TokenDetails();
+      try {
+        user = await Moralis.Web3.authenticate({ provider });
+        web3 = await Moralis.Web3.enable({ provider });
+      } catch (error) {
+        console.log("authenticate failed", error);
       }
+      await renderApp();
+
+      // await initInstance()
+      // const isConnect = await loginProcess()
+      // if (isConnect) {
+      //   const address = await getAccount()
+      //   setUserAddress(address)
+      //   fetchBal();
+      //   TokenDetails();
+      // }
     } catch (e) {
       //
     }
-  }
+  };
+  
+  
 
   const TokenDetails = async () => {
-  axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=booby-trap&order=market_cap_desc&per_page=100&page=1&sparkline=false')
-  .then(function (response) {
-    setPrice(response.data[0].current_price)
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
+    axios
+      .get(
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=booby-trap&order=market_cap_desc&per_page=100&page=1&sparkline=false"
+      )
+      .then(function (response) {
+        setPrice(response.data[0].current_price);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  async function logout() {
+    try {
+      await Moralis.User.logOut();
+      setUserAddress(undefined)
+    } catch (error) {
+      console.log('logOut failed', error);
+    }
+    result = '';
+    // await renderApp();
   }
 
   const fetchBal = async () => {
     let currentBal = await getBBTBalance();
     let titan = await getTokenBalance();
-    setBBTian(titan)
-    setBBTBal(currentBal)
-  }
+    setBBTian(titan);
+    setBBTBal(currentBal);
+  };
 
   const Slicing = (add) => {
-    const first = add.slice(0, 10)
-    const second = add.slice(32)
-    return first + '...' + second
+    const first = add.slice(0, 10);
+    const second = add.slice(32);
+    return first + "..." + second;
+  };
+
+  async function renderApp() {
+    user = Moralis.User.current(); 
+   if (user) {
+      console.log("user is ",user.get('ethAddress'))
+      setUserAddress(user.get('ethAddress'))
+      if(userAddress){
+        await fetchBal();
+        await TokenDetails();
+        console.log("connected")
+      }
+      await fetchBal();
+      await TokenDetails();
+     
+    } else {
+      authButton.style.display = 'inline-block';
+    }
+    resultBox.innerText = result;
+  }
+
+  
+
+  async function testCall() {
+    try {
+      result = await web3.eth.personal.sign('Hello world', user.get('ethAddress'));
+    } catch (error) {
+      console.log('testCall failed', error);
+    }
+    renderApp();
+  }
+
+  async function enableWeb3() {
+    try {
+      web3 = await Moralis.Web3.enable({ provider });
+    } catch (error) {
+      console.log('testCall failed', error);
+    }
+    renderApp();
   }
 
   return (
@@ -73,14 +148,32 @@ export default function Platform() {
       <div id="sidebarWrapper">
         <div className="container-fluid">
           <div className="topBar d-flex flex-row-reverse pt-3">
-            <button className="btn" onClick={() => ConnectWallet()}>
+            {/* <main>
+              <section class="buttons">
+                <button id="btn-auth" onClick={()=>ConnectWallet()}>Login</button>
+                <button id="btn-call" onClick={()=>logout()}>Logout</button>
+              
+              </section>
+              <section class="result" id="result"></section>
+            </main> */}
+            {userAddress ? <button id='btn-auth' className="btn" onClick={() => logout()}>
               {userAddress ? Slicing(userAddress) : 'Connect Wallet'}{' '}
               {userAddress ? (
                 <img className="mr-1" src={Logo} width={30} height={30} />
               ) : (
                 ''
               )}
-            </button>
+             
+            </button> :
+            <button id='btn-auth' className="btn" onClick={() => ConnectWallet()}>
+              {userAddress ? Slicing(userAddress) : 'Connect Wallet'}{' '}
+              {userAddress ? (
+                <img className="mr-1" src={Logo} width={30} height={30} />
+              ) : (
+                ''
+              )}
+             
+            </button>}
             <a
               target="_blank"
               rel="noreferrer"
@@ -93,7 +186,7 @@ export default function Platform() {
           <div className="container">
             <div className="row my-5 justify-content-around">
               <div className="col-md-3">
-                <h3>${BBTBal} </h3>
+                <h3>${(BBTBal).toFixed(2)} </h3>
                 <span>Your $BBT Balance</span>
               </div>
               <div className="col-md-3">
@@ -113,9 +206,9 @@ export default function Platform() {
               <div
                 className="container-fluid text-start overflow-hidden position-relative marquee"
                 style={{
-                  backgroundColor: '#2A2C34',
-                  color: '#b4b7bd',
-                  height: '24px',
+                  backgroundColor: "#2A2C34",
+                  color: "#b4b7bd",
+                  height: "24px",
                 }}
               >
                 <p>
@@ -133,5 +226,5 @@ export default function Platform() {
         </div>
       </div>
     </div>
-  )
+  );
 }
