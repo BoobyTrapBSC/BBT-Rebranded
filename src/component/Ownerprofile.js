@@ -11,8 +11,6 @@ import { Link, useParams } from "react-router-dom";
 import Ownerdetails from "./Ownerdetails";
 import { addReview, getProfile, BNBBalance } from "./../Web3_connection/ContractMethods"
 import { initInstance } from './../Web3_connection/web3_methods'
-import { TokenABI } from '../ABI/TokenABI';
-import ScamSidebar from './ScamSidebar';
 
 export default function Ownerprofile() {
 
@@ -30,7 +28,7 @@ export default function Ownerprofile() {
     useEffect(() => {
         client.fetch(
             `*[slug.current == "${slug}"] {
-        name,
+              name,
               alias,
               trapPoints,
               numProjects,

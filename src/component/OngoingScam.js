@@ -10,7 +10,6 @@ import {
 import { Link } from "react-router-dom";
 import { getTotoalProfile } from "./../Web3_connection/ContractMethods";
 import { initInstance } from "./../Web3_connection/web3_methods";
-import probably from '../images/probably.png'
 import scam from '../images/scam.png'
 
 export default function OngoingScam() {
@@ -149,7 +148,7 @@ export default function OngoingScam() {
         </div>
         <Link
           className="btn shadow-sm"
-          to={{ pathname: `/safehaven/ongoingprojects/${project.slug.current}/${project.id}`, state:{id:project.id} }}
+          to={{ pathname: `/platform/boobytrap/scamprojects/${project.slug.current}/${project.id}`, state:{id:project.id} }}
         >
           Details
         </Link>

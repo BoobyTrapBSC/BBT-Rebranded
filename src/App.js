@@ -18,6 +18,11 @@ import SafeHaven from './component/SafeHaven';
 import Safecards from './component/Safecards';
 import SafeOwners from './component/SafeOwners';
 import OngoingScam from './component/OngoingScam';
+import DYORcards from './component/DYORcards';
+import UpcomingCards from './component/upcomingCards';
+import Devcards from './component/Devcards';
+import Influencers from './component/Influencers';
+import Promoters from './component/Promoters';
 
 function App() {
 
@@ -85,14 +90,23 @@ function App() {
               <Route path='safuprojects' element={<Safecards />} />
               <Route path='safeowners' element={<SafeOwners />} />
             </Route>
-            <Route path="safeheaven/:slug/:id" element={<Projectpage balance={<Projectpage />} />} />
-            <Route path="safeheaven/:slug/:id" element={<Projectpage balance={<Ownerprofile />} />} />
+            <Route path="safehaven/safuprojects/:slug/:id" element={<Projectpage />} />
+            <Route path="safehaven/safeowners/:slug/:id" element={<Ownerprofile />} />
 
             {/* Routes for Boobytrap */}
             <Route path="boobytrap" element={<PageBoobyTrap />}>
               <Route path='scamprojects' element={<OngoingScam />} />
               <Route path='scamowners' element={<OwnerScam />} />
             </Route>
+            <Route path="boobytrap/scamprojects/:slug/:id" element={<Projectpage />} />
+            <Route path="boobytrap/scamowners/:slug/:id" element={<Ownerprofile />} />
+
+            {/* Routes for DYOR CARDs */}
+            <Route path="ongoing" element={<DYORcards />}/>
+            <Route path='upcoming' element={<UpcomingCards />} />
+            <Route path='developers' element={<Devcards/>}/>
+            <Route path='influencers' element={<Influencers/>}/>
+            <Route path='promoters' element={<Promoters/>}/>
           </Route>
 
           {/* <Route path="/safehaven/boobytrap/:slug/:id" element={<Projectpage/>}/> */}

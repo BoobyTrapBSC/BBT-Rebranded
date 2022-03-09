@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Web3 from "web3";
 import { Link, Outlet } from "react-router-dom";
-import SafeHaven from "./SafeHaven";
 import {
   initInstance,
   loginProcess,

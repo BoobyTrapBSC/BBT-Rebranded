@@ -9,7 +9,7 @@ export default function Influencers() {
 
     useEffect(() => {
       client.fetch(
-          `*[_type=="influencers" && trappoints < 6] | order(trapPoints asc) {
+          `*[_type=="influencers"] | order(trapPoints asc) {
               name,
               alias,
               id,
