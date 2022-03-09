@@ -11,7 +11,7 @@ import {
   BNBBalance,
   getProfile,
 } from "./../Web3_connection/ContractMethods";
-import { initInstance } from "./../Web3_connection/web3_methods";
+import { getAccount, initInstance } from "./../Web3_connection/web3_methods";
 
 export default function Projectpage() {
   const [singleProject, setSingleProject] = useState([]);
@@ -71,6 +71,7 @@ export default function Projectpage() {
     const init = async () => {
       await initInstance();
       await getprofile(id);
+
     };
     setInterval(() => {
       init();
