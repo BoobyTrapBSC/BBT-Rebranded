@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Web3 from "web3";
 import { Link, Outlet } from "react-router-dom";
 import SafeHaven from "./SafeHaven";
 import {
@@ -53,8 +54,11 @@ export default function Platform() {
   const ConnectWallet = async () => {
     try {
       try {
-        user = await Moralis.Web3.authenticate({ provider });
-        web3 = await Moralis.Web3.enable({ provider });
+        user = await Moralis.authenticate({ provider });
+        web3 = await Moralis.enableWeb3({ provider });
+        console.log("moralis user", web3.provider)
+        const newWeb = new Web3(web3.provider)
+        await initInstance(newWeb)
       } catch (error) {
         console.log("authenticate failed", error);
       }
@@ -117,16 +121,17 @@ export default function Platform() {
    if (user) {
       console.log("user is ",user.get('ethAddress'))
       setUserAddress(user.get('ethAddress'))
-      if(userAddress){
-        await fetchBal();
-        await TokenDetails();
-        console.log("connected")
+      // if(userAddress){
+      //   await fetchBal();
+      //   await TokenDetails();
+      //   console.log("connected")
 
-      }
+      // }
       await enableWeb3();
       await fetchBal();
       await TokenDetails();
-     
+      // const address = await getAccount();
+      // console.log("account", address)
     } else {
       authButton.style.display = 'inline-block';
     }
@@ -146,12 +151,15 @@ export default function Platform() {
 
   async function enableWeb3() {
     try {
-      web3 = await Moralis.Web3.enableWeb3({ provider });
-      console.log(web3)
+      const acount = await getAccount();
+      console.log("connect", acount)
+      // web3 = await Moralis.enableWeb3({ provider });
+      // const newWeb = new Web3(web3.provider)
+      // await initInstance(newWeb)
+      
     } catch (error) {
       console.log('testCall failed', error);
     }
-    // renderApp();
   }
 
   return (
@@ -160,7 +168,7 @@ export default function Platform() {
       <div id="sidebarWrapper">
         <div className="container-fluid">
           <div className="topBar d-flex flex-row-reverse pt-3">
-          <button id='btn-auth' className="btn" onClick={() => ConnectWalletMetaMask()}>
+          {/* <button id='btn-auth' className="btn" onClick={() => ConnectWalletMetaMask()}>
               {userAddress ? Slicing(userAddress) : 'Connect Wallet'}{' '}
               {userAddress ? (
                 <img className="mr-1" src={Logo} width={30} height={30} />
@@ -168,8 +176,8 @@ export default function Platform() {
                 ''
               )}
              
-            </button>
-            {/* {userAddress ? <button id='btn-auth' className="btn" onClick={() => logout()}>
+            </button> */}
+            {userAddress ? <button id='btn-auth' className="btn" onClick={() => logout()}>
               {userAddress ? Slicing(userAddress) : 'Connect Wallet'}{' '}
               {userAddress ? (
                 <img className="mr-1" src={Logo} width={30} height={30} />
@@ -186,7 +194,7 @@ export default function Platform() {
                 ''
               )}
              
-            </button>} */}
+            </button>}
             <a
               target="_blank"
               rel="noreferrer"

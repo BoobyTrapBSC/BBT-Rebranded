@@ -6,12 +6,17 @@ export let web3Instance = null;
 export let web3Modal = null;
 export let provider = null;
 
-export const initInstance = async () => {
+export const initInstance = async (web3provider) => {
     if (web3Instance) {
         return web3Instance;
     } else {
-        provider = await getValidProvider();
-        web3Instance = new Web3(provider);
+        if(web3provider){
+            web3Instance = new Web3(web3provider);
+        }
+        else{
+            provider = await getValidProvider();
+            web3Instance = new Web3(provider);
+        }
     }
 }
 
@@ -222,7 +227,7 @@ export const clearInstance = () => {
 }
 
 export const getAccount = async () => {
-    await initInstance();
+    // await initInstance();
     const account = await web3Instance.eth.getAccounts();
     return account[0];
 }
