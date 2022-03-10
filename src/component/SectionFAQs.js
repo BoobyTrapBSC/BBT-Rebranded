@@ -10,69 +10,26 @@ export default function SectionFAQs() {
                         <div className="accordion-item">
                             <h2 className="accordion-header" id="flush-headingOne">
                                 <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                    What is the platform that you are coming up with?
+                                    What is BOOBY TRAP ( $BBT ) Contract Address?
                                 </button>
                             </h2>
                             <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div className="accordion-body">Almost everyone in DEFI space has been scammed or got trapped in a rug pull in one way or the other. So, this team has taken the onus on themselves to come up with a platform where you will get all the legit DEVS (with KYC), list of their successful projects and also upcoming ones with jaw dropping details, doxxed Influencers and service providers at one platform. Investors will be able to rate the projects, Devs, Service Providers, Influencers & promoters with 'TRAP Points' from 0-10, with 0 trap points meaning extremely safe, 1-2 being safe, 3-5 being moderate, and 5-9 being dangerous, and 10 being extremely dangerous. The rating ecosystem will be built on blockchain, thus being immutable and transparent.
+                                <div className="accordion-body">
+                                    <p>Our BEP-20 Smart Contract is as follow :</p>
                             <br />
-                            <b>Booby Trap</b>
+                            <b>0x609b88f5a4aBB7A55bA0c6d255C3F1b1bC7A4D76</b>
                             <br />
-                            Our platform will have a space 'BoobyTrap' (Yep! That is where we trap and kill those bloody Scammers and Fraudsters) to list all potential Rugpull & Honeypots with details regarding owners' wallets, their transfers to other wallets, the exploits found in the contracts and the whole checklist. These details will help investors and service seekers to make a wise investment decision keeping them safe.
-                            <br />
-                            <b>Safe Haven</b>
-                            <br />
-                            Another section of our platform called “Safe Havens” will list all highly rated Devs, their projects, Service providers, Influencers and Promoters who have delivered well in the past. One place to find most promising projects and services and achieve financial freedom for all investors across the DeFi space.</div>
+                            We recommend verifying it on BSC SCAN</div>
                             </div>
                         </div>
                         <div className="accordion-item">
                             <h2 className="accordion-header" id="flush-headingTwo">
                                 <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                    Accordion Item #2
+                                    What is coming up for BOOBY TRAP ( $BBT )?
                                 </button>
                             </h2>
                             <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-                            </div>
-                        </div>
-                        <div className="accordion-item">
-                            <h2 className="accordion-header" id="flush-headingThree">
-                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                    Accordion Item #3
-                                </button>
-                            </h2>
-                            <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-                            </div>
-                        </div>
-                        <div className="accordion-item">
-                            <h2 className="accordion-header" id="flush-headingThree">
-                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                    Accordion Item #3
-                                </button>
-                            </h2>
-                            <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-                            </div>
-                        </div>
-                        <div className="accordion-item">
-                            <h2 className="accordion-header" id="flush-headingThree">
-                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                    Accordion Item #3
-                                </button>
-                            </h2>
-                            <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-                            </div>
-                        </div>
-                        <div className="accordion-item">
-                            <h2 className="accordion-header" id="flush-headingThree">
-                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                    Accordion Item #3
-                                </button>
-                            </h2>
-                            <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                                <div className="accordion-body">We have already released our first utility Safe Haven. Some exciting utilities to be released in the near future, we will start with Escrow payment services for the service providers in DeFi space, followed by Insurance Dao, Launchpad and many more . We are working toward building whole ecosystem.</div>
                             </div>
                         </div>
                     </div>
@@ -82,61 +39,21 @@ export default function SectionFAQs() {
                         <div className="accordion-item">
                             <h2 className="accordion-header" id="flush-headingOne">
                                 <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                    Accordion Item #1
+                                    What is Safe Haven?
                                 </button>
                             </h2>
                             <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                <div className="accordion-body">'Safe Haven' will list all highly rated Devs, their projects, Service providers, Influencers and Promoters who have delivered well in the past. One place to find most promising projects and services and achieve financial freedom for all investors across the DeFi space.</div>
                             </div>
                         </div>
                         <div className="accordion-item">
                             <h2 className="accordion-header" id="flush-headingTwo">
                                 <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                    Accordion Item #2
+                                    How do you plan to keep investors and community safe from potential rug pulls and scams in DeFi?
                                 </button>
                             </h2>
                             <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-                            </div>
-                        </div>
-                        <div className="accordion-item">
-                            <h2 className="accordion-header" id="flush-headingThree">
-                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                    Accordion Item #3
-                                </button>
-                            </h2>
-                            <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-                            </div>
-                        </div>
-                        <div className="accordion-item">
-                            <h2 className="accordion-header" id="flush-headingThree">
-                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                    Accordion Item #3
-                                </button>
-                            </h2>
-                            <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-                            </div>
-                        </div>
-                        <div className="accordion-item">
-                            <h2 className="accordion-header" id="flush-headingThree">
-                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                    Accordion Item #3
-                                </button>
-                            </h2>
-                            <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-                            </div>
-                        </div>
-                        <div className="accordion-item">
-                            <h2 className="accordion-header" id="flush-headingThree">
-                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                    Accordion Item #3
-                                </button>
-                            </h2>
-                            <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                                <div className="accordion-body">We will be developing an ecosystem by creating a platform where only legit devs, influencers/promoters and service providers will be listed. They will be listed on the platform after KYC and ticking our listing parameters which will make them eligible for a rating system. On the basis of the ratings one can contact a dev, influencer/promoter or service provider according to their requirements and investors can invest in their projects on the basis of the ratings which will keep them away from the scams.</div>
                             </div>
                         </div>
                     </div>

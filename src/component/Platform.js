@@ -16,6 +16,7 @@ import SidebarSlide from "./SidebarSlide";
 import Logo from "./../images/badge.png";
 import axios from "axios";
 import WalletConnectProvider from "@walletconnect/web3-provider";
+
 const Moralis = require("moralis");
 Moralis.initialize("3Amct4xq6AlkAngmYLPFJSJeFRe4nxbbyvzlIcOC");
 Moralis.serverURL = "https://4bffcvuqchek.usemoralis.com:2053/server";
@@ -175,7 +176,6 @@ export default function Platform() {
               ) : (
                 ''
               )}
-             
             </button> */}
             {userAddress ? <button id='btn-auth' className="btn" onClick={() => logout()}>
               {userAddress ? Slicing(userAddress) : 'Connect Wallet'}{' '}
@@ -223,7 +223,7 @@ export default function Platform() {
                 <span>$BBTians</span>
               </div>
             </div>
-            <div className="disclaimer">
+            <div className="disclaimer" style={window.location.pathname.includes("upcoming") === true? {display:"true"}:{display:"none"}}>
               <div
                 className="container-fluid text-start overflow-hidden position-relative marquee"
                 style={{

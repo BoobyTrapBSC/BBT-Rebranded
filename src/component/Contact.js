@@ -17,7 +17,7 @@ export default function Contact() {
                 <div id="formMsg">
                     <textarea name="Message" id="" placeholder='Your Message Here!' rows="10"></textarea>
                 </div>
-                <input id='formSubmit' type="submit" value="Submit" />
+                <input id='formSubmit' className='btnYellow btn' type="submit" value="SUBMIT" />
             </form>
         </div>
     </div>

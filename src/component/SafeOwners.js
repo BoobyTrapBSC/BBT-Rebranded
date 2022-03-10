@@ -32,7 +32,7 @@ export default function SafeOwners() {
 
     const renderOwner = (owner, index) =>{
         return(
-            <div className="ownerCard mt-3 mb-5 col-md-3 shadow" key={index}>
+            <div className="ownerCard my-5 mb-5 col-md-3 shadow" key={index}>
                 <img src={owner.image.asset.url} alt="" />
                 <div id="trap-points" className='mt-1'>{owner.trapPoints} Trap Points</div>
                 <div id="dev-name" className='mb-0 lh-sm'>{owner.name}</div>

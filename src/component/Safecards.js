@@ -63,7 +63,7 @@ export default function Safecards() {
   const renderProjects = (project, index) => {
     return (
       <div
-        className="projectCard mx-2 my-4 col-md-3 px-1 py-2 pb-3 shadow"
+        className="projectCard mx-2 my-5 col-md-3 px-1 py-2 pb-3 shadow"
         key={index}
       >
         <div id="projectHead" className="d-flex justify-content-between">

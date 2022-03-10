@@ -94,8 +94,8 @@ export default function UpcomingCards() {
 
   return (
     <>
-      <h1>UPCOMING PROJECTS</h1>
-      <h2>Caption</h2>
+      <h1 style={{borderTop:"1px solid #474747"}} className="pt-5">UPCOMING PROJECTS</h1>
+      <h2>EXCITING OPPORTUNITIES</h2>
       <p>
         0 Trap Points means the safest! lower trap points means safer! Read
         more about{" "}

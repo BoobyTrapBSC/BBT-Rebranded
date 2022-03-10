@@ -53,6 +53,7 @@ export default function Projectdetails() {
                 comStrength,
                 devStatus,
                 description,
+                verdict,
             }`
         ).then((data) => ownername(data[0]))
     }, [slug])
@@ -84,7 +85,6 @@ export default function Projectdetails() {
             </div>
             <div className="container-fluid overflow-hidden text-start fs-6">
                 <ul id="skills">
-                    <li className='card-bold-points font-monospace'><b>Trap Points:</b> {singleProject.trappoints}</li>
                     <li><b>Email:</b> {singleProject.email}</li>
                     <li><b>Contract:</b> {singleProject.contract}</li>
                     <li><b>Owner Name:</b> {ownerName.name}</li>
@@ -107,16 +107,18 @@ export default function Projectdetails() {
                     <li><b>Exchange Listings:</b> {singleProject.exchanges}</li>
                     <li><b>Number of Holders:</b> {singleProject.holdersCount}</li>
                 </ul>
+                <h4 className='mt-5' style={{color:"#ffcc00"}}>What our experts say:</h4>
+                <BlockContent blocks={singleProject.expertOpinion} projectId="lfyw4jna" dataset="production" />
+                <h3 style={{color:"#ffcc00"}}>BBT's Verdict:</h3>
+                <BlockContent blocks={singleProject.verdict} projectId="lfyw4jna" dataset="production" />
                 <h3 style={singleProject.cg === null ? { display: "block" } : { display: "none" }}>Chart Not Available</h3>
-                <div className="row" style={singleProject.cg === null ? { display: "none" } : { display: "block" }}>
+                <div className="row mt-5" style={singleProject.cg === null ? { display: "none" } : { display: "block" }}>
                     <h3>{singleProject.name} Price Chart ({singleProject.tracker})</h3>
                     <ScriptTag src="https://widgets.coingecko.com/coingecko-coin-ticker-widget.js"></ScriptTag>
                     <coingecko-coin-ticker-widget coin-id={singleProject.cgId} currency="usd" locale="en"></coingecko-coin-ticker-widget>
                     <ScriptTag src="https://widgets.coingecko.com/coingecko-coin-compare-chart-widget.js"></ScriptTag>
                     <coingecko-coin-compare-chart-widget coin-ids={singleProject.cgId} currency="usd" locale="en"></coingecko-coin-compare-chart-widget>
                 </div>
-                <h4>What our experts say:</h4>
-                <BlockContent blocks={singleProject.expertOpinion} projectId="lfyw4jna" dataset="production" />
             </div>
         </div>
     );

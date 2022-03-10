@@ -1,11 +1,21 @@
 .App {
   max-width: 1920px;
-  background-color: #12141D;
   color: #95a2b3;
-  font-family: Roboto;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 400;
 }
 body.active-modal {
   overflow-y: hidden;
+}
+
+#video{
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  height: 100vh;
+  width: 100%;
 }
 
 /* NAVBAR */
@@ -17,7 +27,7 @@ body.active-modal {
   max-width: 1150px;
 }
 .navbar-brand img {
-  max-height: 87px;
+  max-height: 80px;
 }
 .mob-nav {
   display: none;
@@ -68,11 +78,12 @@ body.active-modal {
   margin: auto;
   width: 100%;
   max-width: 1150px;
-  font-family: Roboto;
+  font-family: 'Kanit', sans-serif;
 }
 #hero-container h1{
   font-size: 60px;
-  font-weight: 300;
+  font-weight: 200;
+  font-family: "Kanit";
 }
 #hero-container span{
   font-size: 18px;
@@ -85,15 +96,6 @@ body.active-modal {
 }
 .heroBtn{
   display: flex;
-}
-.heroBtn a{
-  padding: 8px 25px;
-  color: #12141D;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  background-color: #fff;
 }
 .heroSearch{
   height: fit-content;
@@ -195,6 +197,7 @@ body.active-modal {
 }
 #featureIco{
   font-size: 30px;
+  color: #ffcc00;
 }
 
 /* About */
@@ -203,8 +206,11 @@ body.active-modal {
   max-width: 1150px;
   margin: auto;
 }
+#about-cont h2{
+  font-weight: 200;
+}
 #aboutList{
-  list-style-image: url(./images/green-check.png);
+  list-style-image: url(./images/yellow-check.png);
 }
 
 /* BUY BBT */
@@ -212,6 +218,15 @@ body.active-modal {
   width: 100%;
   max-width: 1150px;
   margin: auto;
+}
+#buy-cont h2{
+  font-weight: 200;
+}
+.styledA{
+  color: #ffcc00;
+}
+.styledA:hover{
+  color: #cca300;
 }
 .swapPoo{
   max-height: 400px;
@@ -342,13 +357,25 @@ body.active-modal {
   text-align: start !important;
 }
 
+/* SIDEBAR SLIDER */
+.sidebarSlide .active{
+  padding: 5px 20px;
+  background-color: #FFCC00;
+  border-radius: 2px;
+  color: #000 !important;
+}
+.sidebarSlide .bm-item:hover{
+  padding-left: 5px;
+  transition-duration: 0.2s;
+}
+
 /* PLATFORM */
 #platform-cont .topBar a, #platform-cont .topBar button{
   padding: 8px 25px;
   color: #fff;
   margin: auto 15px;
   border: 1px solid #fff;
-}
+} 
 #platform-cont .container{
   width: 100%;
 }
@@ -428,8 +455,8 @@ body.active-modal {
   flex-direction: row;
 }
 .ownerCard .btn:hover, .projectCard .btn:hover {
-  background-color: #264b8c;
-  color: #fff;
+  background-color: #ffcc00;
+  color: #000;
 } 
 .safe-content .content {
   width: 85%;
@@ -492,10 +519,10 @@ body.active-modal {
   padding: 15px;
   position: relative;
   /* allows us to position our pseudo-elements properly */
-  background: #0089d0;
+  background: #ffcc00;
   height: 15px;
   margin-left: 29px;
-  color: #fff;
+  color: #000;
   text-decoration: none;
 }
 
@@ -508,15 +535,14 @@ body.active-modal {
   position: absolute;
   top: 0;
   left: -15px;
-  border-top: 15px solid #0089d0;
-  border-bottom: 15px solid #0089d0;
+  border-top: 15px solid #ffcc00;
+  border-bottom: 15px solid #ffcc00;
   border-right: 15px solid transparent;
   border-left: 15px solid transparent;
 }
 .card-bold-points{
-  font-family: 'Righteous';
   font-size: 18px;
-  color: #254b8c;
+  color: #ffcc00;
 }
 .projectCard img{
   max-height: 75px;
@@ -529,10 +555,10 @@ body.active-modal {
   font-size: 25px;
   margin: auto 2px;
   text-decoration: none;
-  color: #000;
+  color: #FFF;
 }
 #project-social:hover{
-  color: #264b8c;
+  color: #ffcc00;
 }
 #projectDesc{
   text-align: start;
@@ -543,7 +569,7 @@ body.active-modal {
 }
 .projectCard .btn {
   background-color: #fff;
-  color: #264b8c;
+  color: #000;
   border: 1px solid #fff;
   border-radius: 25px;
   padding: 8px 25px;
@@ -761,9 +787,16 @@ body.active-modal {
   max-width: 200px;
   top: 35%;
 }
+#skills li{
+  padding: 5px 10px;
+  list-style: none;
+  border-bottom: 1px solid #474747;
+}
+#skills li a{
+  color: #ffcc00;
+}
 
 /* Booby Trap */
-
 .boobyCards .btn{
   color: #A82323;
 }

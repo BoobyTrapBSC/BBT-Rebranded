@@ -10,7 +10,7 @@ export default function PageBoobyTrap() {
     }
 
   return (
-    <div id="pagesafe-cont">
+    <div id="pagesafe-cont" style={{borderTop:"1px solid #474747"}} className="pt-5">
       <h1>BOOBY TRAP</h1>
             <h2>Shoutout against scammers &amp; fraudsters</h2>
             <p>

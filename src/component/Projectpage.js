@@ -168,8 +168,8 @@ export default function Projectpage() {
   };
 
   return (
-    <div id="pagesafe-cont" className="owner-prof-cont projectpage-cont">
-      <div style={window.location.pathname.includes("/boobytrap/") === true ? { backgroundColor: "#A82323" } : { backgroundColor: "#204788" }} className="safe-head py-3 position-relative container-fluid">
+    <div id="pagesafe-cont" className="owner-prof-cont projectpage-cont" style={{borderTop:"1px solid #474747"}}>
+      <div className="safe-head py-3 position-relative container-fluid">
         <div className="head-content">
           <Breadcrumb>
             <AiFillLeftCircle size={25} color="#fff" />
@@ -207,7 +207,7 @@ export default function Projectpage() {
                 </Link>
               </p>
               <button
-                className={`btn btn-outline-dark ${!bnbBal ? "disabled" : ""} `}
+                className={`btn btnYellow ${!bnbBal ? "disabled" : ""} `}
                 onClick={() => toggleModal()}
               >
                 {!bnbBal ? "Insufficient BNB Balance" : "Give Rating"}

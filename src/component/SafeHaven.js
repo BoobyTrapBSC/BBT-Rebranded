@@ -11,7 +11,7 @@ export default function SafeHaven() {
     }
 
     return (
-        <div id='safehaven-cont' className='mt-5'>
+        <div id='safehaven-cont' className='pt-5' style={{borderTop:"1px solid #474747"}}>
             <h1>SAFE HAVEN</h1>
             <h2>Best Rated in DeFi</h2>
             <p>

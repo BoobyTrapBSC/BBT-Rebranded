@@ -7,11 +7,11 @@ export default function Keyfeatures() {
             <div className="row">
                 <div className="col-md-3">
                     <FaLock id='featureIco'/>&nbsp;
-                    <p>Locked Liquidity<br/>for 5 Years</p>
+                    <p>Locked Liquidity<br/>for 1 Year</p>
                 </div>
                 <div className="col-md-3">
                     <FaHandHoldingWater id='featureIco'/>&nbsp;
-                    <p>Anti Whale<br/>Mechanism</p>
+                    <p>Strong<br/>Liquidity</p>
                 </div>
                 <div className="col-md-3">
                     <FaGlobeAsia id='featureIco'/>&nbsp;

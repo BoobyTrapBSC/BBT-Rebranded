@@ -149,7 +149,7 @@ export default function DYORcards() {
         </div>
         <Link
           className="btn shadow-sm"
-          to={{ pathname: `/safehaven/ongoingprojects/${project.slug.current}/${project.id}`, state: { id: project.id } }}
+          to={{ pathname: `/platform/ongoing/projects/${project.slug.current}/${project.id}`, state: { id: project.id } }}
         >
           Details
         </Link>
@@ -159,7 +159,7 @@ export default function DYORcards() {
 
   return (
     <>
-      <h1>DYOR PROJECTS</h1>
+      <h1 style={{borderTop:"1px solid #474747"}} className="pt-5">DYOR PROJECTS</h1>
       <h2>Shoutout against scammers &amp; fraudsters</h2>
       <p>
         0 Trap Points means the safest! lower trap points means safer! Read

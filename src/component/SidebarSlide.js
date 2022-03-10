@@ -1,8 +1,18 @@
 import React, {useState} from 'react';
 import { scaleDown as Menu } from 'react-burger-menu'
 import {Link} from 'react-router-dom'
+import logo from '../images/logo-text.png'
 
 export default function SidebarSlide() {
+
+  /*Set Active Sidebar*/
+  const [sidebar, setSidebar] = useState(0);
+
+  const activeSidebar = (index) => {
+    setSidebar(index);
+    console.log(index);
+    closeSideBar();
+  };
 
   const [isOpen, setOpen] = useState(true)
 
@@ -11,7 +21,7 @@ export default function SidebarSlide() {
   }
 
   const closeSideBar = () => {
-    setOpen(true)
+    setOpen(false)
   }
 
   let styles = {
@@ -40,9 +50,10 @@ export default function SidebarSlide() {
       height: '100%'
     },
     bmMenu: {
-      background: '#373a47',
+      background: '#0D0E14',
+      borderRight:'1px solid #343b44',
       padding: '2.5em 1.5em 0',
-      fontSize: '1.15em'
+      fontSize: '1.15em',
     },
     bmMorphShape: {
       fill: '#373a47'
@@ -54,6 +65,8 @@ export default function SidebarSlide() {
     bmItem: {
       display: 'block',
       color: "#fff",
+      margin: "5px auto",
+      transitionDuration:"0.2s",
       textDecoration:"none",
     },
     bmOverlay: {
@@ -62,19 +75,20 @@ export default function SidebarSlide() {
   }
 
   return <div>
-      <Menu isOpen={isOpen} onOpen={handleIsOpen} onClose={handleIsOpen} pageWrapId={ "sidebarWrapper" } outerContainerId={ "platform-cont" } styles={ styles }>
-        <Link id="home" onClick={closeSideBar} className="menu-item" to="/platform/safehaven/safuprojects">SAFE HAVEN</Link>
-        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/boobytrap/scamprojects">BOOBY TRAP</Link>
-        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/ongoing">DYOR PROJECTS</Link>
-        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/ongoing/upcoming">UPCOMING PROJECTS</Link>
-        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/developers">DEVELOPERS</Link>
-        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/influencers">INFLUENCERS</Link>
-        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/promoters">AMA/CALL CHANNELS</Link>
-        <Link id="about" onClick={closeSideBar} className="menu-item" to="/platform/boobytrap">OTHER SERVICES</Link>
-        <Link id="contact" onClick={closeSideBar} className="menu-item" to="/safehaven/ongoingprojects">BBT SQUARE</Link>
-        <Link className="menu-item" onClick={closeSideBar} to="/safehaven/projectowner">INSURANCE DAO</Link>
-        <Link className="menu-item" onClick={closeSideBar} to="/safehaven/developers">IEP</Link>
-        <Link className="menu-item" onClick={closeSideBar} to="/safehaven/influencers">DOCS</Link>
+      <Menu className='sidebarSlide' isOpen={isOpen} onOpen={handleIsOpen} onClose={handleIsOpen} pageWrapId={ "sidebarWrapper" } outerContainerId={ "platform-cont" } styles={ styles }>
+        <img style={{marginBottom:"35px"}} width="100%" src={logo} alt="" />
+        <Link id="home" onClick={() => activeSidebar(0)} className={window.location.pathname.includes("safehaven") === true && sidebar === 0 ? "menu-item active" : "menu-item"} to="/platform/safehaven/safuprojects">SAFE HAVEN</Link>
+        <Link id="about" onClick={() => activeSidebar(1)} className={window.location.pathname.includes("boobytrap") === true || sidebar === 1 ? "menu-item active" : "menu-item"} to="/platform/boobytrap/scamprojects">BOOBY TRAP</Link>
+        <Link id="about" onClick={() => activeSidebar(2)} className={window.location.pathname.includes("ongoing") === true || sidebar === 2 ? "menu-item active" : "menu-item"} to="/platform/ongoing">DYOR PROJECTS</Link>
+        <Link id="about" onClick={() => activeSidebar(3)} className={window.location.pathname.includes("upcoming") === true || sidebar === 3 ? "menu-item active" : "menu-item"} to="/platform/upcoming">UPCOMING PROJECTS</Link>
+        <Link id="about" onClick={() => activeSidebar(4)} className={window.location.pathname.includes("developers") === true || sidebar === 4 ? "menu-item active" : "menu-item"} to="/platform/developers">DEVELOPERS</Link>
+        <Link id="about" onClick={() => activeSidebar(5)} className={window.location.pathname.includes("influencers") === true || sidebar === 5 ? "menu-item active" : "menu-item"} to="/platform/influencers">INFLUENCERS</Link>
+        <Link id="about" onClick={() => activeSidebar(6)} className={window.location.pathname.includes("promoters") === true || sidebar === 6 ? "menu-item active" : "menu-item"} to="/platform/promoters">AMA/CALL CHANNELS</Link>
+        <Link id="about" onClick={() => activeSidebar(7)} className={window.location.pathname.includes("other") === true || sidebar === 7 ? "menu-item active" : "menu-item"} to="/platform/boobytrap">OTHER SERVICES</Link>
+        <Link id="contact" onClick={() => activeSidebar(8)} className={window.location.pathname.includes("bbtsquare") === true || sidebar === 8 ? "menu-item active" : "menu-item"} to="/safehaven/ongoingprojects">BBT SQUARE</Link>
+        <Link className="menu-item" onClick={() => activeSidebar(9)} to="/safehaven/projectowner">INSURANCE DAO</Link>
+        <Link className="menu-item" onClick={() => activeSidebar(10)} to="/safehaven/developers">IEP</Link>
+        <Link className="menu-item" onClick={() => activeSidebar(11)} to="/safehaven/influencers">DOCS</Link>
       </Menu>
   </div>
 }

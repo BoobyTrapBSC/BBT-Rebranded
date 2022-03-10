@@ -65,7 +65,7 @@ export default function OngoingScam() {
   const renderProjects = (project, index) => {
     return (
       <div
-        className="projectCard mx-2 my-4 col-md-3 px-1 py-2 shadow"
+        className="projectCard mx-2 my-5 col-md-3 px-1 py-2 shadow"
         key={index}
       >
         <div id="projectHead" className="d-flex justify-content-between">

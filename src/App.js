@@ -67,22 +67,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="faqs" element={<Faqs />} />
 
-
-          {/* <Route path="boobytrap" element={<PageBoobyTrap/>}>
-            <Route path='upcomingscam' element={<UpcomingBoobytrap/>}/>
-            <Route path='ongoingscam' element={<OngoingScam/>}/>
-            <Route path='scamowner' element={<OwnerScam/>}/>
-            <Route path='scamdev' element={<DevScam/>}/>
-            <Route path='scaminfluencer' element={<InfluencerScam/>}/>
-            <Route path='scampromoter' element={<PromoterScam/>}/>
-          </Route>
-          <Route path="/boobytrap/upcomingscam/:slug/:id/" element={<Projectpage/>}/>
-          <Route path="/boobytrap/ongoingscam/:slug/:id/" element={<Ongoingpage/>}/>
-          <Route path="/boobytrap/scamowner/:slug/:id/" element={<Ownerprofile/>}/>
-          <Route path="/boobytrap/scamdev/:slug/:id/" element={<Devprofile/>}/>
-          <Route path="/boobytrap/scaminfluencer/:slug/:id/" element={<InfluencerProfile/>}/>
-          <Route path="/boobytrap/scampromoter/:slug/:id/" element={<PromoterProfile/>}/> */}
-
           {/* Routes for Platform */}
           <Route path="/platform" element={<Platform />}>
             {/* SAFE HAVEN */}
@@ -103,6 +87,7 @@ function App() {
 
             {/* Routes for DYOR CARDs */}
             <Route path="ongoing" element={<DYORcards />}/>
+            <Route path="ongoing/projects/:slug/:id" element={<Projectpage />} />
             <Route path='upcoming' element={<UpcomingCards />} />
             <Route path='developers' element={<Devcards/>}/>
             <Route path='influencers' element={<Influencers/>}/>
