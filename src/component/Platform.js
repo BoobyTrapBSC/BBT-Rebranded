@@ -176,14 +176,9 @@ export default function Platform() {
               ) : (
                 ''
               )}
-<<<<<<< Updated upstream
-            </button> */}
-            {userAddress ? <button id='btn-auth' className="btn" onClick={() => logout()}>
-=======
              
             </button>
             {/* {userAddress ? <button id='btn-auth' className="btn" onClick={() => logout()}>
->>>>>>> Stashed changes
               {userAddress ? Slicing(userAddress) : 'Connect Wallet'}{' '}
               {userAddress ? (
                 <img className="mr-1" src={Logo} width={30} height={30} />
