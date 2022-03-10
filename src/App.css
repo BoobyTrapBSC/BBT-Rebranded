@@ -855,3 +855,21 @@ body.active-modal {
 #taxation-cont .row .col-md-6 p{
   font-size: 16px;
 }
+
+.wallet-select{
+  background-color: rgb(44, 41, 41);
+  border: 1px solid #000;
+  height: 200px;
+}
+
+.wallte-menu{
+  display: grid;
+  grid-gap: 13px;
+}
+
+.Connect-drop{
+  border: 1px solid #ffffff;
+  border-radius: 20px 0px 0px 20px;
+  display: grid;
+  grid-gap: 13px;
+}

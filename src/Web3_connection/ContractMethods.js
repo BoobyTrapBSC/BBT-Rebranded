@@ -64,7 +64,6 @@ export const symbol = async()=>{
 }
 
 export const getBBTBalance = async()=> {
-    await initInstance();
     const account = await getAccount();
     const contract = getContract(BBT,envprod.React_App_BBT)
     const balance = await contract.methods.balanceOf(account).call();
