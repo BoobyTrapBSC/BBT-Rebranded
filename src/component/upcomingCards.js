@@ -87,7 +87,7 @@ export default function UpcomingCards() {
           <p className='mb-0' >{project.comStrength}k+ Community Strength</p>
           <p>{project.description.length > 150 ? project.description.slice(0, 150) + "..." : project.description}</p>
         </div>
-        <Link className="btn shadow-sm" to={{ pathname: `/safehaven/upcomingprojects/${project.slug.current}/${project.id}`, state: { id: project.id } }}>Details</Link>
+        <Link className="btn shadow-sm" to={{ pathname: `/platform/upcoming/projects/${project.slug.current}/${project.id}`, state: { id: project.id } }}>Details</Link>
       </div>
     )
   }

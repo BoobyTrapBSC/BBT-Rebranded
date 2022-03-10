@@ -89,6 +89,7 @@ function App() {
             <Route path="ongoing" element={<DYORcards />}/>
             <Route path="ongoing/projects/:slug/:id" element={<Projectpage />} />
             <Route path='upcoming' element={<UpcomingCards />} />
+            <Route path="upcoming/projects/:slug/:id" element={<Projectpage />} />
             <Route path='developers' element={<Devcards/>}/>
             <Route path='influencers' element={<Influencers/>}/>
             <Route path='promoters' element={<Promoters/>}/>

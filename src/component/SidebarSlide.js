@@ -76,7 +76,7 @@ export default function SidebarSlide() {
 
   return <div>
       <Menu className='sidebarSlide' isOpen={isOpen} onOpen={handleIsOpen} onClose={handleIsOpen} pageWrapId={ "sidebarWrapper" } outerContainerId={ "platform-cont" } styles={ styles }>
-        <img style={{marginBottom:"35px"}} width="100%" src={logo} alt="" />
+        <Link to="/"><img style={{marginBottom:"35px", padding:"0"}} width="100%" src={logo} alt="" /></Link>
         <Link id="home" onClick={() => activeSidebar(0)} className={window.location.pathname.includes("safehaven") === true && sidebar === 0 ? "menu-item active" : "menu-item"} to="/platform/safehaven/safuprojects">SAFE HAVEN</Link>
         <Link id="about" onClick={() => activeSidebar(1)} className={window.location.pathname.includes("boobytrap") === true || sidebar === 1 ? "menu-item active" : "menu-item"} to="/platform/boobytrap/scamprojects">BOOBY TRAP</Link>
         <Link id="about" onClick={() => activeSidebar(2)} className={window.location.pathname.includes("ongoing") === true || sidebar === 2 ? "menu-item active" : "menu-item"} to="/platform/ongoing">DYOR PROJECTS</Link>

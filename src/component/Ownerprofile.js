@@ -154,7 +154,7 @@ export default function Ownerprofile() {
     return (
         <div id="pagesafe-cont" className="owner-prof-cont">
             <ToastContainer />
-            <div style={window.location.pathname.includes("/boobytrap/") == true? {backgroundColor:"#A82323"}:{backgroundColor:"#204788"}} className="safe-head py-3 position-relative container-fluid">
+            <div className="safe-head py-3 position-relative container-fluid">
                 <div className="head-content row">
                     <Breadcrumb><AiFillLeftCircle size={25} color="#fff" />
                         <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
@@ -178,7 +178,7 @@ export default function Ownerprofile() {
                                     trap points
                                 </Link>
                             </p>
-                            <button className={`btn btn-outline-dark ${bnbBal ? "disabled" : ""} `} onClick={() => toggleModal()}>{bnbBal ? "Insufficient BNB Balance" : "Give Rating"}</button>
+                            <button className={`btn btnYellow ${bnbBal ? "disabled" : ""} `} onClick={() => toggleModal()}>{bnbBal ? "Insufficient BNB Balance" : "Give Rating"}</button>
                             
                         </div>
                     </div>

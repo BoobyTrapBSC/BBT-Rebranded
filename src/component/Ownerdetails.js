@@ -33,7 +33,9 @@ export default function Ownerdetails(props) {
         name,
               alias,
               trappoints,
+              comStrength,
               numProjects,
+              about,
               experience,
               slug,
               avgLife,
@@ -96,11 +98,11 @@ export default function Ownerdetails(props) {
       </div>
       <div className="container-fluid text-start fs-6">
         <ul id="skills">
-          <li>Experience in DeFi: {singleOwner.experience} Months</li>
-          <li>Skills: Project owner and excellent project manager</li>
+          <li>Experience in DeFi: {singleOwner.experience} Months+</li>
           <li>Number of Projects till date: {singleOwner.numProjects}</li>
-          <li>Community Strength: 35k+</li>
+          <li>Community Strength: {singleOwner.comStrength}k+</li>
           <li>Avg. Life of Projects: {singleOwner.avgLife} Months</li>
+          <li>About: {singleOwner.about}</li>
         </ul>
       </div>
       <hr className="mb-5" />

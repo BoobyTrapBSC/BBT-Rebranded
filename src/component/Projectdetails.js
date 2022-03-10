@@ -80,9 +80,6 @@ export default function Projectdetails() {
     
     return (
         <div className="row justify-content-center">
-            <div style={window.location.pathname.includes("upcoming") === true? {display:"block"}:{display:"none"}}>
-                <div className="container-fluid text-start overflow-hidden position-relative marquee" style={{ backgroundColor: "#EAEDF3", color: "#2D4E85", height: "24px", }}><p><b>Disclaimer</b>: Due to unavailability of detailed information on upcoming projects, BoobyTrap Team is unable to provide Trap Points (Expert Opinion) at the moment. Trap points will be updated in due course after launch. DYOR and exercise caution while investing in any Private/Presale in such projects.</p></div>
-            </div>
             <div className="container-fluid overflow-hidden text-start fs-6">
                 <ul id="skills">
                     <li><b>Email:</b> {singleProject.email}</li>

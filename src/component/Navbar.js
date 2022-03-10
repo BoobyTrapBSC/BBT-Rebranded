@@ -37,7 +37,7 @@ export default function Navbar() {
                         </ul>
                         <a href="https://t.me/boobytrapbsc" target="_blank" rel="noreferrer" className="nav-socials"><FaTelegramPlane/></a>
                         <a href="https://twitter.com/BoobyTrapBsc" target="_blank" rel="noreferrer" className="nav-socials"><FaTwitter/></a>
-                        <Link to="/platform" className="btn btnOutline m-1">Platform</Link>
+                        <Link to="/platform/safehaven/safuprojects" className="btn btnOutline m-1">Platform</Link>
 
                     </div>
                     <div className="mob-nav">
