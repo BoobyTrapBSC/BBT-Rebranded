@@ -169,15 +169,21 @@ export default function Platform() {
       <div id="sidebarWrapper">
         <div className="container-fluid">
           <div className="topBar d-flex flex-row-reverse pt-3">
-          {/* <button id='btn-auth' className="btn" onClick={() => ConnectWalletMetaMask()}>
+          <button id='btn-auth' className="btn" onClick={() => ConnectWalletMetaMask()}>
               {userAddress ? Slicing(userAddress) : 'Connect Wallet'}{' '}
               {userAddress ? (
                 <img className="mr-1" src={Logo} width={30} height={30} />
               ) : (
                 ''
               )}
+<<<<<<< Updated upstream
             </button> */}
             {userAddress ? <button id='btn-auth' className="btn" onClick={() => logout()}>
+=======
+             
+            </button>
+            {/* {userAddress ? <button id='btn-auth' className="btn" onClick={() => logout()}>
+>>>>>>> Stashed changes
               {userAddress ? Slicing(userAddress) : 'Connect Wallet'}{' '}
               {userAddress ? (
                 <img className="mr-1" src={Logo} width={30} height={30} />
@@ -194,7 +200,7 @@ export default function Platform() {
                 ''
               )}
              
-            </button>}
+            </button>} */}
             <a
               target="_blank"
               rel="noreferrer"
@@ -207,7 +213,7 @@ export default function Platform() {
           <div className="container">
             <div className="row my-5 justify-content-around">
               <div className="col-md-3">
-                <h3>${(BBTBal).toFixed(2)} </h3>
+                <h3>{(BBTBal).toFixed(2)} </h3>
                 <span>Your $BBT Balance</span>
               </div>
               <div className="col-md-3">
