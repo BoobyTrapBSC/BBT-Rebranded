@@ -46,9 +46,9 @@ export const getTokenBalance = async()=> {
 }
 
 export const BNBBalance = async()=>{
-    const web3 = getWeb3();
-    const bal = await web3.eth.getBalance(await getAccount());
-    const convertBal = bal/10**18
+    // const web3 = getWeb3();
+    // const bal = await web3.eth.getBalance(await getAccount());
+     const convertBal = 0/10**18
     if(convertBal > 0.005){
         return false;
     }
@@ -65,9 +65,9 @@ export const symbol = async()=>{
 
 export const getBBTBalance = async()=> {
     await initInstance();
-    const account = await getAccount()
-    console.log("acount",account)
+    const account = await getAccount();
     const contract = getContract(BBT,envprod.React_App_BBT)
     const balance = await contract.methods.balanceOf(account).call();
+    console.log("acount",balance)
     return Number(balance)/10**18
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Web3 from "web3";
 import { Link, Outlet } from "react-router-dom";
+import {ABI} from './../ABI/Rating'
 import {
   initInstance,
   loginProcess,
@@ -14,6 +15,7 @@ import {
 import SidebarSlide from "./SidebarSlide";
 import Logo from "./../images/badge.png";
 import axios from "axios";
+import WalletConnectProvider from "@walletconnect/web3-provider";
 const Moralis = require("moralis");
 Moralis.initialize("3Amct4xq6AlkAngmYLPFJSJeFRe4nxbbyvzlIcOC");
 Moralis.serverURL = "https://4bffcvuqchek.usemoralis.com:2053/server";
@@ -27,6 +29,7 @@ export default function Platform() {
   const [BBTBal, setBBTBal] = useState(0);
   const [price, setPrice] = useState(0);
   const [bbtian, setBBTian] = useState(0);
+  const [WalletProvider, setWalletProvider] = useState()
   // useEffect(()=>{
   //   const ConnectWallet =async()=> {
   //     await initInstance();
@@ -37,6 +40,7 @@ export default function Platform() {
   // },[])
 
   const ConnectWalletMetaMask = async()=> {
+    window.w3 = undefined
     await initInstance()
     const isConnect = await loginProcess()
     if (isConnect) {
@@ -53,24 +57,26 @@ export default function Platform() {
   const ConnectWallet = async () => {
     try {
       try {
-        user = await Moralis.authenticate({ provider });
-        web3 = await Moralis.enableWeb3({ provider });
-        console.log("moralis user", web3.provider)
-        const newWeb = new Web3(web3.provider)
-        await initInstance(newWeb)
+        var provider = new WalletConnectProvider({
+          rpc: {
+            56: "https://bsc-dataseed1.ninicoin.io"
+            // ...
+          },
+          bridge: 'https://bridge.walletconnect.org',
+        });
+        await provider.enable();
+        setWalletProvider(provider)
+        const web3 = new Web3(provider);
+        window.w3 = web3
+        await initInstance(web3)
+        const acount = await getAccount();
+        setUserAddress(acount)
+        console.log("connect",web3, acount)
       } catch (error) {
         console.log("authenticate failed", error);
       }
       await renderApp();
 
-      // await initInstance()
-      // const isConnect = await loginProcess()
-      // if (isConnect) {
-      //   const address = await getAccount()
-      //   setUserAddress(address)
-      //   fetchBal();
-      //   TokenDetails();
-      // }
     } catch (e) {
       //
     }
@@ -93,8 +99,9 @@ export default function Platform() {
 
   async function logout() {
     try {
-      await Moralis.User.logOut();
+      console.log("provider",WalletProvider)
       setUserAddress(undefined)
+      await WalletProvider.disconnect();
     } catch (error) {
       console.log('logOut failed', error);
     }
@@ -103,8 +110,10 @@ export default function Platform() {
   }
 
   const fetchBal = async () => {
+    console.log("balance fetch")
     let currentBal = await getBBTBalance();
     let titan = await getTokenBalance();
+    
     setBBTian(titan);
     setBBTBal(currentBal);
   };
@@ -116,25 +125,21 @@ export default function Platform() {
   };
 
   async function renderApp() {
-    user = Moralis.User.current(); 
-   if (user) {
-      console.log("user is ",user.get('ethAddress'))
-      setUserAddress(user.get('ethAddress'))
-      // if(userAddress){
-      //   await fetchBal();
-      //   await TokenDetails();
-      //   console.log("connected")
-
-      // }
       await enableWeb3();
       await fetchBal();
       await TokenDetails();
-      // const address = await getAccount();
-      // console.log("account", address)
-    } else {
-      authButton.style.display = 'inline-block';
+  }
+
+  const giverating = async()=>{
+    try{
+      const contract = new window.w3.eth.Contract(ABI, "0x2EffB2656506c45d3D7661e2944A8879C7a94401")
+      const data = await contract.methods.addReview(17,5).send({
+        from: userAddress
+      });
     }
-    resultBox.innerText = result;
+    catch(e){
+      console.log(e)
+    }
   }
 
   
@@ -152,10 +157,6 @@ export default function Platform() {
     try {
       const acount = await getAccount();
       console.log("connect", acount)
-      // web3 = await Moralis.enableWeb3({ provider });
-      // const newWeb = new Web3(web3.provider)
-      // await initInstance(newWeb)
-      
     } catch (error) {
       console.log('testCall failed', error);
     }

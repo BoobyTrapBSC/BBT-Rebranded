@@ -207,10 +207,10 @@ export default function Projectpage() {
                 </Link>
               </p>
               <button
-                className={`btn btn-outline-dark ${bnbBal ? "disabled" : ""} `}
+                className={`btn btn-outline-dark ${!bnbBal ? "disabled" : ""} `}
                 onClick={() => toggleModal()}
               >
-                {bnbBal ? "Insufficient BNB Balance" : "Give Rating"}
+                {!bnbBal ? "Insufficient BNB Balance" : "Give Rating"}
               </button>
             </div>
           </div>

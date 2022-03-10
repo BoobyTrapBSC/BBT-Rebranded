@@ -11,10 +11,12 @@ export const initInstance = async (web3provider) => {
         return web3Instance;
     } else {
         if(web3provider){
-            web3Instance = new Web3(web3provider);
+            web3Instance = web3provider;
+            console.log("moralis provide",window.w3)
         }
         else{
             provider = await getValidProvider();
+            console.log("metamask provide",provider)
             web3Instance = new Web3(provider);
         }
     }
@@ -40,7 +42,7 @@ export const loginProcess = async () => {
 
 export const getValidProvider = async () => {
     const connectorId = getConnectorId();
-    if (connectorId === ConnectorID.MetaMask) {
+    if (window.w3) {
         return window.ethereum;
     } else {
         return window.ethereum;
@@ -234,6 +236,7 @@ export const getAccount = async () => {
 
 export const getContract = (abi, address) => {
     let web3 = web3Instance;
+    console.log("contract",web3)
     const customeContract = new web3.eth.Contract(abi, address);
     return customeContract;
 }
