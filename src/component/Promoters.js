@@ -67,7 +67,7 @@ export default function Promoters() {
         <Link
           className="btn shadow-sm"
           to={{
-            pathname: `/safehaven/promoters/${promoter.slug.current}/${promoter.id}`,
+            pathname: `/platform/promoters/${promoter.slug.current}/${promoter.id}`,
             state: { id: promoter.id },
           }}
         >

@@ -56,7 +56,7 @@ export default function Devcards() {
         <Link
           className="btn shadow-sm"
           to={{
-            pathname: `/safehaven/developers/${dev.slug.current}/${dev.id}`,
+            pathname: `/platform/developers/${dev.slug.current}/${dev.id}`,
             state: { id: dev.id },
           }}
         >

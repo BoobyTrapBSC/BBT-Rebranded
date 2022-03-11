@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './component/Home';
 import Ownerprofile from './component/Ownerprofile';
 import Page404 from './component/Page404';
+import ComingSoon from './component/ComingSoon';
 import Projectpage from './component/Projectpage';
 import OwnerScam from './component/OwnerScam';
 import PageBoobyTrap from './component/PageBoobyTrap';
@@ -23,6 +24,9 @@ import UpcomingCards from './component/upcomingCards';
 import Devcards from './component/Devcards';
 import Influencers from './component/Influencers';
 import Promoters from './component/Promoters';
+import Devprofile from './component/Devprofile';
+import InfluencerProfile from './component/InfluencerProfile';
+import PromoterProfile from './component/PromoterProfile';
 
 function App() {
 
@@ -90,13 +94,21 @@ function App() {
             <Route path="ongoing/projects/:slug/:id" element={<Projectpage />} />
             <Route path='upcoming' element={<UpcomingCards />} />
             <Route path="upcoming/projects/:slug/:id" element={<Projectpage />} />
+            {/* Routes for Devs */}
             <Route path='developers' element={<Devcards/>}/>
+            <Route path="developers/:slug/:id" element={<Devprofile />} />
+            {/* Routes for Influencers */}
             <Route path='influencers' element={<Influencers/>}/>
+            <Route path="influencers/:slug/:id" element={<InfluencerProfile />} />
+            {/* Routes for Promoters */}
             <Route path='promoters' element={<Promoters/>}/>
+            <Route path="promoters/:slug/:id" element={<PromoterProfile />} />
+            <Route path='docs' element={<Faqs/>}/>
           </Route>
 
-          {/* <Route path="/safehaven/boobytrap/:slug/:id" element={<Projectpage/>}/> */}
+          {/* Miscelleneous Routes */}
           <Route path="ineligible" element={<InEligible />} />
+          <Route path="comingsoon" element={<ComingSoon />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </Router>

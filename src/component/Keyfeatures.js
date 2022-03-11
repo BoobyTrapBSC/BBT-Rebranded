@@ -3,23 +3,23 @@ import {FaLock, FaGlobeAsia, FaStarOfLife, FaHandHoldingWater} from 'react-icons
 
 export default function Keyfeatures() {
     return (
-        <div id='keyfeatures-cont' className='py-3'>
+        <div id='keyfeatures-cont' className='py-3 position-relative'>
             <div className="row">
                 <div className="col-md-3">
                     <FaLock id='featureIco'/>&nbsp;
-                    <p>Locked Liquidity<br/>for 1 Year</p>
+                    <p>Locked Liquidity<br className='keyBreak' />for 1 Year</p>
                 </div>
                 <div className="col-md-3">
                     <FaHandHoldingWater id='featureIco'/>&nbsp;
-                    <p>Strong<br/>Liquidity</p>
+                    <p>Strong<br className='keyBreak' />Liquidity</p>
                 </div>
                 <div className="col-md-3">
                     <FaGlobeAsia id='featureIco'/>&nbsp;
-                    <p>Community<br/>Driven</p>
+                    <p>Community<br className='keyBreak' />Driven</p>
                 </div>
                 <div className="col-md-3">
                     <FaStarOfLife id='featureIco'/>&nbsp;
-                    <p>Aggressive<br/>Marketing</p>
+                    <p>Aggressive<br className='keyBreak' />Marketing</p>
                 </div>
             </div>
         </div>

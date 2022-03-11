@@ -34,20 +34,20 @@ export default function Bottomnav() {
   return (
     <div className="d-lg-none bottomNav container-fluid">
       <nav>
-        <div className="bottomBtn">
+        <div className="bottomBtn d-flex justify-content-around">
           <button className="btn">
             <Link id="mob-link" to="/"><img src={home} alt=""/><br/>Home</Link>
           </button>
           <button className="btn">
-          <Link id="mob-link" to={BBTLimit && BBTBal >= BBTLimit.minBal ?`/safehaven/safuprojects`:`/ineligible`}><img src={safedefi} alt=""/><br/>Safe Haven</Link>
+          <Link id="mob-link" to={BBTLimit && BBTBal >= BBTLimit.minBal ?`/platform/safehaven/safuprojects`:`/ineligible`}><img src={safedefi} alt=""/><br/>Platfrom</Link>
           </button>
           <button className="btn">
-          <Link id="mob-link" to="/boobytrap/upcomingscam"><img src={stop} style={{height:"30px"}} alt=""/><br/>Booby<br/>Trap</Link>
+          <Link id="mob-link" to="/platform/boobytrap/scamprojects"><img src={stop} style={{height:"30px"}} alt=""/><br/>Booby<br/>Trap</Link>
           </button>
           <button className="btn">
             <Link to = {trapsheetpdf} id="mob-link" target = "_blank" rel="noreferrer"><img src={trapsheet} alt=""/><br/>Trapsheet</Link>
           </button>
-          <a href="https://yachtpad.club/launchpad/BoobyTrap" id="mob-link" target = "_blank" rel="noreferrer"><button className="btn">
+          <a href="https://yachtpad.club/launchpad/BoobyTrap" id="mob-link" target = "_blank" rel="noreferrer"><button className="btn mt-2">
             <img src={buybbt} alt=""/><br/>Buy $BBT
           </button></a>
         </div>

@@ -20,6 +20,7 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 import Metamask from "./../images/metamask.png";
 import WalletConnect from "./../images/walletconnect.png";
 import { Interface } from "@ethersproject/abi";
+import video from '../videos/video-background.m4v'
 
 const Moralis = require("moralis");
 Moralis.initialize("3Amct4xq6AlkAngmYLPFJSJeFRe4nxbbyvzlIcOC");
@@ -59,8 +60,6 @@ export default function Platform() {
       await provider.disconnect();
     }
   },[])
-
-  
 
   const ConnectWalletMetaMask = async () => {
     toggleModal();
@@ -214,7 +213,8 @@ export default function Platform() {
   return (
     <div id="platform-cont">
       <SidebarSlide />
-      <div id="sidebarWrapper">
+      <video id="videoBg" src={video} autoplay='' muted loop></video>
+      <div id="sidebarWrapper" className="position-relative">
         <div className="container-fluid">
           <div className="topBar d-flex flex-row-reverse pt-3">
             {/* <button id='btn-auth' className="btn" onClick={() => ConnectWalletMetaMask()}>
@@ -226,14 +226,14 @@ export default function Platform() {
               )}
              
             </button> */}
-            {showDis ? <button className="Connect-drop btn" onClick={()=> logout()}>Disconnect</button>:''}
+            {showDis ? <button className="Connect-drop btn btnOutline" onClick={()=> logout()}>Disconnect</button>:''}
             {!userAddress ? (
-              <button className="btn" onClick={() => toggleModal()}>
+              <button className="btn btnOutline ms-2" onClick={() => toggleModal()}>
                 Connect Wallet
               </button>
             ) : (
               <div className="">
-                <button className="btn" onClick={() => showDisconnect()}>
+                <button className="btn btnOutline ms-2" onClick={() => showDisconnect()}>
                   {Slicing(userAddress)}{" "}
                   <img className="mr-1" src={Logo} width={30} height={30} /> {" "}&nbsp;&nbsp;<AiOutlineLogout fill='#ffffff' size={20}/>
                 </button><br/>
@@ -265,22 +265,23 @@ export default function Platform() {
                   onClick={() => toggleModal()}
                   className="overlay-popup"
                 ></div>
-                <div className="modal-content wallet-select py-3">
+                <div className="modal-content wallet-select">
                   <label
                     for="category"
-                    className="form-label fw-bold mb-3 text-center"
+                    style={{backgroundColor:"#161C24"}}
+                    className="form-label fw-bold py-3 text-center"
                   >
                     Select Wallet
                   </label>
                   <div className="wallte-menu">
                     <button
-                      className="metamask-btn btn"
+                      className="metamask-btn btn text-light"
                       onClick={() => ConnectWalletMetaMask()}
                     >
                       <img src={Metamask} width={32} /> MetaMask
                     </button>
                     <button
-                      className="metamask-btn btn"
+                      className="metamask-btn btn text-light"
                       onClick={() => ConnectWallet()}
                     >
                       <img src={WalletConnect} width={32} /> WalletConnect
@@ -294,28 +295,27 @@ export default function Platform() {
               target="_blank"
               rel="noreferrer"
               href="https://pancakeswap.finance/swap?outputCurrency=0x609b88f5a4aBB7A55bA0c6d255C3F1b1bC7A4D76"
-              className="btn"
+              className="btn btnOutline"
             >
               BUY $BBT
             </a>
 
-            
           </div>
           <div className="container">
-            <div className="row my-5 justify-content-around">
-              <div className="col-md-3">
+            <div className="row  my-5 justify-content-around">
+              <div className="col-md-3 currentStat">
                 <h3>{BBTBal.toFixed(2)} </h3>
                 <span>Your $BBT Balance</span>
               </div>
-              <div className="col-md-3">
+              <div className="col-md-3 currentStat">
                 <h3>${(price * 881909880.6534261).toFixed(2)}</h3>
                 <span>Market Cap</span>
               </div>
-              <div className="col-md-3">
+              <div className="col-md-3 currentStat">
                 <h3>${price}</h3>
                 <span>Token Price</span>
               </div>
-              <div className="col-md-3">
+              <div className="col-md-3 currentStat">
                 <h3>{bbtian} </h3>
                 <span>$BBTians</span>
               </div>

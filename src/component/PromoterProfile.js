@@ -146,12 +146,12 @@ export default function PromoterProfile() {
   return (
     <div id="pagesafe-cont" className="owner-prof-cont">
       <ToastContainer />
-      <div style={window.location.pathname.includes("/boobytrap/") == true? {backgroundColor:"#A82323"}:{backgroundColor:"#204788"}} className="safe-head py-3 position-relative container-fluid">
+      <div className="safe-head py-3 position-relative container-fluid">
         <div className="head-content row">
           <Breadcrumb>
             <AiFillLeftCircle size={25} color="#fff" />
             <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
-            <Breadcrumb.Item href="/safehaven/promoters">
+            <Breadcrumb.Item href="/platform/promoters">
             Safe Haven
             </Breadcrumb.Item>
             <Breadcrumb.Item active>{singlePromoter.name}</Breadcrumb.Item>
@@ -175,7 +175,7 @@ export default function PromoterProfile() {
                 </a>
               </div>
               <button
-                className="btn btn-outline-dark mt-2"
+                className="btn btnYellow mt-2"
                 onClick={() => toggleModal()}
               >
                 Give Rating

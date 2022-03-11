@@ -218,17 +218,18 @@ export default function Projectpage() {
       </div>
 
       {modal && (
-        <div style={{ zIndex: "5" }}>
+        <div style={{ zIndex: "5", position:"relative" }}>
           <div onClick={() => toggleModal()} className="overlay-popup"></div>
-          <div className="modal-content py-3">
-            <label for="category" className="form-label fw-bold mb-3">
+          <div className="modal-content py-3" style={{backgroundColor:"#283046"}}>
+            <label for="category" className="form-label fw-bold mb-3 text-center  ">
               Give Rating
             </label>
             <span
               style={{
                 fontSize: "10px",
+                textAlign:"center",
                 marginTop: "-20px",
-                marginBottom: "10px",
+                marginBottom: "20px",
               }}
             >
               (A fee of 0.001 BNBs is applicable to keep this utility spam
@@ -255,7 +256,7 @@ export default function Projectpage() {
               </select>
             </div>
             <button
-              className="btn w-50 mx-auto fw-bold my-2 btn-outline-dark"
+              className="btn w-50 mx-auto fw-bold my-2 btnOutline-sm"
               onClick={() => giveRating(rating)}
             >
               Submit

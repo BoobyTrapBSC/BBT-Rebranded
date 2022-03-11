@@ -5,7 +5,7 @@ import {GiStrongbox} from 'react-icons/gi'
 
 export default function TaxationExplained() {
   return (
-    <div id='taxation-cont'>
+    <div id='taxation-cont' className='position-relative'>
             <h2>Innovative <span style={{color:"#ffcc00"}}>Tokenomics</span></h2>
         <div className="row">
             <div className="col-md-6 d-flex">

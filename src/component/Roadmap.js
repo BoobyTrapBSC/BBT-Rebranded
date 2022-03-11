@@ -6,7 +6,7 @@ import {GiMissileLauncher, GiRocketFlight, GiPoliceBadge, GiMetalBoot} from 'rea
 export default function Roadmap() {
 
   return (
-    <div id="roadmap-cont">
+    <div id="roadmap-cont" className="position-relative">
       <h2 style={{color:"#ffcc00", textAlign:"center", fontWeight:"200", marginBottom:"50px"}}>Roadmap</h2>
       <VerticalTimeline>
         <VerticalTimelineElement

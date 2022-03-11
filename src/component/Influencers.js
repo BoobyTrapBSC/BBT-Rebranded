@@ -59,7 +59,7 @@ export default function Influencers() {
         <Link
           className="btn shadow-sm"
           to={{
-            pathname: `/safehaven/influencers/${influencer.slug.current}/${influencer.id}`,
+            pathname: `/platform/influencers/${influencer.slug.current}/${influencer.id}`,
             state: { id: influencer.id },
           }}
         >

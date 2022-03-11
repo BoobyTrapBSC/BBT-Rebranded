@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Tokenomics() {
   return (
-    <div id='tokenomics-cont'>
+    <div id='tokenomics-cont' className='position-relative'>
         <div className="row py-3">
             <div className="col-md-3">
                 <h2>911911911</h2>

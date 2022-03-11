@@ -4,7 +4,7 @@ import fGraphic from "../images/footer_graphic.png";
 
 export default function Footer() {
   return (
-    <div id="footer-container">
+    <div id="footer-container" className='position-relative'>
       <div className="row">
         <div className="col-md-6 ps-2">
           <p>Email: <a className="text-decoration-none" style={{ color: "#fff", fontWeight: "500" }} href="mailto:info@boobytrap.live">info@boobytrap.live</a></p>

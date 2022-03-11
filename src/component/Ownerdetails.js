@@ -94,7 +94,7 @@ export default function Ownerdetails(props) {
   return (
     <div className="row justify-content-center">
       <div style={window.location.pathname.includes("unknown/16") === true ? { display: "block" } : { display: "none" }}>
-        <div className="container-fluid text-start overflow-hidden position-relative marquee" style={{ backgroundColor: "#EAEDF3", color: "#A82323", height: "24px", }}><p><b>Disclaimer</b>: Projects where the identity of its owner is unknown have been listed under "Unknown Owner". The status will be updated once the information on their owner is available.</p></div>
+        <div className="container-fluid text-start overflow-hidden position-relative marquee" style={{ backgroundColor: "#292B33", color: "#A82323", height: "24px", }}><p><b>Disclaimer</b>: Projects where the identity of its owner is unknown have been listed under "Unknown Owner". The status will be updated once the information on their owner is available.</p></div>
       </div>
       <div className="container-fluid text-start fs-6">
         <ul id="skills">
@@ -110,7 +110,7 @@ export default function Ownerdetails(props) {
       {/* UPCOMING PROJECTS */}
       <h3
         style={{
-          backgroundColor: "#EDF0F4",
+          backgroundColor: "#292B33",
           textAlign: "start",
           paddingTop: "5px",
           paddingBottom: "5px",
@@ -206,7 +206,7 @@ export default function Ownerdetails(props) {
       {/* PREVIOUS PROJECTS */}
       <h3
         style={{
-          backgroundColor: "#EDF0F4",
+          backgroundColor: "#292B33",
           textAlign: "start",
           paddingTop: "5px",
           paddingBottom: "5px",

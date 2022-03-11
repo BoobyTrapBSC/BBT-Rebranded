@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function BuyBBT() {
     return (
-        <div id='buy-cont'>
+        <div id='buy-cont' className='position-relative'>
             <div className="row my-5">
                 <div className="col-md-6">
                     <h2>How to Buy <span style={{color:"#ffcc00"}}>$BBT</span>?</h2>

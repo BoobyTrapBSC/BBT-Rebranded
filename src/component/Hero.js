@@ -7,7 +7,7 @@ import audit from '../whitepaper/Booby-Audit.pdf'
 export default function Hero() {
 
     return (
-        <div id='hero-container'>
+        <div id='hero-container' className='position-relative'>
             <div className="row my-5">
                 <div className="col-md-6 align-self-center">
                     <div>

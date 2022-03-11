@@ -10,12 +10,21 @@ body.active-modal {
 
 #video{
   position: fixed;
-  z-index: 0;
+  z-index: -1 !important;
   top: 0;
   left: 0;
   object-fit: cover;
   height: 100vh;
   width: 100%;
+}
+
+/* Background Video */
+#videoBg{
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  position: fixed;
+  z-index: 0;
 }
 
 /* NAVBAR */
@@ -44,12 +53,15 @@ body.active-modal {
   margin: auto 10px;
   color: rgba(255, 255, 255, 0.75);
 }
+.nav-socials:hover{
+  color: #ffcc00;
+}
 
 /* BOTTOM NAVBAR */
 .bottomNav {
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  background-color: #264b8c;
+  background-color:#441C72;
   position: fixed;
   z-index: 100;
   width: 100vw;
@@ -65,10 +77,6 @@ body.active-modal {
 }
 .bottomNav button:hover {
   color: #fff;
-}
-.buttonBtn {
-  display: flex;
-  justify-content: space-around;
 }
 
 /* HERO SECTION */
@@ -197,6 +205,8 @@ body.active-modal {
 }
 #featureIco{
   font-size: 30px;
+  max-height: 30px;
+  max-width: 30px;
   color: #ffcc00;
 }
 
@@ -219,6 +229,9 @@ body.active-modal {
   max-width: 1150px;
   margin: auto;
 }
+.row{
+  --bs-gutter-x:0 !important;
+}
 #buy-cont h2{
   font-weight: 200;
 }
@@ -228,10 +241,14 @@ body.active-modal {
 .styledA:hover{
   color: #cca300;
 }
+#buy-cont .col-md-6{
+  overflow: hidden;
+}
 .swapPoo{
   max-height: 400px;
   width: fit-content;
-  overflow: auto;
+  overflow: scroll;
+  margin: auto;
 }
 .swapPoo .root .bg-dark-1{
   background-color: #12141d;
@@ -267,19 +284,22 @@ body.active-modal {
   text-align: center;
   color: #fff;
 }
-#faqs-cont .accordion-button{
+.accordion-button{
   background-color: #12141D !important;
   color: #fff;
   font-weight: 500;
 }
-#faqs-cont .accordion-button::after{
+.accordion-button::after{
   filter: grayscale(1);
 }
 #faqs-cont .accordion-item{
   border: none;
 }
-#faqs-cont .accordion-flush .accordion-collapse{
+.accordion-flush .accordion-collapse{
   background-color: #12141D;
+}
+.accordion-button:not(.collapsed){
+  color: #ffcc00;
 }
 #faqs-cont .accordion-button:focus{
   outline: none;
@@ -370,16 +390,10 @@ body.active-modal {
 }
 
 /* PLATFORM */
-#platform-cont .topBar a, #platform-cont .topBar button{
-  padding: 8px 25px;
-  color: #fff;
-  margin: auto 15px;
-  border: 1px solid #fff;
-} 
 #platform-cont .container{
   width: 100%;
 }
-#platform-cont .row .col-md-3{
+.currentStat{
   background-color: #292B33;
   width: 25%;
   min-width: 225px;
@@ -388,6 +402,9 @@ body.active-modal {
 }
 #platform-cont .row .col-md-3 h3{
   color: #fff;
+}
+#sidebarWrapper{
+  padding-bottom: 90px;
 }
 
 /* SAFE CARDS */
@@ -409,10 +426,10 @@ body.active-modal {
 
 /*Owner Cards*/
 #owner-card-cont, .safuCards{
-  justify-content: start;
+  justify-content: space-around;
 }
 .ownerCard {
-  background-color: #264b8c;
+  background-color: #292B33;
   width: fit-content;
   border-radius: 20px;
   text-align: start;
@@ -487,7 +504,7 @@ body.active-modal {
   border-radius: 25px;
 }
 .projectCard{
-  background-color: #EDF0F4;
+  background-color: #292B33;
   border-radius: 20px;
   position: relative;
   min-width: 325px;
@@ -777,7 +794,7 @@ body.active-modal {
   margin: auto 5px;
 }
 #dev-social:hover{
-  color: #000;
+  color: #ffcc00;
 }
 #bbt-ribbon-container img{
   position: absolute;
@@ -807,11 +824,8 @@ body.active-modal {
 .boobyCards .card-bold-points{
   color: #A82323;
 }
-#scamSidebar .nav-item .active{
-  color: #A82323;
-}
 .boobyCards .ownerCard{
-  background-color: #A82323;
+  background-color: #292B33;
 }
 .getaccess{
   text-decoration: none;

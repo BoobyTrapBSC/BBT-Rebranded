@@ -17,6 +17,7 @@ import video from '../videos/video-background.m4v'
 export default function Home() {
   return (
     <div>
+      <video id="videoBg" src={video} autoplay='' muted loop></video>
       <Navbar />
       <Hero />
       <hr />

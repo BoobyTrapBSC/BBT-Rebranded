@@ -138,7 +138,7 @@ export default function Devprofile() {
   return (
     <div id="pagesafe-cont" className="owner-prof-cont">
       <ToastContainer />
-      <div style={window.location.pathname.includes("/boobytrap/") === true? {backgroundColor:"#A82323"}:{backgroundColor:"#204788"}} className="safe-head py-3 position-relative container-fluid">
+      <div className="safe-head py-3 position-relative container-fluid">
         <div className="head-content row">
           <Breadcrumb>
             <AiFillLeftCircle size={25} color="#fff" />
@@ -167,7 +167,7 @@ export default function Devprofile() {
                 </a>
               </div>
               <button
-                className="btn btn-outline-dark mt-2"
+                className="btn btnYellow mt-2"
                 onClick={() => toggleModal()}
               >
                 Give Rating

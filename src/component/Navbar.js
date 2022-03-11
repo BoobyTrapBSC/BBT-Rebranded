@@ -14,16 +14,16 @@ export default function Navbar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">About</Link>
+                                <a className="nav-link" href="#about-cont">About</a>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to={`/safehaven/safuprojects`}>Tokenomics</Link>
+                                <a className="nav-link" href="#tokenomics-cont">Tokenomics</a>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/boobytrap/upcomingscam">Eco-System</Link>
+                                <a className="nav-link" href="#taxation-cont">Eco-System</a>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/boobytrap/upcomingscam">Roadmap</Link>
+                                <a className="nav-link" href="#roadmap-cont">Roadmap</a>
                             </li>
                             <li className="nav-item">
                                 <a href={trapsheetpdf} target="_blank" rel="noreferrer" className="nav-link">Trapsheet</a>
@@ -42,6 +42,7 @@ export default function Navbar() {
                     </div>
                     <div className="mob-nav">
                         <a href="https://t.me/boobytrapbsc" target="_blank" rel="noreferrer" className="btn btn-sm btn-outline-dark m-1"><FaTelegramPlane/></a>
+                        <Link to="/platform/safehaven/safuprojects" className="btn btnOutline-sm m-1">Platform</Link>
                     </div>
                 </div>
             </nav>

@@ -3,7 +3,7 @@ import aboutImg from '../images/badge.png'
 
 export default function About() {
   return (
-    <div id='about-cont'>
+    <div id='about-cont' className='position-relative'>
       <div className="row my-5">
         <div className="col-md-6">
           <img src={aboutImg} alt="" id='aboutImg' />

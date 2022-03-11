@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Contact() {
   return (
-    <div id='contact-cont'>
+    <div id='contact-cont' className='position-relative'>
         <h2>Get <span>in touch</span></h2>
         <p>Do you have any question or proposal for us?</p>
         <p>Use this form to contact us and someone will be in touch with you soon!</p>
