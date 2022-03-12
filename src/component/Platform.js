@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Web3 from "web3";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { ABI } from "./../ABI/Rating";
 import {AiOutlineLogout} from "react-icons/ai"
 import {
@@ -235,7 +235,7 @@ export default function Platform() {
               <div className="">
                 <button className="btn btnOutline ms-2" onClick={() => showDisconnect()}>
                   {Slicing(userAddress)}{" "}
-                  <img className="mr-1" src={Logo} width={30} height={30} /> {" "}&nbsp;&nbsp;<AiOutlineLogout fill='#ffffff' size={20}/>
+                  <img className="mr-1" src={Logo} alt="" width={30} height={30} /> {" "}&nbsp;&nbsp;<AiOutlineLogout fill='#ffffff' size={20}/>
                 </button><br/>
               </div>
             )}
@@ -269,7 +269,7 @@ export default function Platform() {
                   <label
                     for="category"
                     style={{backgroundColor:"#161C24"}}
-                    className="form-label fw-bold py-3 text-center"
+                    className="form-label fw-bold py-3 text-center position-relative"
                   >
                     Select Wallet
                   </label>
@@ -278,13 +278,13 @@ export default function Platform() {
                       className="metamask-btn btn text-light"
                       onClick={() => ConnectWalletMetaMask()}
                     >
-                      <img src={Metamask} width={32} /> MetaMask
+                      <img src={Metamask} width={32} alt="" /> MetaMask
                     </button>
                     <button
                       className="metamask-btn btn text-light"
                       onClick={() => ConnectWallet()}
                     >
-                      <img src={WalletConnect} width={32} /> WalletConnect
+                      <img src={WalletConnect} alt="" width={32} /> WalletConnect
                     </button>
                   </div>
                 </div>

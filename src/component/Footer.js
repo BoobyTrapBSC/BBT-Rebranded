@@ -1,6 +1,5 @@
 import React from "react";
 import { FaTelegramPlane, FaTwitter, FaTiktok, FaInstagram } from "react-icons/fa";
-import fGraphic from "../images/footer_graphic.png";
 
 export default function Footer() {
   return (
@@ -10,16 +9,16 @@ export default function Footer() {
           <p>Email: <a className="text-decoration-none" style={{ color: "#fff", fontWeight: "500" }} href="mailto:info@boobytrap.live">info@boobytrap.live</a></p>
         </div>
         <div className="col-md-6">
-          <a href="https://t.me/boobytrapbsc">
+          <a href="https://t.me/boobytrapbsc" target = "_blank" rel="noreferrer">
             <FaTelegramPlane size={25} className="text-light mx-3" />
           </a>
-          <a href="http://tiktok.com/@boobytrapbsc">
+          <a href="http://tiktok.com/@boobytrapbsc" target = "_blank" rel="noreferrer">
             <FaTiktok size={25} className="text-light mx-3" />
           </a>
-          <a href="https://instagram.com/boobytrap_bsc">
+          <a href="https://instagram.com/boobytrap_bsc" target = "_blank" rel="noreferrer">
             <FaInstagram size={25} className="text-light mx-3" />
           </a>
-          <a href="https://twitter.com/BoobyTrapBsc">
+          <a href="https://twitter.com/BoobyTrapBsc" target = "_blank" rel="noreferrer">
             <FaTwitter size={25} className="text-light mx-3" />
           </a>
         </div>

@@ -47,7 +47,7 @@ export default function Bottomnav() {
           <button className="btn">
             <Link to = {trapsheetpdf} id="mob-link" target = "_blank" rel="noreferrer"><img src={trapsheet} alt=""/><br/>Trapsheet</Link>
           </button>
-          <a href="https://yachtpad.club/launchpad/BoobyTrap" id="mob-link" target = "_blank" rel="noreferrer"><button className="btn mt-2">
+          <a href="https://pancakeswap.finance/swap?outputCurrency=0x609b88f5a4aBB7A55bA0c6d255C3F1b1bC7A4D76" id="mob-link" target = "_blank" rel="noreferrer"><button className="btn mt-2">
             <img src={buybbt} alt=""/><br/>Buy $BBT
           </button></a>
         </div>

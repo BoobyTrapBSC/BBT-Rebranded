@@ -40,7 +40,7 @@ export default function Roadmap() {
           • V1 of $BBT platform launch<br/>
           • Listing of more Project Owners, Developers, Influencers/Promoters<br/>
           • Post launch marketing campaign<br/>
-          • Major Listings &amp; Tendings
+          • Major Listings &amp; Trendings
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
@@ -64,7 +64,6 @@ export default function Roadmap() {
           icon={<GiMetalBoot />}
         >
           <h3 className="vertical-timeline-element-title">PHASE IV</h3>
-          <h4 className="vertical-timeline-element-subtitle"></h4>
           <p>
           • Launchpad for projects willing to list on $BBT platform<br/>
           • VC Funding and Presale platforms<br/>

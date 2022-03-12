@@ -10,7 +10,6 @@ export default function SidebarSlide() {
 
   const activeSidebar = (index) => {
     setSidebar(index);
-    console.log(index);
     closeSideBar();
   };
 

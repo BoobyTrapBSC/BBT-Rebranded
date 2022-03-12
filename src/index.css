@@ -148,6 +148,9 @@ button:focus, button:active{
   .projectpage-cont h1{
     margin-top: 15px;
   }
+  .modal-content{
+    top: 15% !important;
+  }
 }
 
 @media only screen and (max-width: 769px){
@@ -162,6 +165,9 @@ button:focus, button:active{
   }
   .hero-text h1{
     font-size: 7vw !important;
+  }
+  #heroImg{
+    margin-top: 25px;
   }
   .categories-cont{
     width: 90% !important;
@@ -230,6 +236,9 @@ button:focus, button:active{
   .safuCards{
     width: 90%;
     margin: auto;
+  }
+  .modal-content{
+    top: 10% !important;
   }
 }
 @media only screen and (max-width: 420px){
