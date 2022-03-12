@@ -10,7 +10,6 @@ import client from '../client';
 import {getBBTBalance} from '../Web3_connection/ContractMethods'
 
 export default function Bottomnav() {
-
   // Fetch required number of Tokens for accessing Safe Haven
   const [BBTLimit, setBBTLimit] = useState(undefined)
   useEffect(() => {
@@ -20,7 +19,6 @@ export default function Bottomnav() {
       }`
     ).then((data) => setBBTLimit(data[0])).catch(console.error)
   }, []);
-  
 
   const [BBTBal, setBBTBal] = useState(0)
   useEffect(() => {

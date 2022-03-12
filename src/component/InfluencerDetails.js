@@ -3,13 +3,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import client from "../client";
 import { initInstance } from './../Web3_connection/web3_methods'
 import { addReview, getProfile } from "./../Web3_connection/ContractMethods"
-import {
-  FaTelegramPlane,
-  FaTwitter,
-  FaGlobe,
-  FaDiscord,
-  FaInstagram,
-} from "react-icons/fa";
 import { Link, useParams, useLocation } from "react-router-dom";
 
 export default function InfluencerDetails() {

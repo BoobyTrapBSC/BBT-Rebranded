@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { BiSearchAlt2 } from "react-icons/bi";
 import hoverImg from '../images/logo.png'
 import desert from '../images/cupcake.png'
@@ -20,8 +20,8 @@ export default function Hero() {
                         <BiSearchAlt2 id='searchIco'/>
                     </div>
                     <div className='heroBtn mb-3'>
-                        <a href="#" className='btnYellow btn'>BUY $BBT</a>
-                        <a href="#" className='btnYellow btn ms-2'>CHART</a>
+                        <a href='https://pancakeswap.finance/swap?outputCurrency=0x609b88f5a4aBB7A55bA0c6d255C3F1b1bC7A4D76' target = "_blank" rel="noreferrer" className='btnYellow btn'>BUY $BBT</a>
+                        <a href="https://poocoin.app/tokens/0x609b88f5a4abb7a55ba0c6d255c3f1b1bc7a4d76" target = "_blank" rel="noreferrer" className='btnYellow btn ms-2'>CHART</a>
                     </div>
                     <div className="heroAudit">
                         <b>Audited by:</b> &nbsp;
