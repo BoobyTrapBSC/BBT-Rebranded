@@ -1,5 +1,5 @@
 import React from 'react'
-import aboutImg from '../images/badge.png'
+import aboutImg from '../images/logo.png'
 
 export default function About() {
   return (

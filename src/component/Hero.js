@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { BiSearchAlt2 } from "react-icons/bi";
-import hoverImg from '../images/badge.png'
+import hoverImg from '../images/logo.png'
 import desert from '../images/cupcake.png'
 import audit from '../whitepaper/Booby-Audit.pdf'
 
