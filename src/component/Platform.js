@@ -57,7 +57,7 @@ export default function Platform() {
     });
     console.log('Wallet is ',provider)
     if(provider.isWalletConnect == true){
-      await provider.disconnect();
+      // await provider.disconnect();
     }
   },[])
 
