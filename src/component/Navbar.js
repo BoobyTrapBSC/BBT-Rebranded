@@ -41,7 +41,7 @@ export default function Navbar() {
 
                     </div>
                     <div className="mob-nav">
-                        <a href="https://t.me/boobytrapbsc" target="_blank" rel="noreferrer" className="btn btn-sm btn-outline-dark m-1"><FaTelegramPlane/></a>
+                        <a href="https://t.me/boobytrapbsc" target="_blank" rel="noreferrer" className="btn p-1 m-1 text-light"><FaTelegramPlane/></a>
                         <Link to="/platform/safehaven/safuprojects" className="btn btnOutline-sm m-1">Platform</Link>
                     </div>
                 </div>

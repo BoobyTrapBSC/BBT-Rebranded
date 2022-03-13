@@ -3,12 +3,16 @@ import { BiSearchAlt2 } from "react-icons/bi";
 import hoverImg from '../images/logo.png'
 import desert from '../images/cupcake.png'
 import audit from '../whitepaper/Booby-Audit.pdf'
+import video from '../videos/video-background.m4v'
+import Navbar from './Navbar';
 
 export default function Hero() {
 
     return (
-        <div id='hero-container' className='position-relative'>
-            <div className="row my-5">
+        <div id='hero-container'>
+        <video id="videoBg" src={video} autoplay='' muted loop></video>
+        <Navbar/>
+            <div className="row rowHero">
                 <div className="col-md-6 align-self-center">
                     <div>
                         <span>911 of DeFi World</span>

@@ -11,16 +11,13 @@ import TaxationExplained from "./TaxationExplained";
 import SectionFAQs from "./SectionFAQs";
 import Contact from "./Contact";
 import Footer from "./Footer";
-import video from '../videos/video-background.m4v'
 // import Mobmap from '../component/Mobmap';
 
 export default function Home() {
   return (
     <div>
-      <video id="videoBg" src={video} autoplay='' muted loop></video>
-      <Navbar />
       <Hero />
-      <hr />
+      <hr className="mt-0"/>
       <Keyfeatures />
       <hr />
       <About />

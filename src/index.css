@@ -72,6 +72,10 @@ button:focus, button:active{
 }
 
 @media only screen and (max-width: 992px) {
+  .rowHero{
+    width: 90% !important;
+    position: relative !important;
+  }
   .secondary-cont{
     flex-direction: column;
   }
@@ -83,9 +87,6 @@ button:focus, button:active{
   }
   #navbar-container .navbar{
     width: 100% !important;
-  }
-  .mob-nav {
-    margin-right: 40px !important;
   }
   #keyfeatures-cont .row svg{
     width: 300px;
@@ -111,8 +112,6 @@ button:focus, button:active{
   }
   .mob-nav{
   display: block !important;
-  position: absolute;
-  right: 5px;
   }
   .copyright{
     padding-bottom: 80px !important;
@@ -154,6 +153,15 @@ button:focus, button:active{
 }
 
 @media only screen and (max-width: 769px){
+  .rowHero{
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    margin: 50px auto !important;
+  }
+  #heroImg{
+    display: none;
+  }
   .defi-main{
     width: 100% !important;
   }
