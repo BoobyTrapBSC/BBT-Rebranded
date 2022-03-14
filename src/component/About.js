@@ -1,12 +1,12 @@
 import React from 'react'
-import aboutImg from '../images/logo.png'
+import aboutImg from '../images/vault.png'
 
 export default function About() {
   return (
     <div id='about-cont' className='position-relative'>
       <div className="row my-5">
-        <div className="col-md-6">
-          <img src={aboutImg} alt="" id='aboutImg' />
+        <div className="col-md-6 justify-content-center align-content-center" id='aboutImg'>
+          <img src={aboutImg} alt="" />
         </div>
         <div className="col-md-6">
           <h2>What Makes <span style={{color:"#ffcc00"}}>Booby Trap</span> Different?</h2>

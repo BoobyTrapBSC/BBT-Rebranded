@@ -103,6 +103,15 @@ body.active-modal {
   height: 100vh;
   width: 100%;
 }
+.vidOverlay{
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.507) !important;
+  position: fixed;
+  z-index: 0;
+}
 #videoBg{
   height: 100vh;
   width: 100%;
@@ -110,6 +119,9 @@ body.active-modal {
   object-fit: cover;
   position: absolute;
   z-index: 0;
+}
+#mainVid{
+  height: 500px;
 }
 
 /* NAVBAR */
@@ -308,6 +320,12 @@ body.active-modal {
   width: 100%;
   max-width: 1150px;
   margin: auto;
+}
+#aboutImg{
+  width: 50%;
+}
+#aboutImg img{
+  width: 90%;
 }
 #about-cont h2{
   font-weight: 200;

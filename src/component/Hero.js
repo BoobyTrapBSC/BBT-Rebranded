@@ -4,6 +4,7 @@ import hoverImg from '../images/logo.png'
 import desert from '../images/cupcake.png'
 import audit from '../whitepaper/Booby-Audit.pdf'
 import video from '../videos/video-background.m4v'
+import mainVid from '../videos/BBTCUBE.mp4'
 import Navbar from './Navbar';
 
 export default function Hero() {
@@ -34,7 +35,8 @@ export default function Hero() {
                     </div>
                 </div>
                 <div className="col-md-6 position-relative">
-                    <img id='heroImg' src={hoverImg} alt="" />
+                    {/* <img id='heroImg' src={hoverImg} alt="" /> */}
+                    <video id='mainVid' src={mainVid} autoPlay loop></video>
                 </div>
             </div>
         </div>

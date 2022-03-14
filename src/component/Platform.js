@@ -213,6 +213,7 @@ export default function Platform() {
   return (
     <div id="platform-cont">
       <SidebarSlide />
+      <div className="vidOverlay"></div>
       <video id="video" src={video} autoplay='' muted loop></video>
       <div id="sidebarWrapper" className="position-relative">
         <div className="container-fluid">

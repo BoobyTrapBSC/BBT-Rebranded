@@ -29,10 +29,10 @@ export default function SidebarSlide() {
       width: '36px',
       height: '30px',
       left: '36px',
-      top: '36px'
+      top: '36px',
     },
     bmBurgerBars: {
-      background: '#373a47'
+      background: '#ffcc00'
     },
     bmBurgerBarsHover: {
       background: '#a90000'
