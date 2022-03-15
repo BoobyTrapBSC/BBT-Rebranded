@@ -22,9 +22,9 @@ export default function Ownerdetails(props) {
   /* THIS IS TO FETCH THE OWNERS SLUG FROM URL */
   var fetchedOwner = window.location.pathname
     .replace(/[0-9]/g, "")
-    .slice(24, -1);
+    .slice(22, -1);
   // var currentOwner = fetchedOwner.replace(/^./, str => str.toUpperCase())
-  // console.log(fetchedOwner);
+  console.log(fetchedOwner);
 
   useEffect(() => {
     client
@@ -126,7 +126,7 @@ export default function Ownerdetails(props) {
               <div className="projectCard mx-2 my-4 col-md-3 px-3 pt-2 pb-4 shadow" key={index}>
                 <div id="projectHead" className="d-flex">
                   <div className="m-auto">
-                    <h3 className="fs-6">
+                    <h3 className="fs-6 dynName">
                       {upcoming.name} <span>({upcoming.tracker})</span>
                     </h3>
                     <a
@@ -223,7 +223,7 @@ export default function Ownerdetails(props) {
               <div className="projectCard mx-2 my-4 col-md-3 px-3 pt-2 pb-4 shadow" key={index}>
                 <div id="projectHead" className="d-flex">
                   <div className="m-auto">
-                    <h3 className="fs-6">
+                    <h3 className="fs-6 dynName">
                       {launched.name} <span>({launched.tracker})</span>
                     </h3>
                     <a
