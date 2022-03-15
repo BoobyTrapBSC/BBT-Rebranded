@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { AiFillCheckCircle, AiFillAlert } from 'react-icons/ai'
 
 export default function Contact() {
+
+  const [handleSuccess, setHandleSuccess] = useState("")
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_lj3uaq7', 'template_sd934db', e.target, 'RCYuCsC8aUhCtdHVr')
+      .then((result) => {
+        setHandleSuccess("success")
+        e.target.reset()
+      }, (error) => {
+        setHandleSuccess("err")
+        console.log(error.text);
+      });
+  };
 
   return (
     <div id="contact-cont" className="position-relative">
@@ -12,13 +29,10 @@ export default function Contact() {
         Use this form to contact us and someone will be in touch with you soon!
       </p>
       <div className="contactForm">
-        {/* SUCCESS ALERT
+        {/* SUCCESS ALERT */}
         <div
-          className="alert alert-success d-none align-items-center my-2"
+          className={handleSuccess == "success" ? "alert alert-success d-flex align-items-center my-2" : "alert alert-success d-none align-items-center my-2" }
           role="alert"
-          styles={
-            handleSuccess === 0 ? { display: "none" } : { display: "flex" }
-          }
         >
           <svg
             className="bi flex-shrink-0 me-2 "
@@ -30,18 +44,26 @@ export default function Contact() {
             <AiFillCheckCircle fontSize={25} />
           </svg>
           <div>Your response has been submitted successfully!</div>
-        </div>*/}
+        </div>
+        {/* FAILED ALERT */}
+        <div className={handleSuccess == "err" ? "alert alert-danger d-flex align-items-center my-2" : "alert alert-danger d-none align-items-center my-2" } role="alert">
+          <svg className="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><AiFillAlert fontSize={25}/></svg>
+          <div>
+            Response submission failed!
+          </div>
+        </div>
         {/* CONTACT FORM */}
         <form
           name="contact-form"
           method="post"
+          onSubmit={sendEmail}
           data-netlify="true"
         >
           <input type="hidden" name="form-name" value="contact-form" />
           <div id="formName">
             <input
               type="text"
-              name="Name"
+              name="name"
               placeholder="Your Name"
               id=""
               required
@@ -50,7 +72,7 @@ export default function Contact() {
           <div id="formMail">
             <input
               type="email"
-              name="Email"
+              name="email"
               placeholder="Your Email"
               required
               id=""
@@ -58,13 +80,14 @@ export default function Contact() {
           </div>
           <div id="formMsg">
             <textarea
-              name="Message"
+              name="message"
               id=""
               placeholder="Your Message Here!"
               required
               rows="10"
             ></textarea>
           </div>
+          <div class="g-recaptcha" data-sitekey="6LcuW-EeAAAAAHW8mngeysgFrOFILIRPW659xk6n"></div>
           <input
             id="formSubmit"
             className="btnYellow btn"

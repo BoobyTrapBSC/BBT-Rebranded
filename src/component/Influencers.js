@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import client from "../client";
 import { FaTelegramPlane, FaTwitter, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import PlatformHead from "./PlatformHead";
+import SidebarSlide from "./SidebarSlide";
 
 export default function Influencers() {
   const [influencer, setInfluencer] = useState([]);
@@ -59,7 +61,7 @@ export default function Influencers() {
         <Link
           className="btn shadow-sm"
           to={{
-            pathname: `/platform/influencers/${influencer.slug.current}/${influencer.id}`,
+            pathname: `/influencers/${influencer.slug.current}/${influencer.id}`,
             state: { id: influencer.id },
           }}
         >
@@ -70,6 +72,9 @@ export default function Influencers() {
   };
   return (
     <>
+    <SidebarSlide />
+    <PlatformHead />
+    <div style={{position:"relative", maxWidth:"1150px", margin:"auto"}}>
       <h1 style={{ borderTop: "1px solid #474747" }} className="pt-5">
         Influencers
       </h1>
@@ -86,6 +91,7 @@ export default function Influencers() {
       <div className="row mt-3" id="owner-card-cont">
         {influencer.map(renderDev)}
       </div>
+    </div>
     </>
   );
 }

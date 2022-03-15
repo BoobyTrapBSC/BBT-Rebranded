@@ -2,7 +2,7 @@ import "./App.css";
 import Bottomnav from "./component/Bottomnav";
 import Faqs from "./component/Faqs";
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./component/Home";
 import Ownerprofile from "./component/Ownerprofile";
 import Page404 from "./component/Page404";
@@ -14,7 +14,6 @@ import { getBBTBalance } from "./Web3_connection/ContractMethods";
 import { loginProcess } from "./Web3_connection/web3_methods";
 import client from "./client";
 import InEligible from "./component/InEligible";
-import Platform from "./component/Platform";
 import SafeHaven from "./component/SafeHaven";
 import Safecards from "./component/Safecards";
 import SafeOwners from "./component/SafeOwners";
@@ -81,13 +80,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="faqs" element={<Faqs />} />
 
-          {/* Routes for Platform */}
-          <Route path="/platform" element={<Platform />}>
             {/* SAFE HAVEN */}
-            <Route path="safehaven" element={<SafeHaven />}>
-              <Route path="safuprojects" element={<Safecards />} />
-              <Route path="safeowners" element={<SafeOwners />} />
-            </Route>
+            <Route path="safehaven" element={<SafeHaven />}/>
             <Route
               path="safehaven/safuprojects/:slug/:id"
               element={<Projectpage />}
@@ -98,10 +92,7 @@ function App() {
             />
 
             {/* Routes for Boobytrap */}
-            <Route path="boobytrap" element={<PageBoobyTrap />}>
-              <Route path="scamprojects" element={<OngoingScam />} />
-              <Route path="scamowners" element={<OwnerScam />} />
-            </Route>
+            <Route path="boobytrap" element={<PageBoobyTrap />}/>
             <Route
               path="boobytrap/scamprojects/:slug/:id"
               element={<Projectpage />}
@@ -135,7 +126,6 @@ function App() {
             <Route path="promoters" element={<Promoters />} />
             <Route path="promoters/:slug/:id" element={<PromoterProfile />} />
             <Route path="docs" element={<Faqs />} />
-          </Route>
 
           {/* Miscelleneous Routes */}
           <Route path="ineligible" element={<InEligible />} />

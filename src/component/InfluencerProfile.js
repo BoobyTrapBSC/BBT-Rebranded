@@ -14,6 +14,8 @@ import { useParams } from "react-router-dom";
 import { addReview, getProfile } from "./../Web3_connection/ContractMethods";
 import { initInstance } from "./../Web3_connection/web3_methods";
 import InfluencerDetails from "./InfluencerDetails";
+import PlatformHead from "./PlatformHead";
+import SidebarSlide from "./SidebarSlide";
 
 export default function InfluencerProfile() {
   const [singleInfluencer, setSingleInfluencer] = useState([]);
@@ -135,9 +137,12 @@ export default function InfluencerProfile() {
   };
 
   return (
-    <div id="pagesafe-cont" className="owner-prof-cont">
+    <>
+    <SidebarSlide />
+    <PlatformHead />
+    <div id="pagesafe-cont" className="owner-prof-cont position-relative">
       <ToastContainer />
-      <div className="safe-head py-3 position-relative container-fluid">
+      <div className="safe-head py-3 container-fluid">
         <div className="head-content row">
           <Breadcrumb>
             <AiFillLeftCircle size={25} color="#fff" />
@@ -228,5 +233,6 @@ export default function InfluencerProfile() {
         </div>
       </div>
     </div>
+    </>
   );
 }

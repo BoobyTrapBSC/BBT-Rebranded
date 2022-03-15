@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import client from "../client";
+import probably from '../images/probably.png'
 import {
   FaTelegramPlane,
   FaTwitter,
@@ -10,6 +11,8 @@ import {
 import { Link } from "react-router-dom";
 import { getTotoalProfile } from "../Web3_connection/ContractMethods";
 import { initInstance } from "../Web3_connection/web3_methods";
+import PlatformHead from "./PlatformHead";
+import SidebarSlide from "./SidebarSlide";
 
 export default function DYORcards() {
   const [project, setProject] = useState([]);
@@ -135,6 +138,10 @@ export default function DYORcards() {
               New
             </span>
           </div>
+          {/* RIBBON CONTAINER FOR NEWLY LAUNCHED PROJECTS */}
+          <div id="bbt-ribbon-container" style={project.trappoints >= 6 ? { display: "block" } : { display: "none" }}>
+            <img src={probably} alt="" width="100px" />
+          </div>
           <img
             className="shadow bg-light"
             src={project.image.asset.url}
@@ -149,7 +156,7 @@ export default function DYORcards() {
         </div>
         <Link
           className="btn shadow-sm"
-          to={{ pathname: `/platform/ongoing/projects/${project.slug.current}/${project.id}`, state: { id: project.id } }}
+          to={{ pathname: `/ongoing/projects/${project.slug.current}/${project.id}`, state: { id: project.id } }}
         >
           Details
         </Link>
@@ -159,20 +166,24 @@ export default function DYORcards() {
 
   return (
     <>
-      <h1 style={{borderTop:"1px solid #474747"}} className="pt-5">DYOR PROJECTS</h1>
-      <h2>Shoutout against scammers &amp; fraudsters</h2>
-      <p>
-        0 Trap Points means the safest! lower trap points means safer! Read
-        more about{" "}
-        <Link
-          to="/"
-          style={{ color: "#fff", fontSize: "16px", fontWeight: "500" }}
-        >
-          trap points
-        </Link>
-      </p>
-      <div className="row safuCards">
-        {project.map(renderProjects)}
+      <SidebarSlide />
+      <PlatformHead />
+      <div style={{position:"relative", maxWidth:"1150px", margin:"auto"}}>
+        <h1 style={{ borderTop: "1px solid #474747", }} className="pt-5">DYOR PROJECTS</h1>
+        <h2>Shoutout against scammers &amp; fraudsters</h2>
+        <p>
+          0 Trap Points means the safest! lower trap points means safer! Read
+          more about{" "}
+          <Link
+            to="/"
+            style={{ color: "#fff", fontSize: "16px", fontWeight: "500" }}
+          >
+            trap points
+          </Link>
+        </p>
+        <div className="row safuCards">
+          {project.map(renderProjects)}
+        </div>
       </div>
     </>
   );

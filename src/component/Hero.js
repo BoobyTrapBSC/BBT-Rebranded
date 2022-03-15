@@ -1,10 +1,10 @@
 import React from 'react'
 import { BiSearchAlt2 } from "react-icons/bi";
-import hoverImg from '../images/logo.png'
+// import hoverImg from '../images/logo.png'
 import desert from '../images/cupcake.png'
 import audit from '../whitepaper/Booby-Audit.pdf'
 import video from '../videos/video-background.m4v'
-import mainVid from '../videos/BBTCUBE.mp4'
+import mainVid from '../videos/BBT2.webm'
 import Navbar from './Navbar';
 
 export default function Hero() {
@@ -36,7 +36,7 @@ export default function Hero() {
                 </div>
                 <div className="col-md-6 position-relative">
                     {/* <img id='heroImg' src={hoverImg} alt="" /> */}
-                    <video id='mainVid' src={mainVid} autoPlay loop></video>
+                    <video id='mainVid' src={mainVid} autoPlay="autoplay" muted loop></video>
                 </div>
             </div>
         </div>

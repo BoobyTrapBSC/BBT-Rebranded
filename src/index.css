@@ -76,6 +76,9 @@ button:focus, button:active{
     width: 90% !important;
     position: relative !important;
   }
+  #mainVid{
+    width: 100%;
+  }
   .secondary-cont{
     flex-direction: column;
   }
@@ -161,6 +164,12 @@ button:focus, button:active{
   }
   #heroImg{
     display: none;
+  }
+  #mainVid{
+    display: none;
+  }
+  #aboutImg{
+    width: 100% !important;
   }
   .defi-main{
     width: 100% !important;

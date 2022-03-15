@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
-import Platform from "./Platform";
+import PlatformHead from "./PlatformHead";
+import Safecards from "./Safecards";
+import SafeOwners from "./SafeOwners";
+import SidebarSlide from "./SidebarSlide";
 
 export default function SafeHaven() {
   const [activeTab, setActiveTab] = useState(1);
@@ -11,10 +14,12 @@ export default function SafeHaven() {
 
   return (
     <>
+    <SidebarSlide/>
+    <PlatformHead/>
       <div
         id="safehaven-cont"
-        className="pt-5"
-        style={{ borderTop: "1px solid #474747" }}
+        className="pt-5 position-relative"
+        style={{ borderTop: "1px solid #474747", maxWidth:"1150px", margin:"auto", }}
       >
         <h1>SAFE HAVEN</h1>
         <h2>Best Rated in DeFi</h2>
@@ -35,7 +40,7 @@ export default function SafeHaven() {
                 className={activeTab === 1 ? "nav-link active" : "nav-link"}
                 aria-current="page"
                 onClick={() => toggleActive(1)}
-                to="/platform/safehaven/safuprojects"
+                to="/safehaven"
               >
                 Projects
               </Link>
@@ -44,14 +49,14 @@ export default function SafeHaven() {
               <Link
                 className={activeTab === 2 ? "nav-link active" : "nav-link"}
                 onClick={() => toggleActive(2)}
-                to="/platform/safehaven/safeowners"
+                to="/safehaven"
               >
                 Project Owners
               </Link>
             </li>
           </ul>
           <div className="container-fluid mt-2">
-            <Outlet />
+            {activeTab === 1 ? <Safecards/>:<SafeOwners/>}
           </div>
         </div>
       </div>

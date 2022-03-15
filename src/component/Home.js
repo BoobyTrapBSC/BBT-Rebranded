@@ -1,7 +1,6 @@
 import React from "react";
 // import News from '../component/News';
 import Roadmap from "../component/Roadmap";
-import Navbar from "../component/Navbar";
 import Hero from "../component/Hero";
 import Keyfeatures from "../component/Keyfeatures";
 import About from "./About";

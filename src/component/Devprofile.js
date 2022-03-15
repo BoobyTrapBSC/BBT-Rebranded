@@ -14,6 +14,8 @@ import { useParams } from "react-router-dom";
 import { addReview, getProfile } from "./../Web3_connection/ContractMethods";
 import { initInstance } from "./../Web3_connection/web3_methods";
 import Devdetails from "./Devdetails";
+import PlatformHead from "./PlatformHead";
+import SidebarSlide from "./SidebarSlide";
 
 export default function Devprofile() {
   const [singleDev, setSingleDev] = useState([]);
@@ -136,9 +138,12 @@ export default function Devprofile() {
   };
 
   return (
-    <div id="pagesafe-cont" className="owner-prof-cont">
+    <>
+    <SidebarSlide />
+    <PlatformHead />
+    <div id="pagesafe-cont" className="owner-prof-cont position-relative" style={{maxWidth:"1150px", margin:"auto"}}>
       <ToastContainer />
-      <div className="safe-head py-3 position-relative container-fluid">
+      <div className="safe-head py-3 container-fluid">
         <div className="head-content row">
           <Breadcrumb>
             <AiFillLeftCircle size={25} color="#fff" />
@@ -229,5 +234,6 @@ export default function Devprofile() {
         </div>
       </div>
     </div>
+    </>
   );
 }

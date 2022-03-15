@@ -12,6 +12,8 @@ import {
   getProfile,
 } from "./../Web3_connection/ContractMethods";
 import { getAccount, initInstance } from "./../Web3_connection/web3_methods";
+import PlatformHead from "./PlatformHead";
+import SidebarSlide from "./SidebarSlide";
 
 export default function Projectpage() {
   const [singleProject, setSingleProject] = useState([]);
@@ -168,108 +170,112 @@ export default function Projectpage() {
   };
 
   return (
-    <div id="pagesafe-cont" className="owner-prof-cont projectpage-cont" style={{borderTop:"1px solid #474747"}}>
-      <div className="safe-head py-3 position-relative container-fluid">
-        <div className="head-content">
-          <Breadcrumb>
-            <AiFillLeftCircle size={25} color="#fff" />
-            <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
-            <Breadcrumb.Item href="/platform/safehaven/safuprojects">
-              Safe Haven
-            </Breadcrumb.Item>
-            <Breadcrumb.Item active>{singleProject.name}</Breadcrumb.Item>
-          </Breadcrumb>
-          <div className="col-lg-8">
-            <div className="project-main">
-              <div className="d-flex">
-              {singleProject.image && singleProject.image.asset && (
-                <img
-                  className="projectImg me-3"
-                  src={singleProject.image.asset.url}
-                  alt={singleProject.name}
-                />
-              )}
-              <h1 className="fs-4 my-auto text-light">{singleProject.name}</h1>
-              </div>
-              <h3 className="text-light mt-2">{singleProject.trappoints} Trap Points</h3>
-              <div className="fs-6">
-                <span className="review-star fs-5"> {start(avgRating)} </span> (
-                {countreview} Reviews)
-              </div>
-              <p>
-                0 Trap Points means the safest! lower trap points means safer!
-                Read more about{" "}
-                <Link
-                  to="/"
-                  style={{ color: "#fff", fontSize: "16px", fontWeight: "500" }}
+    <>
+      <SidebarSlide />
+      <PlatformHead />
+      <div id="pagesafe-cont" className="owner-prof-cont position-relative projectpage-cont" style={{ borderTop: "1px solid #474747", margin:"auto", maxWidth:"1150px" }}>
+        <div className="safe-head py-3 container-fluid">
+          <div className="head-content">
+            <Breadcrumb>
+              <AiFillLeftCircle size={25} color="#fff" />
+              <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
+              <Breadcrumb.Item href="/platform/safehaven/safuprojects">
+                Safe Haven
+              </Breadcrumb.Item>
+              <Breadcrumb.Item active>{singleProject.name}</Breadcrumb.Item>
+            </Breadcrumb>
+            <div className="col-lg-8">
+              <div className="project-main">
+                <div className="d-flex">
+                  {singleProject.image && singleProject.image.asset && (
+                    <img
+                      className="projectImg me-3"
+                      src={singleProject.image.asset.url}
+                      alt={singleProject.name}
+                    />
+                  )}
+                  <h1 className="fs-4 my-auto text-light">{singleProject.name}</h1>
+                </div>
+                <h3 className="text-light mt-2">{singleProject.trappoints} Trap Points</h3>
+                <div className="fs-6">
+                  <span className="review-star fs-5"> {start(avgRating)} </span> (
+                  {countreview} Reviews)
+                </div>
+                <p>
+                  0 Trap Points means the safest! lower trap points means safer!
+                  Read more about{" "}
+                  <Link
+                    to="/"
+                    style={{ color: "#fff", fontSize: "16px", fontWeight: "500" }}
+                  >
+                    trap points
+                  </Link>
+                </p>
+                <button
+                  className={`btn btnYellow ${!bnbBal ? "disabled" : ""} `}
+                  onClick={() => toggleModal()}
                 >
-                  trap points
-                </Link>
-              </p>
-              <button
-                className={`btn btnYellow ${!bnbBal ? "disabled" : ""} `}
-                onClick={() => toggleModal()}
+                  {!bnbBal ? "Insufficient BNB Balance" : "Give Rating"}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {modal && (
+          <div style={{ zIndex: "5", position: "relative" }}>
+            <div onClick={() => toggleModal()} className="overlay-popup"></div>
+            <div className="modal-content py-3" style={{ backgroundColor: "#283046" }}>
+              <label for="category" className="form-label fw-bold mb-3 text-center  ">
+                Give Rating
+              </label>
+              <span
+                style={{
+                  fontSize: "10px",
+                  textAlign: "center",
+                  marginTop: "-20px",
+                  marginBottom: "20px",
+                }}
               >
-                {!bnbBal ? "Insufficient BNB Balance" : "Give Rating"}
+                (A fee of 0.001 BNBs is applicable to keep this utility spam
+                free!)
+              </span>
+              <div className="px-4 mb-2">
+                <select
+                  className="form-select text-center"
+                  id="sel1"
+                  value={rating}
+                  onChange={(e) => setRating(e.target.value)}
+                  aria-label="Default select example"
+                >
+                  <option selected>Select Star Rating</option>
+                  <option>
+                    Safu &nbsp; &#9733; &#9733; &#9733; &#9733; &#9733;
+                  </option>
+                  <option>
+                    Excellent &nbsp; &#9733; &#9733; &#9733; &#9733;
+                  </option>
+                  <option>DYOR &nbsp; &#9733; &#9733; &#9733;</option>
+                  <option>Avoidable &nbsp; &#9733; &#9733;</option>
+                  <option>Scammer &nbsp; &#9733;</option>
+                </select>
+              </div>
+              <button
+                className="btn w-50 mx-auto fw-bold my-2 btnOutline-sm"
+                onClick={() => giveRating(rating)}
+              >
+                Submit
               </button>
             </div>
           </div>
-        </div>
-      </div>
+        )}
 
-      {modal && (
-        <div style={{ zIndex: "5", position:"relative" }}>
-          <div onClick={() => toggleModal()} className="overlay-popup"></div>
-          <div className="modal-content py-3" style={{backgroundColor:"#283046"}}>
-            <label for="category" className="form-label fw-bold mb-3 text-center  ">
-              Give Rating
-            </label>
-            <span
-              style={{
-                fontSize: "10px",
-                textAlign:"center",
-                marginTop: "-20px",
-                marginBottom: "20px",
-              }}
-            >
-              (A fee of 0.001 BNBs is applicable to keep this utility spam
-              free!)
-            </span>
-            <div className="px-4 mb-2">
-              <select
-                className="form-select text-center"
-                id="sel1"
-                value={rating}
-                onChange={(e) => setRating(e.target.value)}
-                aria-label="Default select example"
-              >
-                <option selected>Select Star Rating</option>
-                <option>
-                  Safu &nbsp; &#9733; &#9733; &#9733; &#9733; &#9733;
-                </option>
-                <option>
-                  Excellent &nbsp; &#9733; &#9733; &#9733; &#9733;
-                </option>
-                <option>DYOR &nbsp; &#9733; &#9733; &#9733;</option>
-                <option>Avoidable &nbsp; &#9733; &#9733;</option>
-                <option>Scammer &nbsp; &#9733;</option>
-              </select>
-            </div>
-            <button
-              className="btn w-50 mx-auto fw-bold my-2 btnOutline-sm"
-              onClick={() => giveRating(rating)}
-            >
-              Submit
-            </button>
+        <div className="safe-content row w-100 mt-3">
+          <div className="content col">
+            <Projectdetails />
           </div>
         </div>
-      )}
-
-      <div className="safe-content row w-100 mt-3">
-        <div className="content col">
-          <Projectdetails />
-        </div>
       </div>
-    </div>
+    </>
   );
 }

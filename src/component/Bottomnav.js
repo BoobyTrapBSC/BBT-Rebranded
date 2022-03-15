@@ -37,10 +37,10 @@ export default function Bottomnav() {
             <Link id="mob-link" to="/"><img src={home} alt=""/><br/>Home</Link>
           </button>
           <button className="btn">
-          <Link id="mob-link" to={BBTLimit && BBTBal >= BBTLimit.minBal ?`/platform/safehaven/safuprojects`:`/ineligible`}><img src={safedefi} alt=""/><br/>Platfrom</Link>
+          <Link id="mob-link" to={BBTLimit && BBTBal >= BBTLimit.minBal ?`/safehaven`:`/ineligible`}><img src={safedefi} alt=""/><br/>Platfrom</Link>
           </button>
           <button className="btn">
-          <Link id="mob-link" to="/platform/boobytrap/scamprojects"><img src={stop} style={{height:"30px"}} alt=""/><br/>Booby<br/>Trap</Link>
+          <Link id="mob-link" to="/boobytrap"><img src={stop} style={{height:"30px"}} alt=""/><br/>Booby<br/>Trap</Link>
           </button>
           <button className="btn">
             <Link to = {trapsheetpdf} id="mob-link" target = "_blank" rel="noreferrer"><img src={trapsheet} alt=""/><br/>Trapsheet</Link>

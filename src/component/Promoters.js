@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import client from "../client";
 import { FaTelegramPlane, FaTwitter, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import PlatformHead from "./PlatformHead";
+import SidebarSlide from "./SidebarSlide";
 
 export default function Promoters() {
   const [promoter, setPromoters] = useState([]);
@@ -67,7 +69,7 @@ export default function Promoters() {
         <Link
           className="btn shadow-sm"
           to={{
-            pathname: `/platform/promoters/${promoter.slug.current}/${promoter.id}`,
+            pathname: `/promoters/${promoter.slug.current}/${promoter.id}`,
             state: { id: promoter.id },
           }}
         >
@@ -78,6 +80,9 @@ export default function Promoters() {
   };
   return (
     <>
+    <SidebarSlide />
+    <PlatformHead />
+    <div style={{position:"relative", maxWidth:"1150px", margin:"auto"}}>
       <h1 style={{ borderTop: "1px solid #474747" }} className="pt-5">
         AMA/Call Channels
       </h1>
@@ -94,6 +99,7 @@ export default function Promoters() {
       <div className="row mt-3" id="owner-card-cont">
         {promoter.map(renderDev)}
       </div>
+    </div>
     </>
   );
 }

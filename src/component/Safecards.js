@@ -68,7 +68,7 @@ export default function Safecards() {
       >
         <div id="projectHead" className="d-flex justify-content-between">
           <div className="w-100 text-start" style={{ paddingLeft: "30px" }}>
-            <h3 className="fs-6 mt-2 text-start">
+            <h3 className="fs-6 mt-2 dynName text-start">
               {project.name} <span>({project.tracker})</span>
             </h3>
             <a
@@ -147,7 +147,7 @@ export default function Safecards() {
         </div>
         <Link
           className="btn shadow-sm"
-          to={{ pathname: `/platform/safehaven/safuprojects/${project.slug.current}/${project.id}`, state:{id:project.id}}}
+          to={{ pathname: `/safehaven/safuprojects/${project.slug.current}/${project.id}`, state:{id:project.id}}}
         >
           Details
         </Link>

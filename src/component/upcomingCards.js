@@ -10,6 +10,8 @@ import {
 import { Link } from 'react-router-dom';
 import { getTotoalProfile } from "./../Web3_connection/ContractMethods"
 import { initInstance } from './../Web3_connection/web3_methods'
+import PlatformHead from "./PlatformHead";
+import SidebarSlide from "./SidebarSlide";
 
 export default function UpcomingCards() {
 
@@ -66,7 +68,7 @@ export default function UpcomingCards() {
       <div className="projectCard mx-2 my-4 col-md-3 px-1 py-2 pb-3 shadow" key={index}>
         <div id="projectHead" className="d-flex justify-content-between">
           <div className="w-100 text-start" style={{ paddingLeft: "30px" }}>
-            <h3 className="fs-6 mt-2 text-start">
+            <h3 className="fs-6 mt-2 dynName text-start">
               {project.name} <span>({project.tracker})</span>
             </h3>
             <a href={project.telegram} style={project.telegram.length > 2 ? { display: "inline-block" } : { display: "none" }} id="project-social"><FaTelegramPlane /></a>
@@ -87,13 +89,16 @@ export default function UpcomingCards() {
           <p className='mb-0' >{project.comStrength}k+ Community Strength</p>
           <p>{project.description.length > 150 ? project.description.slice(0, 150) + "..." : project.description}</p>
         </div>
-        <Link className="btn shadow-sm" to={{ pathname: `/platform/upcoming/projects/${project.slug.current}/${project.id}`, state: { id: project.id } }}>Details</Link>
+        <Link className="btn shadow-sm" to={{ pathname: `/upcoming/projects/${project.slug.current}/${project.id}`, state: { id: project.id } }}>Details</Link>
       </div>
     )
   }
 
   return (
     <>
+    <SidebarSlide />
+    <PlatformHead />
+    <div style={{position:"relative", maxWidth:"1150px", margin:"auto"}}>
       <h1 style={{borderTop:"1px solid #474747"}} className="pt-5">UPCOMING PROJECTS</h1>
       <h2>EXCITING OPPORTUNITIES</h2>
       <p>
@@ -109,6 +114,7 @@ export default function UpcomingCards() {
       <div className='row safuCards'>
         {project.map(renderProjects)}
       </div>
+    </div>
     </>
   )
 }

@@ -121,7 +121,7 @@ body.active-modal {
   z-index: 0;
 }
 #mainVid{
-  height: 500px;
+  max-width: 500px;
 }
 
 /* NAVBAR */
@@ -400,6 +400,9 @@ body.active-modal {
   color: #fff;
   font-weight: 500;
 }
+.accordion-body{
+  position: relative;
+}
 .accordion-button::after{
   filter: grayscale(1);
 }
@@ -534,6 +537,9 @@ body.active-modal {
   color: #fff !important;
   border: none;
 }
+.dynName{
+  max-width: 200px;
+}
 
 /*Owner Cards*/
 #owner-card-cont, .safuCards{
@@ -578,6 +584,10 @@ body.active-modal {
   position: absolute;
   left: 30%;
   bottom: -7%;
+}
+.owner-prof-cont{
+  margin: auto;
+  max-width: 1150px;
 }
 .owner-prof-cont .head-content {
   flex-direction: row;

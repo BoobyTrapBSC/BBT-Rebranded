@@ -11,6 +11,8 @@ import { Link, useParams } from "react-router-dom";
 import Ownerdetails from "./Ownerdetails";
 import { addReview, getProfile, BNBBalance } from "./../Web3_connection/ContractMethods"
 import { initInstance } from './../Web3_connection/web3_methods'
+import PlatformHead from "./PlatformHead";
+import SidebarSlide from "./SidebarSlide";
 
 export default function Ownerprofile() {
 
@@ -152,9 +154,12 @@ export default function Ownerprofile() {
     }
     
     return (
-        <div id="pagesafe-cont" className="owner-prof-cont">
+        <>
+        <SidebarSlide />
+        <PlatformHead />
+        <div id="pagesafe-cont" className="owner-prof-cont m-auto">
             <ToastContainer />
-            <div className="safe-head py-3 position-relative container-fluid">
+            <div className="safe-head py-3 position-relative container-fluid" style={{margin:"auto", maxWidth:"1150px"}}>
                 <div className="head-content row">
                     <Breadcrumb><AiFillLeftCircle size={25} color="#fff" />
                         <Breadcrumb.Item href="/">&nbsp; Home</Breadcrumb.Item>
@@ -213,11 +218,12 @@ export default function Ownerprofile() {
                     </div>
                 </div>
             )}
-            <div className="safe-content row mt-3">
+            <div className="safe-content row mt-3" style={{maxWidth:"1150px", margin:"auto", position:"relative"}}>
                 <div className="content col">
                     <Ownerdetails />
                 </div>
             </div>
         </div>
+        </>
     );
 }

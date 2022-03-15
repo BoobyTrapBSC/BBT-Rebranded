@@ -148,7 +148,7 @@ export default function OngoingScam() {
         </div>
         <Link
           className="btn shadow-sm"
-          to={{ pathname: `/platform/boobytrap/scamprojects/${project.slug.current}/${project.id}`, state:{id:project.id} }}
+          to={{ pathname: `/boobytrap/scamprojects/${project.slug.current}/${project.id}`, state:{id:project.id} }}
         >
           Details
         </Link>
