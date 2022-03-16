@@ -11,7 +11,7 @@ export default function Hero() {
 
     return (
         <div id='hero-container'>
-        <video id="videoBg" src={video} autoplay='' muted loop></video>
+        <video id="videoBg" src={video} autoplay='' preload='metadata' muted loop></video>
         <Navbar/>
             <div className="row rowHero">
                 <div className="col-md-6 align-self-center">

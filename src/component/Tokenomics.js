@@ -13,12 +13,12 @@ export default function Tokenomics() {
                 <p>Burned</p>    
             </div>
             <div className="col-md-3">
-                <h2>1k+</h2>
-                <p>Holders Worlwide</p>
+                <h2>7%</h2>
+                <p>Buy Tax</p>
             </div>
             <div className="col-md-3">
-                <h2>20k+</h2>
-                <p>Followers on SM Platforms</p>
+                <h2>10%</h2>
+                <p>Sell Tax</p>
             </div>
         </div>
     </div>

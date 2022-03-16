@@ -569,7 +569,7 @@ body.active-modal {
 
 /*Owner Cards*/
 #owner-card-cont, .safuCards{
-  justify-content: space-around;
+  justify-content: start;
 }
 .ownerCard {
   background-color: #292B33;
