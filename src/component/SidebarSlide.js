@@ -26,8 +26,8 @@ export default function SidebarSlide() {
   let styles = {
     bmBurgerButton: {
       position: 'fixed',
-      width: '36px',
-      height: '30px',
+      width: '30px',
+      height: '24px',
       left: '36px',
       top: '36px',
     },
@@ -64,6 +64,7 @@ export default function SidebarSlide() {
     bmItem: {
       display: 'block',
       color: "#fff",
+      fontSize:"18px",
       margin: "5px auto",
       transitionDuration:"0.2s",
       textDecoration:"none",

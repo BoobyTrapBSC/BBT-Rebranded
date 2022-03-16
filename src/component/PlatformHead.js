@@ -288,7 +288,6 @@ export default function PlatformHead() {
                 </div>
               </div>
             )}
-
             <a
               target="_blank"
               rel="noreferrer"

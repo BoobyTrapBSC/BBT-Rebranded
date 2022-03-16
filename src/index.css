@@ -262,6 +262,11 @@ button:active {
   .f-socials {
     justify-content: start !important;
   }
+  .currentStat{
+    max-width: 350px !important;
+    width: 100% !important;
+    margin: 5px auto;
+  }
 }
 @media only screen and (max-width: 420px) {
   .topBar {

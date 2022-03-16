@@ -50,6 +50,20 @@ export default function Roadmap() {
           icon={<GiPoliceBadge />}
         >
           <h3 className="vertical-timeline-element-title">PHASE III</h3>
+          <h4 className="vertical-timeline-element-subtitle">FREELANCING &amp; ESCROW</h4>
+          <p>
+          • Launch of $BBT Square (Freelancing pllatform with escrow payment services)<br/>
+          • Marketing campaign for $BBT Square<br/>
+          • Partnerships with popular freelancers
+          </p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          date="May 2022"
+          iconStyle={{ background: '#a28eb9', color: '#fff' }}
+          icon={<GiPoliceBadge />}
+        >
+          <h3 className="vertical-timeline-element-title">PHASE IV</h3>
           <h4 className="vertical-timeline-element-subtitle">INSURING DEFI</h4>
           <p>
           • Launch of Insurance on blockchain for $BBT holders<br/>
@@ -63,7 +77,7 @@ export default function Roadmap() {
           iconStyle={{ background: '#a28eb9', color: '#fff' }}
           icon={<GiMetalBoot />}
         >
-          <h3 className="vertical-timeline-element-title">PHASE IV</h3>
+          <h3 className="vertical-timeline-element-title">PHASE V</h3>
           <p>
           • Launchpad for projects willing to list on $BBT platform<br/>
           • VC Funding and Presale platforms<br/>

@@ -3,7 +3,7 @@ import React from 'react'
 export default function Tokenomics() {
   return (
     <div id='tokenomics-cont' className='position-relative py-3'>
-        <div className="row py-3">
+        <div className="row py-3 text-center">
             <div className="col-md-3">
                 <h2>911911911</h2>
                 <p>Total Supply</p>    
