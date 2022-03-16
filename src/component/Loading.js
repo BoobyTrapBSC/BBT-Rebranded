@@ -8,7 +8,8 @@ export default function Loading() {
           <div className="configure-core"></div>
         </div>
         <div className="configure-border-2">
-          <div className="configure-core" style={{boxShadow: "0px 0px 15px rgb(63,249,220) inset"}}></div>
+          <div className="configure-core" style={{boxShadow: "0px 0px 15px rgb(63,249,220) inset"}}>  
+          </div>
         </div>
       </div>
     </div>

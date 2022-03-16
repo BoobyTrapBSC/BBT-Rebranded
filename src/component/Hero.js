@@ -35,7 +35,6 @@ export default function Hero() {
                     </div>
                 </div>
                 <div className="col-md-6 position-relative">
-                    {/* <img id='heroImg' src={hoverImg} alt="" /> */}
                     <video id='mainVid' src={mainVid} autoPlay="autoplay" muted loop></video>
                 </div>
             </div>

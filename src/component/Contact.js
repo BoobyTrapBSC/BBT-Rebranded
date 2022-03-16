@@ -87,7 +87,7 @@ export default function Contact() {
               rows="10"
             ></textarea>
           </div>
-          <div class="g-recaptcha" data-sitekey="6LcuW-EeAAAAAHW8mngeysgFrOFILIRPW659xk6n"></div>
+          <div className="g-recaptcha my-2" data-sitekey="6LcuW-EeAAAAAHW8mngeysgFrOFILIRPW659xk6n"></div>
           <input
             id="formSubmit"
             className="btnYellow btn"

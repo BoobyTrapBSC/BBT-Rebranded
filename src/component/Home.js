@@ -10,6 +10,9 @@ import TaxationExplained from "./TaxationExplained";
 import SectionFAQs from "./SectionFAQs";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import CarouselHome from "./CarouselHome";
+import Vetted from "./Vetted";
+import Defiloss from './Defiloss'
 // import Mobmap from '../component/Mobmap';
 
 export default function Home() {
@@ -17,14 +20,21 @@ export default function Home() {
     <div>
       <Hero />
       <hr className="mt-0"/>
-      <Keyfeatures />
+      <CarouselHome/>
       <hr />
       <About />
+      <hr />
+      <Keyfeatures />
+      <hr />
+      <Defiloss/>
       <BuyBBT />
       <hr />
       <Tokenomics />
       <hr />
       <TaxationExplained />
+      <hr />
+      <Vetted/>
+      <hr />
       <Roadmap />
       <hr />
       <SectionFAQs />

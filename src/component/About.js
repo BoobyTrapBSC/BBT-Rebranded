@@ -3,7 +3,7 @@ import aboutImg from '../images/vault.png'
 
 export default function About() {
   return (
-    <div id='about-cont' className='position-relative'>
+    <div id='about-cont' className='position-relative py-5'>
       <div className="row my-5">
         <div className="col-md-6 justify-content-center align-content-center" id='aboutImg'>
           <img src={aboutImg} alt="" />

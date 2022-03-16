@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Web3 from "web3";
-import { Outlet } from "react-router-dom";
 import { ABI } from "../ABI/Rating";
 import {AiOutlineLogout} from "react-icons/ai"
 import {
@@ -13,7 +12,6 @@ import {
   getBBTBalance,
   getTokenBalance,
 } from "../Web3_connection/ContractMethods";
-import SidebarSlide from "./SidebarSlide";
 import Logo from "./../images/logo-circle.png";
 import axios from "axios";
 import WalletConnectProvider from "@walletconnect/web3-provider";

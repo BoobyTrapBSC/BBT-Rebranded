@@ -56,6 +56,7 @@ body.active-modal {
 .configure-core {
   width: 100%;
   height: 100%;
+  position: relative;
   background-color: #1d2630;
 }
 @keyframes configure-clockwise {
@@ -119,9 +120,6 @@ body.active-modal {
   object-fit: cover;
   position: absolute;
   z-index: 0;
-}
-#mainVid{
-  max-width: 500px;
 }
 
 /* NAVBAR */
@@ -249,10 +247,13 @@ body.active-modal {
 .heroAudit a{
   color: #95a2b3;
 }
+#mainVid{
+  max-width: 500px;
+}
 
 /* CAROUSEL HOME */
 #carousel-container {
-  max-width: 1440px;
+  max-width: 1150px;
   margin: auto;
 }
 .slick-next:before, .slick-arrow, .slick-next{
@@ -279,20 +280,6 @@ body.active-modal {
   margin: auto 20px;
   min-width: 150px;
   max-width: 250px;
-}
-.rating-slider {
-  width: 90%;
-}
-.rating-slider > [rows] {
-  margin: auto;
-  background-color: #fff !important;
-}
-.rating-slider .card {
-  max-width: 300px;
-  margin: auto;
-}
-.rating-slider .card-body {
-  font-size: 12px;
 }
 
 /* KEYFEATURES */
@@ -334,6 +321,35 @@ body.active-modal {
   list-style-image: url(./images/yellow-check.png);
 }
 
+
+/* DEFILOSS CONTAINER */
+.defi-main {
+  width: 60%;
+}
+#defiloss-cont {
+  width: 100%;
+  max-width: 1150px;
+}
+#defiloss-cont .btn{
+  position: absolute;
+  font-weight: 500;
+  right: -55%;
+  top: 25px;
+}
+.defi-desc p:nth-child(1) {
+  font-size: 16px;
+  font-weight: 600;
+}
+.defi-desc p:nth-child(2) {
+  font-size: 14px;
+  color: #767d8a;
+}
+.defibg {
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 15px;
+}
+
 /* BUY BBT */
 #buy-cont{
   width: 100%;
@@ -372,6 +388,12 @@ body.active-modal {
 .patternImg {
   width: 80%;
   max-width: 1440px;
+}
+
+/* VETTED */
+#vettedCont{
+  max-width: 1150px;
+  margin: auto;
 }
 
 /* ROADMAP */
@@ -441,7 +463,7 @@ body.active-modal {
 #formName input, #formMail input{
   width: 100%;
   height: 40px;
-  margin: 10px auto;
+  margin: auto auto 10px auto;
   padding: 15px;
   border-radius: 2px;
   background-color: #2A2C34;
@@ -476,6 +498,10 @@ body.active-modal {
   margin: 25px auto 0 auto;
   max-width: 1150px;
   width: 100%;
+}
+.f-socials{
+  display: flex;
+  justify-content: end;
 }
 .copyright {
   max-width: 1440px;

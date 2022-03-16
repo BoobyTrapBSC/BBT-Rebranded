@@ -29,10 +29,10 @@ export default function Navbar() {
                                 <a href={trapsheetpdf} target="_blank" rel="noreferrer" className="nav-link">Trapsheet</a>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/boobytrap/upcomingscam">FAQs</Link>
+                                <Link className="nav-link" to="/docs">FAQs</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/boobytrap/upcomingscam">Contact Us</Link>
+                                <a className="nav-link" href="#contact-cont">Contact Us</a>
                             </li>
                         </ul>
                         <a href="https://t.me/boobytrapbsc" target="_blank" rel="noreferrer" className="nav-socials"><FaTelegramPlane/></a>
@@ -42,7 +42,8 @@ export default function Navbar() {
                     </div>
                     <div className="mob-nav">
                         <a href="https://t.me/boobytrapbsc" target="_blank" rel="noreferrer" className="btn p-1 m-1 text-light"><FaTelegramPlane/></a>
-                        <Link to="/safehaven" className="btn btnOutline-sm m-1">Platform</Link>
+                        <a href="https://twitter.com/BoobyTrapBsc" target="_blank" rel="noreferrer" className="btn p-1 m-1 text-light"><FaTwitter/></a>
+                        <Link to="/safehaven" className="btn btnOutline-sm m-1">Buy $BBT</Link>
                     </div>
                 </div>
             </nav>

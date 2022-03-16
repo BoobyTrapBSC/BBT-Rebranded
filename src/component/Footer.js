@@ -8,18 +8,18 @@ export default function Footer() {
         <div className="col-md-6 ps-2">
           <p>Email: <a className="text-decoration-none" style={{ color: "#fff", fontWeight: "500" }} href="mailto:info@boobytrap.live">info@boobytrap.live</a></p>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 f-socials">
           <a href="https://t.me/boobytrapbsc" target = "_blank" rel="noreferrer">
-            <FaTelegramPlane size={25} className="text-light mx-3" />
+            <FaTelegramPlane size={25} className="text-light ms-3" />
           </a>
           <a href="http://tiktok.com/@boobytrapbsc" target = "_blank" rel="noreferrer">
-            <FaTiktok size={25} className="text-light mx-3" />
+            <FaTiktok size={25} className="text-light ms-3" />
           </a>
           <a href="https://instagram.com/boobytrap_bsc" target = "_blank" rel="noreferrer">
-            <FaInstagram size={25} className="text-light mx-3" />
+            <FaInstagram size={25} className="text-light ms-3" />
           </a>
           <a href="https://twitter.com/BoobyTrapBsc" target = "_blank" rel="noreferrer">
-            <FaTwitter size={25} className="text-light mx-3" />
+            <FaTwitter size={25} className="text-light ms-3" />
           </a>
         </div>
       </div>

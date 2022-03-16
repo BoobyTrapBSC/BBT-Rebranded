@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function SectionFAQs() {
     return (
-        <div id='faqs-cont' className='position-relative'>
+        <div id='faqs-cont' className='position-relative py-5'>
             <h2>FAQs</h2>
             <div className="row mt-4">
                 <div className="col-md-6">
