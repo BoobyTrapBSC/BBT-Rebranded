@@ -169,11 +169,11 @@ export default function Ownerprofile() {
                         <Breadcrumb.Item active>Profile</Breadcrumb.Item>
                     </Breadcrumb>
                     <div className="col-lg-8">
-                        <div className="dev-main">
+                        <div className="dev-main text-light">
                             <h1>{name}</h1>
-                            <div className="fs-6"><span className="review-star fs-5"> {start(avgRating)} </span> ({countreview} Reviews)</div>
+                            <div className="fs-6 fw-normal"><span className="review-star fs-5"> {start(avgRating)} </span> ({countreview} Reviews)</div>
                             <p className="my-1">{trappoint} Trap Points</p>
-                            <p>
+                            <p className='fw-normal fs-6'>
                                 0 Trap Points means the safest! lower trap points means safer! Read
                                 more about{" "}
                                 <Link

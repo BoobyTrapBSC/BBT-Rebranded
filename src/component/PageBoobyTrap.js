@@ -17,15 +17,15 @@ export default function PageBoobyTrap() {
     <>
       <SidebarSlide />
       <PlatformHead />
-      <div id="pagesafe-cont" style={{ borderTop: "1px solid #474747", maxWidth:"1150px", margin:"auto", position:"relative" }} className="pt-5">
+      <div id="pagesafe-cont" style={{ borderTop: "1px solid #474747", maxWidth:"1150px", margin:"auto", position:"relative", color:"#fff" }} className="pt-5">
         <h1>BOOBY TRAP</h1>
         <h2>Shoutout against scammers &amp; fraudsters</h2>
-        <p>
+        <p className="fw-normal fs-6">
           0 Trap Points means the safest! lower trap points means safer! Read
           more about{" "}
           <Link
             to="/"
-            style={{ color: "#fff", fontSize: "16px", fontWeight: "500" }}
+            style={{ color: "#fff"}}
           >
             trap points
           </Link>

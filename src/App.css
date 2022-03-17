@@ -651,6 +651,7 @@ body.active-modal {
 }
 #skills{
   line-height: 30px;
+  padding-left: 0;
 }
 .profileImg {
   max-height: 175px;
@@ -960,7 +961,12 @@ body.active-modal {
 #skills li{
   padding: 5px 10px;
   list-style: none;
+  color: #fff;
+  font-weight: 400;
   border-bottom: 1px solid #474747;
+}
+#skills li b{
+  color: #ffcc00;
 }
 #skills li a{
   color: #ffcc00;

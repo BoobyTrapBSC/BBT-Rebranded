@@ -18,17 +18,17 @@ export default function SafeHaven() {
     <PlatformHead/>
       <div
         id="safehaven-cont"
-        className="pt-5 position-relative"
+        className="pt-5 position-relative text-light"
         style={{ borderTop: "1px solid #474747", maxWidth:"1150px", margin:"auto", }}
       >
         <h1>SAFE HAVEN</h1>
         <h2>Best Rated in DeFi</h2>
-        <p>
+        <p className="fw-normal fs-6">
           0 Trap Points means the safest! lower trap points means safer! Read more
           about{" "}
           <Link
             to="/"
-            style={{ color: "#fff", fontSize: "16px", fontWeight: "500" }}
+            style={{ color: "#fff"}}
           >
             trap points
           </Link>

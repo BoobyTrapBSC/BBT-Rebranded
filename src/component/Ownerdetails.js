@@ -98,11 +98,11 @@ export default function Ownerdetails(props) {
       </div>
       <div className="container-fluid text-start fs-6">
         <ul id="skills">
-          <li>Experience in DeFi: {singleOwner.experience} Months+</li>
-          <li>Number of Projects till date: {singleOwner.numProjects}</li>
-          <li>Community Strength: {singleOwner.comStrength}k+</li>
-          <li>Avg. Life of Projects: {singleOwner.avgLife} Months</li>
-          <li>About: {singleOwner.about}</li>
+          <li><b>Experience in DeFi:</b> {singleOwner.experience} Months+</li>
+          <li><b>Number of Projects till date:</b> {singleOwner.numProjects}</li>
+          <li><b>Community Strength:</b> {singleOwner.comStrength}k+</li>
+          <li><b>Avg. Life of Projects:</b> {singleOwner.avgLife} Months</li>
+          <li><b>About:</b> {singleOwner.about}</li>
         </ul>
       </div>
       <hr className="mb-5" />

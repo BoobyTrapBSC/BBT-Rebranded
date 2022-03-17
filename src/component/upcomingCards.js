@@ -98,10 +98,10 @@ export default function UpcomingCards() {
     <>
     <SidebarSlide />
     <PlatformHead />
-    <div style={{position:"relative", maxWidth:"1150px", margin:"auto"}}>
+    <div style={{position:"relative", maxWidth:"1150px", margin:"auto", color:"#fff"}}>
       <h1 style={{borderTop:"1px solid #474747"}} className="pt-5">UPCOMING PROJECTS</h1>
       <h2>EXCITING OPPORTUNITIES</h2>
-      <p>
+      <p className='fs-6 fw-normal'>
         0 Trap Points means the safest! lower trap points means safer! Read
         more about{" "}
         <Link

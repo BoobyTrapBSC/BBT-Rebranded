@@ -104,15 +104,17 @@ export default function Projectdetails() {
                     <li><b>Exchange Listings:</b> {singleProject.exchanges}</li>
                     <li><b>Number of Holders:</b> {singleProject.holdersCount}</li>
                 </ul>
-                <h4 className='mt-5' style={{color:"#ffcc00"}}>What our experts say:</h4>
-                <BlockContent blocks={singleProject.expertOpinion} projectId="lfyw4jna" dataset="production" />
-                <h3 style={{color:"#ffcc00"}}>BBT's Verdict:</h3>
-                <BlockContent blocks={singleProject.verdict} projectId="lfyw4jna" dataset="production" />
+                <div style={{backgroundColor:"#12141ee7", padding:"0px 5px"}}>
+                    <h4 className='mt-5' style={{color:"#ffcc00"}}>What our experts say:</h4>
+                    <BlockContent blocks={singleProject.expertOpinion} projectId="lfyw4jna" dataset="production" />
+                    <h3 style={{color:"#ffcc00"}}>BBT's Verdict:</h3>
+                    <BlockContent blocks={singleProject.verdict} projectId="lfyw4jna" dataset="production" />
+                </div>
                 <h3 style={singleProject.cg === null ? { display: "block" } : { display: "none" }}>Chart Not Available</h3>
                 <div className="row mt-5" style={singleProject.cg === null ? { display: "none" } : { display: "block" }}>
                     <h3>{singleProject.name} Price Chart ({singleProject.tracker})</h3>
                     <ScriptTag src="https://widgets.coingecko.com/coingecko-coin-ticker-widget.js"></ScriptTag>
-                    <coingecko-coin-ticker-widget coin-id={singleProject.cgId} currency="usd" locale="en"></coingecko-coin-ticker-widget>
+                    <coingecko-coin-ticker-widget coin-id={singleProject.cgId} currency="usd" background-color="#12141E" locale="en"></coingecko-coin-ticker-widget>
                     <ScriptTag src="https://widgets.coingecko.com/coingecko-coin-compare-chart-widget.js"></ScriptTag>
                     <coingecko-coin-compare-chart-widget coin-ids={singleProject.cgId} currency="usd" locale="en"></coingecko-coin-compare-chart-widget>
                 </div>

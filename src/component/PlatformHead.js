@@ -298,7 +298,7 @@ export default function PlatformHead() {
             </a>
 
           </div>
-          <div className="container">
+          <div className="container" style={{maxWidth:"1150px"}}>
             <div className="row  my-5 justify-content-around">
               <div className="col-md-3 currentStat">
                 <h3>{BBTBal.toFixed(2)} </h3>

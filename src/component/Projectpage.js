@@ -197,16 +197,16 @@ export default function Projectpage() {
                   <h1 className="fs-4 my-auto text-light">{singleProject.name}</h1>
                 </div>
                 <h3 className="text-light mt-2">{singleProject.trappoints} Trap Points</h3>
-                <div className="fs-6">
+                <div className="fs-6 fw-normal text-light">
                   <span className="review-star fs-5"> {start(avgRating)} </span> (
                   {countreview} Reviews)
                 </div>
-                <p>
+                <p className="fs-6 text-light fw-normal">
                   0 Trap Points means the safest! lower trap points means safer!
                   Read more about{" "}
                   <Link
                     to="/"
-                    style={{ color: "#fff", fontSize: "16px", fontWeight: "500" }}
+                    style={{ color: "#fff",}}
                   >
                     trap points
                   </Link>

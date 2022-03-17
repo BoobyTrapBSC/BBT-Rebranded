@@ -74,11 +74,11 @@ export default function Influencers() {
     <>
     <SidebarSlide />
     <PlatformHead />
-    <div style={{position:"relative", maxWidth:"1150px", margin:"auto"}}>
+    <div style={{position:"relative", maxWidth:"1150px", margin:"auto", color:"#fff"}}>
       <h1 style={{ borderTop: "1px solid #474747" }} className="pt-5">
         Influencers
       </h1>
-      <p>
+      <p className="fw-normal fs-6">
         0 Trap Points means the safest! lower trap points means safer! Read more
         about{" "}
         <Link
