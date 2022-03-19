@@ -14,6 +14,7 @@ import {
 import { getAccount, initInstance } from "./../Web3_connection/web3_methods";
 import PlatformHead from "./PlatformHead";
 import SidebarSlide from "./SidebarSlide";
+import Footer from "./Footer";
 
 export default function Projectpage() {
   const [singleProject, setSingleProject] = useState([]);
@@ -225,7 +226,7 @@ export default function Projectpage() {
         {modal && (
           <div style={{ zIndex: "5", position: "relative" }}>
             <div onClick={() => toggleModal()} className="overlay-popup"></div>
-            <div className="modal-content py-3" style={{ backgroundColor: "#283046" }}>
+            <div className="modal-content py-3" style={{ backgroundColor: "#283046", top:"-50px" }}>
               <label for="category" className="form-label fw-bold mb-3 text-center  ">
                 Give Rating
               </label>
@@ -276,6 +277,7 @@ export default function Projectpage() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

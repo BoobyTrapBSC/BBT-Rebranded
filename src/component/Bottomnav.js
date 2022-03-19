@@ -66,8 +66,8 @@ export default function Bottomnav() {
             </Link>
           </button>
           <button className="btn">
-            <Link
-              to={trapsheetpdf}
+            <a
+              href="https://drive.google.com/uc?id=1PbT6ef7QUcQM6IA3yfFga9hdTDpf7hua"
               id="mob-link"
               target="_blank"
               rel="noreferrer"
@@ -75,7 +75,7 @@ export default function Bottomnav() {
               <img src={trapsheet} alt="" />
               <br />
               Trapsheet
-            </Link>
+            </a>
           </button>
         </div>
       </nav>

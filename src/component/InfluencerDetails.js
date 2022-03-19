@@ -54,12 +54,26 @@ export default function InfluencerDetails() {
   return (
     <div className="row justify-content-center">
       <div className="container-fluid text-start fs-6">
-        <ul id="skills">
-          <li><b>Return on Investment:</b> {singleInfluencer.roi}</li>
-          <li><b>Engagement Rating:</b> {singleInfluencer.engagementRating}</li>
-          <li><b>Experience:</b> {singleInfluencer.experience}+ Months</li>
-          <li><b>Average Cost:</b> ${singleInfluencer.avgPrice}</li>
-        </ul>
+      <table className="table table-hover" id="skills">
+          <tbody>
+            <tr>
+              <th>Return on Investment:</th>
+              <td>{singleInfluencer.roi}</td>
+            </tr>
+            <tr>
+              <th>Engagement Rating:</th>
+              <td>{singleInfluencer.engagementRating}</td>
+            </tr>
+            <tr>
+              <th>Experience:</th>
+              <td>{singleInfluencer.experience}+ Months</td>
+            </tr>
+            <tr>
+              <th>Average Cost:</th>
+              <td>${singleInfluencer.avgPrice}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       
     </div>

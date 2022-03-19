@@ -13,6 +13,7 @@ import { getTotoalProfile } from "../Web3_connection/ContractMethods";
 import { initInstance } from "../Web3_connection/web3_methods";
 import PlatformHead from "./PlatformHead";
 import SidebarSlide from "./SidebarSlide";
+import Footer from "./Footer";
 
 export default function DYORcards() {
   const [project, setProject] = useState([]);
@@ -185,6 +186,7 @@ export default function DYORcards() {
           {project.map(renderProjects)}
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

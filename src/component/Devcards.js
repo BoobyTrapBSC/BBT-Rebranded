@@ -4,6 +4,7 @@ import { FaTelegramPlane, FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import PlatformHead from "./PlatformHead";
 import SidebarSlide from "./SidebarSlide";
+import Footer from "./Footer";
 
 export default function Devcards() {
   const [dev, setDev] = useState([]);
@@ -40,7 +41,7 @@ export default function Devcards() {
 
   const renderDev = (dev, index) => {
     return (
-      <div className="ownerCard my-5 col-md-3 shadow" key={index}>
+      <div className="ownerCard my-5 col-md-3 shadow fs-6" key={index}>
         <img src={dev.image.asset.url} alt="" />
         <p className="mb-0">{dev.trappoints} Trap Points</p>
         <div id="dev-name">{dev.name}</div>
@@ -89,6 +90,7 @@ export default function Devcards() {
           {dev.map(renderDev)}
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+import Footer from "./Footer";
 import OngoingScam from "./OngoingScam";
 import OwnerScam from "./OwnerScam";
 import PlatformHead from "./PlatformHead";
@@ -48,6 +49,7 @@ export default function PageBoobyTrap() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

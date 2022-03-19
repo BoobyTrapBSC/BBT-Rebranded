@@ -4,6 +4,7 @@ import { FaTelegramPlane, FaTwitter, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import PlatformHead from "./PlatformHead";
 import SidebarSlide from "./SidebarSlide";
+import Footer from "./Footer";
 
 export default function Promoters() {
   const [promoter, setPromoters] = useState([]);
@@ -47,7 +48,7 @@ export default function Promoters() {
 
   const renderDev = (promoter, index) => {
     return (
-      <div className="ownerCard my-5 col-md-3 shadow" key={index}>
+      <div className="ownerCard my-5 col-md-3 shadow fs-6" key={index}>
         <img src={promoter.image.asset.url} alt="" />
         <p className="mb-0">{promoter.trappoints} Trap Points</p>
         <div id="dev-name">{promoter.name}</div>
@@ -100,6 +101,7 @@ export default function Promoters() {
         {promoter.map(renderDev)}
       </div>
     </div>
+    <Footer/>
     </>
   );
 }

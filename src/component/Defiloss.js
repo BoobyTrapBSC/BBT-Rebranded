@@ -6,7 +6,7 @@ export default function Defiloss() {
     return (
         <div id='defiloss-cont' className='text-start py-5 mx-auto'>
             <div className="defi-main px-0 position-relative">
-                <h2>In the past year, the DeFi world<br />has seen over $12 billion in fraud.</h2>
+                <h2>In the past year, the DeFi world has seen over $12 billion in fraud.</h2>
                 <p>Scammers are out there planning new and innovative ways to commit frauds and rob millions of people of their hard earned income. Not everyone is expert at identifying potential Rugpulls and Honeypots and most novice investors fall in the trap of these scams. $BBT is building a Booby-Trap for such scammers by calling them out at the earliest on our “Booby Trap” Dashboard.</p>
                 <button className="btn btnOutline dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Request Listing</button>
                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -26,7 +26,7 @@ export default function Defiloss() {
                         <p>Booby Trap will list information on all potential Rugpulls and Honeypots, keeping track of the exploits found in their contracts and the transfers from these wallets. This dashboard will help investors make well-informed decisions.</p>
                     </div>
                 </div>
-                <div className="col w-50 position-relative overflow-hidden">
+                <div className="col w-auto position-relative overflow-hidden">
                     <img className='defibg' src={defibg} alt="" />
                     {/* <img style={{position:"absolute", left:"20%", top:"20%", boxShadow:"0px 0px 5px #000", borderRadius:"22px"}} className='defibg' src={boobybg} alt="" /> */}
                 </div>

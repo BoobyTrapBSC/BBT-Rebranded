@@ -63,19 +63,47 @@ export default function PromoterDetails() {
   return (
     <div className="row justify-content-center">
       <div className="container-fluid text-start fs-6">
-        <ul id="skills">
-          <li><b>Email:</b> <a href={`mailto:${singlePromoter.email}`}>{singlePromoter.email}</a></li>
-          <li><b>Owner:</b> <a href={singlePromoter.tgOwner}>{singlePromoter.groupowner}</a></li>
-          <li><b>Group Created on:</b> {singlePromoter.groupCreated}</li>
-          <li><b>Admin:</b> <a href={singlePromoter.tgAdmin}>{singlePromoter.admin}</a></li>
-          <li><b>Return on Investment:</b> {singlePromoter.roi}</li>
-          <li><b>Engagement Rating:</b> {singlePromoter.engagementRating}</li>
-          <li><b>Experience:</b> {singlePromoter.experience}+ Months</li>
-          <li><b>Average Cost:</b> ${singlePromoter.avgCost}</li>
-          <li><b>About:</b> {singlePromoter.about}</li>
-        </ul>
+      <table className="table table-hover" id="skills">
+          <tbody>
+            <tr>
+              <th>Email:</th>
+              <td><a href={`mailto:${singlePromoter.email}`}>{singlePromoter.email}</a></td>
+            </tr>
+            <tr>
+              <th>Owner:</th>
+              <td><a href={singlePromoter.tgOwner}>{singlePromoter.groupowner}</a></td>
+            </tr>
+            <tr>
+              <th>Group Created on:</th>
+              <td>{singlePromoter.groupCreated}</td>
+            </tr>
+            <tr>
+              <th>Admin:</th>
+              <td><a href={singlePromoter.tgAdmin}>{singlePromoter.admin}</a></td>
+            </tr>
+            <tr>
+              <th>Return on Investment:</th>
+              <td>{singlePromoter.roi}</td>
+            </tr>
+            <tr>
+              <th>Engagement Rating:</th>
+              <td>{singlePromoter.engagementRating}</td>
+            </tr>
+            <tr>
+              <th>Experience:</th>
+              <td>{singlePromoter.experience}+ Months</td>
+            </tr>
+            <tr>
+              <th>Average Cost:</th>
+              <td>${singlePromoter.avgCost}</td>
+            </tr>
+            <tr>
+              <th>About:</th>
+              <td>{singlePromoter.about}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      
     </div>
   );
 }

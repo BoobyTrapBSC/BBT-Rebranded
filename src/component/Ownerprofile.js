@@ -13,6 +13,7 @@ import { addReview, getProfile, BNBBalance } from "./../Web3_connection/Contract
 import { initInstance } from './../Web3_connection/web3_methods'
 import PlatformHead from "./PlatformHead";
 import SidebarSlide from "./SidebarSlide";
+import Footer from "./Footer";
 
 export default function Ownerprofile() {
 
@@ -224,6 +225,7 @@ export default function Ownerprofile() {
                 </div>
             </div>
         </div>
+        <Footer/>
         </>
     );
 }

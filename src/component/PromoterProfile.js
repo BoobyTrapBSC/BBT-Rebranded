@@ -16,6 +16,7 @@ import { initInstance } from "./../Web3_connection/web3_methods";
 import PromoterDetails from "./PromoterDetails";
 import PlatformHead from "./PlatformHead";
 import SidebarSlide from "./SidebarSlide";
+import Footer from "./Footer";
 
 export default function PromoterProfile() {
   const [singlePromoter, setSinglePromoter] = useState([]);
@@ -242,6 +243,7 @@ export default function PromoterProfile() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

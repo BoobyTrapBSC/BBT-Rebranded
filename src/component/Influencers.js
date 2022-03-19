@@ -4,6 +4,7 @@ import { FaTelegramPlane, FaTwitter, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import PlatformHead from "./PlatformHead";
 import SidebarSlide from "./SidebarSlide";
+import Footer from "./Footer";
 
 export default function Influencers() {
   const [influencer, setInfluencer] = useState([]);
@@ -39,7 +40,7 @@ export default function Influencers() {
 
   const renderDev = (influencer, index) => {
     return (
-      <div className="ownerCard my-5 col-md-3 shadow" key={index}>
+      <div className="ownerCard my-5 col-md-3 shadow fs-6" key={index}>
         <img src={influencer.image.asset.url} alt="" />
         <p className="mb-0">{influencer.trappoints} Trap Points</p>
         <div id="dev-name">{influencer.name}</div>
@@ -92,6 +93,7 @@ export default function Influencers() {
         {influencer.map(renderDev)}
       </div>
     </div>
+    <Footer/>
     </>
   );
 }

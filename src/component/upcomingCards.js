@@ -12,6 +12,7 @@ import { getTotoalProfile } from "./../Web3_connection/ContractMethods"
 import { initInstance } from './../Web3_connection/web3_methods'
 import PlatformHead from "./PlatformHead";
 import SidebarSlide from "./SidebarSlide";
+import Footer from './Footer';
 
 export default function UpcomingCards() {
 
@@ -115,6 +116,7 @@ export default function UpcomingCards() {
         {project.map(renderProjects)}
       </div>
     </div>
+    <Footer/>
     </>
   )
 }

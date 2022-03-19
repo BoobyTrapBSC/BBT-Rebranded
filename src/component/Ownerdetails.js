@@ -93,17 +93,53 @@ export default function Ownerdetails(props) {
 
   return (
     <div className="row justify-content-center">
-      <div style={window.location.pathname.includes("unknown/16") === true ? { display: "block" } : { display: "none" }}>
-        <div className="container-fluid text-start overflow-hidden position-relative marquee" style={{ backgroundColor: "#292B33", color: "#A82323", height: "24px", }}><p><b>Disclaimer</b>: Projects where the identity of its owner is unknown have been listed under "Unknown Owner". The status will be updated once the information on their owner is available.</p></div>
+      <div
+        style={
+          window.location.pathname.includes("unknown/16") === true
+            ? { display: "block" }
+            : { display: "none" }
+        }
+      >
+        <div
+          className="container-fluid text-start overflow-hidden position-relative marquee"
+          style={{
+            backgroundColor: "#292B33",
+            color: "#A82323",
+            height: "24px",
+          }}
+        >
+          <p>
+            <b>Disclaimer</b>: Projects where the identity of its owner is
+            unknown have been listed under "Unknown Owner". The status will be
+            updated once the information on their owner is available.
+          </p>
+        </div>
       </div>
       <div className="container-fluid text-start fs-6">
-        <ul id="skills">
-          <li><b>Experience in DeFi:</b> {singleOwner.experience} Months+</li>
-          <li><b>Number of Projects till date:</b> {singleOwner.numProjects}</li>
-          <li><b>Community Strength:</b> {singleOwner.comStrength}k+</li>
-          <li><b>Avg. Life of Projects:</b> {singleOwner.avgLife} Months</li>
-          <li><b>About:</b> {singleOwner.about}</li>
-        </ul>
+        <table className="table table-hover" id="skills">
+          <tbody>
+            <tr>
+              <th>Experience in DeFi:</th>
+              <td>{singleOwner.experience} Months+</td>
+            </tr>
+            <tr>
+              <th>Number of Projects till date:</th>
+              <td>{singleOwner.numProjects}</td>
+            </tr>
+            <tr>
+              <th>Community Strength:</th>
+              <td>{singleOwner.comStrength}k+</td>
+            </tr>
+            <tr>
+              <th>Avg. Life of Projects:</th>
+              <td>{singleOwner.avgLife} Months</td>
+            </tr>
+            <tr>
+              <th>About:</th>
+              <td>{singleOwner.about}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <hr className="mb-5" />
 
@@ -118,12 +154,24 @@ export default function Ownerdetails(props) {
       >
         Upcoming Projects
       </h3>
-      <h2 style={Array.isArray(singleOwner.uprojects) && singleOwner.uprojects.length === 0 ? { display: "block" } : { display: "none" }}>No Data Available</h2>
+      <h2
+        style={
+          Array.isArray(singleOwner.uprojects) &&
+          singleOwner.uprojects.length === 0
+            ? { display: "block" }
+            : { display: "none" }
+        }
+      >
+        No Data Available
+      </h2>
       <div className="row justify-content-evenly mb-4">
         {singleOwner.uprojects &&
           singleOwner.uprojects.map((upcoming, index) => {
             return (
-              <div className="projectCard mx-2 my-4 col-md-3 px-3 pt-2 pb-4 shadow" key={index}>
+              <div
+                className="projectCard mx-2 my-4 col-md-3 px-3 pt-2 pb-4 shadow"
+                key={index}
+              >
                 <div id="projectHead" className="d-flex">
                   <div className="m-auto">
                     <h3 className="fs-6 dynName">
@@ -193,9 +241,19 @@ export default function Ownerdetails(props) {
                 </div>
                 <div id="projectDesc">
                   <br />
-                  <p>{upcoming.description.length > 150 ? upcoming.description.slice(0, 150) + "..." : upcoming.description}</p>
+                  <p>
+                    {upcoming.description.length > 150
+                      ? upcoming.description.slice(0, 150) + "..."
+                      : upcoming.description}
+                  </p>
                 </div>
-                <Link className="btn shadow-sm" to={{ pathname: `/safehaven/upcomingprojects/${upcoming.slug.current}/${upcoming.id}`, state: { id: upcoming.id } }}>
+                <Link
+                  className="btn shadow-sm"
+                  to={{
+                    pathname: `/safehaven/upcomingprojects/${upcoming.slug.current}/${upcoming.id}`,
+                    state: { id: upcoming.id },
+                  }}
+                >
                   Details
                 </Link>
               </div>
@@ -214,13 +272,25 @@ export default function Ownerdetails(props) {
       >
         Previous Projects
       </h3>
-      <h2 style={Array.isArray(singleOwner.lprojects) && singleOwner.lprojects.length === 0 ? { display: "block" } : { display: "none" }}>No Data Available</h2>
+      <h2
+        style={
+          Array.isArray(singleOwner.lprojects) &&
+          singleOwner.lprojects.length === 0
+            ? { display: "block" }
+            : { display: "none" }
+        }
+      >
+        No Data Available
+      </h2>
 
       <div className="row justify-content-evenly">
         {singleOwner.lprojects &&
           singleOwner.lprojects.map((launched, index) => {
             return (
-              <div className="projectCard mx-2 my-4 col-md-3 px-3 pt-2 pb-4 shadow" key={index}>
+              <div
+                className="projectCard mx-2 my-4 col-md-3 px-3 pt-2 pb-4 shadow"
+                key={index}
+              >
                 <div id="projectHead" className="d-flex">
                   <div className="m-auto">
                     <h3 className="fs-6 dynName">
@@ -301,9 +371,19 @@ export default function Ownerdetails(props) {
                 </div>
                 <div id="projectDesc">
                   <br />
-                  <p>{launched.description.length > 150 ? launched.description.slice(0, 150) + "..." : launched.description}</p>
+                  <p>
+                    {launched.description.length > 150
+                      ? launched.description.slice(0, 150) + "..."
+                      : launched.description}
+                  </p>
                 </div>
-                <Link className="btn shadow-sm" to={{ pathname: `/safehaven/ongoingprojects/${launched.slug.current}/${launched.id}`, state: { id: launched.id } }}>
+                <Link
+                  className="btn shadow-sm"
+                  to={{
+                    pathname: `/safehaven/ongoingprojects/${launched.slug.current}/${launched.id}`,
+                    state: { id: launched.id },
+                  }}
+                >
                   Details
                 </Link>
               </div>

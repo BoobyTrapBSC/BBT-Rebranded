@@ -75,7 +75,7 @@ export default function SidebarSlide() {
   }
 
   return <div>
-      <Menu className='sidebarSlide' isOpen={isOpen} onOpen={handleIsOpen} onClose={handleIsOpen} pageWrapId={ "sidebarWrapper" } outerContainerId={ "platform-cont" } styles={ styles }>
+      <Menu className='sidebarSlide' isOpen={isOpen} onOpen={handleIsOpen} onClose={handleIsOpen} styles={ styles }>
         <Link to="/"><img style={{marginBottom:"35px", padding:"0"}} width="100%" src={logo} alt="" /></Link>
         <Link id="home" className={window.location.pathname.includes("safehaven") === true ? "menu-item active" : "menu-item"} to="/safehaven">SAFE HAVEN</Link>
         <Link id="about" className={window.location.pathname.includes("boobytrap") === true ? "menu-item active" : "menu-item"} to="/boobytrap">BOOBY TRAP</Link>

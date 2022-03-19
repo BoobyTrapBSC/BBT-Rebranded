@@ -1,5 +1,6 @@
 import React from 'react';
 import Chart from './Chart';
+import Footer from './Footer';
 import PlatformHead from "./PlatformHead";
 import SidebarSlide from "./SidebarSlide";
 
@@ -196,6 +197,7 @@ export default function Faqs() {
                     </div>
                 </div>
             </div>
+            <Footer/>   
         </>
     )
 }

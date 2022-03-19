@@ -28,12 +28,13 @@ export default function InEligible() {
     };
     fetchBal();
   }, []);
+  console.log(BBTBal + " & " +BBTLimit)
 
   return (
     <>
       <SidebarSlide />
       <PlatformHead />
-      <div style={{ width: "100%", height: "100vh" }}>
+      <div style={{ width: "100%", height: "100vh", position: "relative" }}>
         <div
           style={{
             position: "absolute",
@@ -50,26 +51,19 @@ export default function InEligible() {
           </h2>
           <a
             href="https://pancakeswap.finance/swap?outputCurrency=0x609b88f5a4aBB7A55bA0c6d255C3F1b1bC7A4D76"
-            style={
-              BBTBal <= BBTLimit ? { display: "block" } : { display: "none" }
-            }
+            // style={
+            //   BBTBal <= BBTLimit ? { display: "block" } : { display: "none" }
+            // }
             target="_blank"
+            className="btnYellow btn"
             rel="noreferrer"
-          >
-            <button className="getaccess btn buttonYellow px-2 mt-3">
-              GET ACCESS
-            </button>
-          </a>
+          >GET ACCESS</a> <br /> <br />
           <Link
-            to="/safehaven/safuprojects"
-            style={
-              BBTBal >= BBTLimit ? { display: "block" } : { display: "none" }
-            }
-          >
-            <button className="getaccess btn buttonYellow mt-3">
-              Access Safe Haven
-            </button>
-          </Link>
+          className="btn btnYellow m-auto"
+            to="/safehaven/"
+            // style={BBTBal >= BBTLimit ? { display: "block", width:"fit-content" } : { display: "none" }}
+            >
+              Access Safe Haven</Link>
         </div>
       </div>
     </>

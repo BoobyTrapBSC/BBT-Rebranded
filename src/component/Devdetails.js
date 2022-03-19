@@ -53,14 +53,27 @@ export default function Devdetails(props) {
   return (
     <div className="row justify-content-center">
       <div className="container-fluid text-start fs-6">
-        <ul id="skills">
-          <li><b>Experience in DeFi:</b> {singleDev.experience}+ Months</li>
-          <li><b>Skills:</b> {singleDev.skills}</li>
-          <li><b>Other Skills:</b> {singleDev.otherSkills}</li>
-          <li><b>Number of Projects till date:</b> {singleDev.numProjects}</li>
-        </ul>
+      <table className="table table-hover" id="skills">
+          <tbody>
+            <tr>
+              <th>Experience in DeFi:</th>
+              <td>{singleDev.experience}+ Months</td>
+            </tr>
+            <tr>
+              <th>Skills:</th>
+              <td>{singleDev.skills}</td>
+            </tr>
+            <tr>
+              <th>Other Skills:</th>
+              <td>{singleDev.otherSkills}</td>
+            </tr>
+            <tr>
+              <th>Number of Projects till date:</th>
+              <td>{singleDev.numProjects}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      
     </div>
   );
 }

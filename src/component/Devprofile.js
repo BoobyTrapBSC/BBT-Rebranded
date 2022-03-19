@@ -16,6 +16,7 @@ import { initInstance } from "./../Web3_connection/web3_methods";
 import Devdetails from "./Devdetails";
 import PlatformHead from "./PlatformHead";
 import SidebarSlide from "./SidebarSlide";
+import Footer from "./Footer";
 
 export default function Devprofile() {
   const [singleDev, setSingleDev] = useState([]);
@@ -234,6 +235,7 @@ export default function Devprofile() {
         </div>
       </div>
     </div>
+    <Footer/>
     </>
   );
 }

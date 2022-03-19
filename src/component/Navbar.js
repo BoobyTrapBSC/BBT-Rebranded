@@ -1,6 +1,5 @@
 import React from 'react'
 import logo from "../images/logo.png"
-import trapsheetpdf from '../whitepaper/BBT _TrapSheet_V3.pdf'
 import { Link } from 'react-router-dom'
 import { FaTelegramPlane, FaTwitter } from "react-icons/fa";
 
@@ -26,7 +25,7 @@ export default function Navbar() {
                                 <a className="nav-link" href="#roadmap-cont">Roadmap</a>
                             </li>
                             <li className="nav-item">
-                                <a href={trapsheetpdf} target="_blank" rel="noreferrer" className="nav-link">Trapsheet</a>
+                                <a href="https://drive.google.com/uc?id=1PbT6ef7QUcQM6IA3yfFga9hdTDpf7hua" target="_blank" rel="noreferrer" className="nav-link">Trapsheet</a>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/docs">FAQs</Link>
