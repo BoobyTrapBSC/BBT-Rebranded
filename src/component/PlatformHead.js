@@ -3,7 +3,6 @@ import Web3 from "web3";
 import { ABI } from "../ABI/Rating";
 import {AiOutlineLogout} from "react-icons/ai"
 import {
-  initInstance,
   loginProcess,
   getAccount,
 } from "../Web3_connection/web3_methods";
@@ -17,19 +16,16 @@ import axios from "axios";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import Metamask from "./../images/metamask.png";
 import WalletConnect from "./../images/walletconnect.png";
-import { Interface } from "@ethersproject/abi";
+import {SelectWallet,DisconnectWallet} from './../Web3_connection/web3'
 import video from '../videos/video-background.m4v'
 
 const Moralis = require("moralis");
 Moralis.initialize("3Amct4xq6AlkAngmYLPFJSJeFRe4nxbbyvzlIcOC");
 Moralis.serverURL = "https://4bffcvuqchek.usemoralis.com:2053/server";
-const provider = "walletconnect";
-let user;
-let web3;
-let result = "";
+
 
 export default function PlatformHead() {
-  const [userAddress, setUserAddress] = useState();
+  const [userAddress, setUserAddress] = useState(window.User);
   const [BBTBal, setBBTBal] = useState(0);
   const [price, setPrice] = useState(0);
   const [bbtian, setBBTian] = useState(0);
@@ -37,44 +33,38 @@ export default function PlatformHead() {
   const [modal, setModal] = useState(false);
   const [showDis, setShowDis] = useState(false);
   const [preventDuble, setPreventDuble] = useState(true)
-  // useEffect(()=>{
-  //   const ConnectWallet =async()=> {
-  //     await initInstance();
-  //     window.ethereum.enable();
-  //     const address = await getAccount();
-  //     setUserAddress(address);
-  // }
-  // },[])
+  
   useEffect(async()=>{
-    var provider = new WalletConnectProvider({
-      rpc: {
-        56: "https://bsc-dataseed1.ninicoin.io",
-        // ...
-      },
-      bridge: "https://bridge.walletconnect.org",
-    });
-    console.log('Wallet is ',provider)
-    if(provider.isWalletConnect == true){
-      // await provider.disconnect();
+    try{
+      if(window.provide){
+       await TokenDetails();
+       await fetchBal();
+      }
     }
-  },[])
+    catch(e){
+      //
+    }
+  },[window.provide])
 
   const ConnectWalletMetaMask = async () => {
-    toggleModal();
-    window.w3 = undefined;
-    await initInstance();
-    const isConnect = await loginProcess();
-    if (isConnect) {
+    window.MM = true
+    window.WC = false
+    await loginProcess();
+    await SelectWallet();
+    if (true) {
       const address = await getAccount();
+      console.log("address",address)
+      window.User = address
       setUserAddress(address);
-      fetchBal();
-      TokenDetails();
     }
+
+    toggleModal();
   };
+
+
   const toggleModal = () => {
     setModal(!modal);
   };
-
   if (modal) {
     document.body.classList.add("active-modal");
   } else {
@@ -84,36 +74,23 @@ export default function PlatformHead() {
   const authButton = document.getElementById("btn-auth");
   const resultBox = document.getElementById("result");
 
+
   const ConnectWallet = async () => {
-    toggleModal();
+    window.WC = true
+    window.MM = false
       try {
-        var provider = new WalletConnectProvider({
-          rpc: {
-            56: "https://bsc-dataseed1.ninicoin.io",
-            // ...
-          },
-          bridge: "https://bridge.walletconnect.org",
-        });
-        
-        if(preventDuble){
-          const pro = await provider.enable();
-          if(pro){
-            setUserAddress(pro[0])
-          }
-        }
-        setPreventDuble(false)
-        setWalletProvider(provider);
-        const web3 = new Web3(provider);
-        window.w3 = web3;
-        await initInstance(web3);
-        const acount = await getAccount();
-        setUserAddress(acount);
-        console.log("connect", web3, acount);
+        await SelectWallet();
+        const address = await getAccount();
+        console.log("address",address)
+        window.User = address
+        setUserAddress(address);
+        toggleModal();
       } catch (error) {
         console.log("authenticate failed", error);
       }
-      await renderApp();
+      
   };
+
 
   const TokenDetails = async () => {
     axios
@@ -128,26 +105,23 @@ export default function PlatformHead() {
       });
   };
 
+
   async function logout() {
     try {
       setUserAddress(undefined);
-      await WalletProvider.disconnect();
-    
-      setPreventDuble(true)
-      setShowDis(false)
-      // window.location.reload();
+      window.User = undefined
+      await DisconnectWallet();
+      showDisconnect();
+      window.location.reload();
     } catch (error) {
       console.log("logOut failed", error);
     }
-    result = "";
-    // await renderApp();
   }
 
   const fetchBal = async () => {
-
     let currentBal = await getBBTBalance();
     let titan = await getTokenBalance();
-
+    console.log(currentBal)
     setBBTian(titan);
     setBBTBal(currentBal);
   };
@@ -157,47 +131,8 @@ export default function PlatformHead() {
     const second = add.slice(35);
     return first + "..." + second;
   };
+  console.log('user', userAddress)
 
-  async function renderApp() {
-    await enableWeb3();
-    await fetchBal();
-    await TokenDetails();
-  }
-
-  // const giverating = async () => {
-  //   try {
-  //     const contract = new window.w3.eth.Contract(
-  //       ABI,
-  //       "0x2EffB2656506c45d3D7661e2944A8879C7a94401"
-  //     );
-  //     const data = await contract.methods.addReview(17, 5).send({
-  //       from: userAddress,
-  //     });
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // };
-
-  async function testCall() {
-    try {
-      result = await web3.eth.personal.sign(
-        "Hello world",
-        user.get("ethAddress")
-      );
-    } catch (error) {
-      console.log("testCall failed", error);
-    }
-    renderApp();
-  }
-
-  async function enableWeb3() {
-    try {
-      const acount = await getAccount();
-      console.log("connect", acount);
-    } catch (error) {
-      console.log("testCall failed", error);
-    }
-  }
 
   const showDisconnect =()=>{
     if(!showDis){
@@ -215,15 +150,7 @@ export default function PlatformHead() {
       <div className="position-relative">
         <div className="container-fluid">
           <div className="topBar d-flex flex-row-reverse pt-3">
-            {/* <button id='btn-auth' className="btn" onClick={() => ConnectWalletMetaMask()}>
-              {userAddress ? Slicing(userAddress) : 'Connect Wallet'}{' '}
-              {userAddress ? (
-                <img className="mr-1" src={Logo} width={30} height={30} />
-              ) : (
-                ''
-              )}
-             
-            </button> */}
+            
             {showDis ? <button className="Connect-drop btn btnOutline" onClick={()=> logout()}>Disconnect</button>:''}
             {!userAddress ? (
               <button className="btn btnOutline ms-2" onClick={() => toggleModal()}>
@@ -238,25 +165,6 @@ export default function PlatformHead() {
               </div>
             )}
             <br />
-
-            {/* {userAddress ? <button id='btn-auth' className="btn" onClick={() => logout()}>
-              {userAddress ? Slicing(userAddress) : 'Connect Wallet'}{' '}
-              {userAddress ? (
-                <img className="mr-1" src={Logo} width={30} height={30} />
-              ) : (
-                ''
-              )}
-             
-            </button> :
-            <button id='btn-auth' className="btn" onClick={() => ConnectWallet()}>
-              {userAddress ? Slicing(userAddress) : 'Connect Wallet'}{' '}
-              {userAddress ? (
-                <img className="mr-1" src={Logo} width={30} height={30} />
-              ) : (
-                ''
-              )}
-             
-            </button>} */}
             {modal && (
               <div style={{ zIndex: "5" }}>
                 <div
@@ -301,11 +209,11 @@ export default function PlatformHead() {
           <div className="container" style={{maxWidth:"1150px"}}>
             <div className="row  my-5 justify-content-around">
               <div className="col-md-3 currentStat">
-                <h3>{BBTBal.toFixed(2)} </h3>
+                <h3>{Number(BBTBal).toFixed(2)} </h3>
                 <span>Your $BBT Balance</span>
               </div>
               <div className="col-md-3 currentStat">
-                <h3>${(price * 881909880.6534261).toFixed(2)}</h3>
+                <h3>${Number(price * 881909880.6534261).toFixed(2)}</h3>
                 <span>Market Cap</span>
               </div>
               <div className="col-md-3 currentStat">

@@ -1,41 +1,53 @@
 import Web3 from 'web3';
 import { ConnectorID, CONNECTOR_ID } from './Constants';
 import {envprod} from './Envrionments';
+import WalletConnectProvider from "@walletconnect/web3-provider";
+import { getWeb3 } from './web3';
 
 export let web3Instance = null;
 export let web3Modal = null;
 export let provider = null;
 
 export const initInstance = async (web3provider) => {
-    if (web3Instance) {
-        return web3Instance;
-    } else {
-        if(web3provider){
-            web3Instance = web3provider;
-            console.log("moralis provide",window.w3)
-        }
-        else{
-            provider = await getValidProvider();
-            console.log("metamask provide",provider)
-            web3Instance = new Web3(provider);
-        }
-    }
+    // if (web3Instance) {
+    //     return web3Instance;
+    // } else {
+    //     if(window.WC){
+    //         var provider = new WalletConnectProvider({
+    //             rpc: {
+    //               56: "https://bsc-dataseed1.ninicoin.io",
+    //               // ...
+    //             },
+    //             bridge: "https://bridge.walletconnect.org",
+    //         });
+    //         const pro = await provider.enable();
+    //         web3Instance = provider;
+    //         if(pro){
+    //             window.provider = true
+    //         }
+    //     }
+    //     if(window.MM){
+    //         provider = await getValidProvider();
+    //         console.log("metamask provide",provider)
+    //         web3Instance = new Web3(provider);
+    //     }
+    // }
 }
 
 export const loginProcess = async () => {
     await window.ethereum.enable();
     try {
-        const chainId = await web3Instance.eth.getChainId();
-        if(chainId !== envprod.React_App_chain_Id){
-            alert("Please Switch to BSC Mainnet")
-        }
-        else{
-            return true;
-        }
+        // const chainId = await web3Instance.eth.getChainId();
+        // if(chainId !== envprod.React_App_chain_Id){
+        //     alert("Please Switch to BSC Mainnet")
+        // }
+        // else{
+        //     return true;
+        // }
     }
     catch (err) {
-        console.log('check chain error:', err);
-        window.location.replace('/')
+        // console.log('check chain error:', err);
+        // window.location.replace('/')
     }
     // await login();
 }
@@ -229,14 +241,13 @@ export const clearInstance = () => {
 }
 
 export const getAccount = async () => {
-    // await initInstance();
-    const account = await web3Instance.eth.getAccounts();
+    const web3 = getWeb3();
+    const account = await web3.eth.getAccounts();
     return account[0];
 }
 
 export const getContract = (abi, address) => {
-    let web3 = web3Instance;
-    console.log("contract",web3)
+    const web3 = getWeb3();
     const customeContract = new web3.eth.Contract(abi, address);
     return customeContract;
 }

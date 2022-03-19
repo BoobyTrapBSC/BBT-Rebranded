@@ -1,22 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Outlet, Link } from "react-router-dom";
 import PlatformHead from "./PlatformHead";
 import Safecards from "./Safecards";
 import SafeOwners from "./SafeOwners";
 import SidebarSlide from "./SidebarSlide";
+import {getBBTBalance} from './../Web3_connection/ContractMethods'
+import InEligible from './InEligible'
+
 
 export default function SafeHaven() {
   const [activeTab, setActiveTab] = useState(1);
+  const [bbtBalance, setBBTBalance] = useState(0);
 
   const toggleActive = (num) => {
     setActiveTab(num);
   };
 
+  useEffect(async()=>{
+    const init = async()=> {
+      const balance = await getBBTBalance();
+      setBBTBalance(balance)
+    }
+
+    try{
+      if(window.provide){
+        init();
+      }
+    }
+    catch(e){
+      console.log("error",e)
+    }
+  },[window.provide])
+  
+  console.log("Balance is safeheaver",bbtBalance)
   return (
     <>
+    {bbtBalance != 0 
+    ?<>
     <SidebarSlide/>
     <PlatformHead/>
-      <div
+    </>
+    :''}
+     {bbtBalance != 0 ? <div
         id="safehaven-cont"
         className="pt-5 position-relative text-light"
         style={{ borderTop: "1px solid #474747", maxWidth:"1150px", margin:"auto", }}
@@ -59,7 +84,7 @@ export default function SafeHaven() {
             {activeTab === 1 ? <Safecards/>:<SafeOwners/>}
           </div>
         </div>
-      </div>
+      </div>:<InEligible/>}
     </>
   );
 }
