@@ -9,6 +9,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 window.WC = true
 window.User = undefined
+window.bbtbalance = 0 
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

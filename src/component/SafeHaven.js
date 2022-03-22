@@ -17,32 +17,32 @@ export default function SafeHaven() {
     setActiveTab(num);
   };
 
-  useEffect(async()=>{
+  useEffect(()=>{
+
     const init = async()=> {
       const balance = await getBBTBalance();
       setBBTBalance(balance)
+      console.log("Balance",balance)
     }
-
     try{
-      if(window.provide){
+      setInterval(()=>{
         init();
-      }
+      },4000)
     }
     catch(e){
       console.log("error",e)
     }
-  },[window.provide])
-  
-  console.log("Balance is safeheaver",bbtBalance)
+  },[])
+  console.log("Balance",bbtBalance)
   return (
     <>
-      {bbtBalance != 0
+      {bbtBalance >= 150000
       ?<>
       <SidebarSlide/>
       <PlatformHead/>
       </>
       :''}
-      {bbtBalance != 0 ? 
+      {bbtBalance >= 150000 ? 
       <div
           id="safehaven-cont"
           className="pt-5 position-relative text-light"

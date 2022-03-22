@@ -95,9 +95,8 @@ export const getBBTBalance = async () => {
     const account = await getAccount()
     const contract = getContract(BBT, envprod.React_App_BBT)
     const balance = await contract.methods.balanceOf(account).call()
-    console.log('acount', balance)
     return Number(balance) / 10 ** 18
   } catch (e) {
-    //
+  //
   }
 }

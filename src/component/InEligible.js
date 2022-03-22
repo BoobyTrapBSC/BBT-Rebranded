@@ -21,6 +21,7 @@ export default function InEligible() {
   }, []);
 
   const [BBTBal, setBBTBal] = useState(0);
+
   useEffect(() => {
     const fetchBal = async () => {
       let currentBal = await getBBTBalance();
@@ -28,7 +29,7 @@ export default function InEligible() {
     };
     fetchBal();
   }, []);
-  console.log(BBTBal + " & " +BBTLimit)
+
 
   return (
     <>

@@ -53,11 +53,9 @@ export default function PlatformHead() {
     await SelectWallet();
     if (true) {
       const address = await getAccount();
-      console.log("address",address)
       window.User = address
       setUserAddress(address);
     }
-
     toggleModal();
   };
 
@@ -121,6 +119,7 @@ export default function PlatformHead() {
   const fetchBal = async () => {
     let currentBal = await getBBTBalance();
     let titan = await getTokenBalance();
+    console.log("balance is ",currentBal)
     console.log(currentBal)
     setBBTian(titan);
     setBBTBal(currentBal);
@@ -131,7 +130,7 @@ export default function PlatformHead() {
     const second = add.slice(35);
     return first + "..." + second;
   };
-  console.log('user', userAddress)
+  
 
 
   const showDisconnect =()=>{
@@ -209,7 +208,7 @@ export default function PlatformHead() {
           <div className="container" style={{maxWidth:"1150px"}}>
             <div className="row  my-5 justify-content-around">
               <div className="col-md-3 currentStat">
-                <h3>{Number(BBTBal).toFixed(2)} </h3>
+                <h3>{!isNaN(BBTBal) ? Number(BBTBal).toFixed(2): 0} </h3>
                 <span>Your $BBT Balance</span>
               </div>
               <div className="col-md-3 currentStat">
@@ -221,7 +220,7 @@ export default function PlatformHead() {
                 <span>Token Price</span>
               </div>
               <div className="col-md-3 currentStat">
-                <h3>{bbtian} </h3>
+                <h3>{bbtian ? bbtian : 0} </h3>
                 <span>$BBTians</span>
               </div>
             </div>
