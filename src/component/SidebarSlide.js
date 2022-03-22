@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, forwardRef, useImperativeHandle} from "react";
 import {
   ProSidebar,
   Menu,
@@ -9,7 +9,7 @@ import {
 } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
 import logo from '../images/logo-text.png'
-import { FaGem, FaList, FaCode, FaSuitcase, FaTelegramPlane, FaTwitter, FaTiktok, FaInstagram, FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from "react-icons/fa";
+import { FaGem, FaList, FaCode, FaSuitcase, FaTelegramPlane, FaTwitter, FaTiktok, FaInstagram } from "react-icons/fa";
 import { SiCrowdsource} from "react-icons/si";
 import { BsFillFileEarmarkLockFill} from "react-icons/bs";
 import {MdOutlineCastForEducation} from 'react-icons/md'
@@ -17,9 +17,16 @@ import {GiWolfTrap, GiNewShoot, GiBugleCall, GiPayMoney} from 'react-icons/gi'
 import {HiOutlineDocumentText} from 'react-icons/hi'
 import {Link} from 'react-router-dom'
 
-export default function SidebarSlide(props) {
+export default function SidebarSlide(props, ref) {
 
   const [isCollapse, setIsCollapse] = useState(false)
+
+  useImperativeHandle(ref, () => ({
+    toggleCollapse(){
+      // setIsCollapse(!isCollapse)
+      console.log("Clicked")
+    }
+  }))
 
   return (
     <ProSidebar collapsed={isCollapse} toggled={false} breakPoint="lg">

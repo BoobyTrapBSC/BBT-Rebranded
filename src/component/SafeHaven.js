@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Outlet, Link } from "react-router-dom";
 import PlatformHead from "./PlatformHead";
 import Safecards from "./Safecards";
@@ -8,8 +8,7 @@ import {GiHamburgerMenu} from 'react-icons/gi'
 import { getBBTBalance } from './../Web3_connection/ContractMethods'
 import InEligible from './InEligible'
 
-
-export default function SafeHaven() {
+export default function SafeHaven(props) {
   const [activeTab, setActiveTab] = useState(1);
   const [bbtBalance, setBBTBalance] = useState(0);
 
@@ -33,13 +32,15 @@ export default function SafeHaven() {
     }
   }, [window.provide])
 
-  console.log("Balance is safeheaver", bbtBalance)
+  // console.log("Balance is safeheaver", bbtBalance)
+  const sidebarRef = useRef()
+
   return (
     <div style={{display:"flex",}}>
-        <SidebarSlide/>
+        <SidebarSlide ref={sidebarRef}/>
       <div className="globalCont">
       <PlatformHead/>
-      <button id="pro-sidebar-burger"><GiHamburgerMenu/></button>
+      <button id="pro-sidebar-burger" onClick={sidebarRef.current.toggleCollapse()}><GiHamburgerMenu/></button>
         {bbtBalance != 0 ?
           <div
           id="safehaven-cont"
