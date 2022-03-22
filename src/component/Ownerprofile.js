@@ -33,7 +33,7 @@ export default function Ownerprofile() {
             `*[slug.current == "${slug}"] {
               name,
               alias,
-              trapPoints,
+              trappoints,
               numProjects,
               experience,
               slug,
@@ -167,13 +167,13 @@ export default function Ownerprofile() {
                         <Breadcrumb.Item href="/safehaven/projectowner">
                         Safe Haven
                         </Breadcrumb.Item>
-                        <Breadcrumb.Item active>Profile</Breadcrumb.Item>
+                        <Breadcrumb.Item active>{singleOwner.name}</Breadcrumb.Item>
                     </Breadcrumb>
                     <div className="col-lg-8">
                         <div className="dev-main text-light">
                             <h1>{name}</h1>
                             <div className="fs-6 fw-normal"><span className="review-star fs-5"> {start(avgRating)} </span> ({countreview} Reviews)</div>
-                            <p className="my-1">{trappoint} Trap Points</p>
+                            <p className="my-1">{singleOwner.trappoints} Trap Points</p>
                             <p className='fw-normal fs-6'>
                                 0 Trap Points means the safest! lower trap points means safer! Read
                                 more about{" "}
