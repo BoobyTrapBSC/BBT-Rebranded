@@ -277,13 +277,20 @@ button:active {
 }
 @media only screen and (max-width: 420px) {
   .topBar {
-    flex-direction: column-reverse !important;
+    /* flex-direction: column-reverse !important; */
     justify-content: end;
   }
   .topBar .btn {
     width: fit-content;
     align-self: flex-end;
     margin-left: 0 !important;
+    padding: 5px 15px;
+    font-size: 14px;
+    margin-right: 5px;
+  }
+  .globalCont{
+    width: 90% !important;
+    margin: auto !important;
   }
 }
 @media only screen and (max-width: 350px) {

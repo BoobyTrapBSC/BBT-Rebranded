@@ -208,7 +208,7 @@ body.active-modal {
 }
 #hero-container p{
   font-size: 18px;
-  color: #95a2b3;
+  color: #c9d3df;
 }
 .heroBtn{
   display: flex;
@@ -599,6 +599,10 @@ a{
 .globalCont{
   width: 100%;
   margin-left: 270px;
+}
+.pro-menu .active #pro-sidebar-link{
+  color: #000;
+  font-weight: 500;
 }
 
 /* PLATFORM */

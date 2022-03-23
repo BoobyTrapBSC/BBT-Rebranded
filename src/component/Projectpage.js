@@ -14,9 +14,10 @@ import {
 import { getAccount, initInstance } from "./../Web3_connection/web3_methods";
 import PlatformHead from "./PlatformHead";
 import SidebarSlide from "./SidebarSlide";
-import Footer from "./Footer";
+import {GiHamburgerMenu} from 'react-icons/gi'
 
 export default function Projectpage() {
+  const [lg, setlg] = useState(false)
   const [singleProject, setSingleProject] = useState([]);
   const [rating, setRating] = useState("SAFU (5 Start)");
   const [bnbBal, setBNBBal] = useState(0);
@@ -171,9 +172,11 @@ export default function Projectpage() {
   };
 
   return (
-    <>
-      <SidebarSlide />
+    <div style={{display:"flex",}}>
+      <SidebarSlide lg={lg}/>
+      <div className="globalCont">
       <PlatformHead />
+      <button id="pro-sidebar-burger" onClick={() => {setlg(!lg)}}><GiHamburgerMenu/></button>
       <div id="pagesafe-cont" className="owner-prof-cont position-relative projectpage-cont" style={{ borderTop: "1px solid #474747", margin:"auto", maxWidth:"1150px" }}>
         <div className="safe-head py-3 container-fluid">
           <div className="head-content">
@@ -277,7 +280,7 @@ export default function Projectpage() {
           </div>
         </div>
       </div>
-      <Footer/>
-    </>
+    </div>
+    </div>
   );
 }

@@ -8,7 +8,7 @@ import {GiHamburgerMenu} from 'react-icons/gi'
 import { getBBTBalance } from './../Web3_connection/ContractMethods'
 import InEligible from './InEligible'
 
-export default function SafeHaven(props) {
+export default function SafeHaven() {
   const [activeTab, setActiveTab] = useState(1);
   const [bbtBalance, setBBTBalance] = useState(0);
 
@@ -33,14 +33,14 @@ export default function SafeHaven(props) {
   }, [window.provide])
 
   // console.log("Balance is safeheaver", bbtBalance)
-  const sidebarRef = useRef()
+  const [lg, setlg] = useState(false)
 
   return (
     <div style={{display:"flex",}}>
-        <SidebarSlide ref={sidebarRef}/>
+        <SidebarSlide lg={lg}/>
       <div className="globalCont">
       <PlatformHead/>
-      <button id="pro-sidebar-burger" onClick={sidebarRef.current.toggleCollapse()}><GiHamburgerMenu/></button>
+      <button id="pro-sidebar-burger" onClick={() => {setlg(!lg)}}><GiHamburgerMenu/></button>
         {bbtBalance != 0 ?
           <div
           id="safehaven-cont"

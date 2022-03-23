@@ -8,12 +8,12 @@ import {
   FaDiscord,
   FaInstagram,
 } from "react-icons/fa";
+import {GiHamburgerMenu} from 'react-icons/gi'
 import { Link } from "react-router-dom";
 import { getTotoalProfile } from "../Web3_connection/ContractMethods";
 import { initInstance } from "../Web3_connection/web3_methods";
 import PlatformHead from "./PlatformHead";
 import SidebarSlide from "./SidebarSlide";
-import Footer from "./Footer";
 
 export default function DYORcards() {
   const [project, setProject] = useState([]);
@@ -63,6 +63,8 @@ export default function DYORcards() {
   }, []);
   console.log(project)
   console.log("Total profile", CountProfile);
+
+  const [lg, setlg] = useState(false)
 
   // RENDER PROJECTS
   const renderProjects = (project, index) => {
@@ -166,9 +168,11 @@ export default function DYORcards() {
   };
 
   return (
-    <>
-      <SidebarSlide />
+    <div style={{display:"flex",}}>
+      <SidebarSlide lg={lg}/>
+      <div className="globalCont">
       <PlatformHead />
+      <button id="pro-sidebar-burger" onClick={() => {setlg(!lg)}}><GiHamburgerMenu/></button>
       <div style={{position:"relative", maxWidth:"1150px", margin:"auto", color:"#fff"}}>
         <h1 style={{ borderTop: "1px solid #474747", }} className="pt-5">DYOR PROJECTS</h1>
         <h2>Shoutout against scammers &amp; fraudsters</h2>
@@ -186,7 +190,7 @@ export default function DYORcards() {
           {project.map(renderProjects)}
         </div>
       </div>
-      <Footer/>
-    </>
+    </div>
+    </div>
   );
 }

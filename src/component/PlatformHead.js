@@ -160,7 +160,7 @@ export default function PlatformHead() {
               <div className="">
                 <button className="btn btnOutline ms-2" onClick={() => showDisconnect()}>
                   {Slicing(userAddress)}{" "}
-                  <img className="mr-1" src={Logo} alt="" width={30} height={30} /> {" "}&nbsp;&nbsp;<AiOutlineLogout fill='#ffffff' size={20}/>
+                  <img className="mr-1" src={Logo} alt="" width={25} height={25} /> {" "}&nbsp;&nbsp;<AiOutlineLogout fill='#ffffff' size={20}/>
                 </button><br/>
               </div>
             )}

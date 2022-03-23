@@ -13,10 +13,11 @@ import { addReview, getProfile, BNBBalance } from "./../Web3_connection/Contract
 import { initInstance } from './../Web3_connection/web3_methods'
 import PlatformHead from "./PlatformHead";
 import SidebarSlide from "./SidebarSlide";
-import Footer from "./Footer";
+import {GiHamburgerMenu} from 'react-icons/gi'
 
 export default function Ownerprofile() {
 
+    const [lg, setlg] = useState(false)
     const [singleOwner, setSingleOwner] = useState([]);
     const [rating, setRating] = useState('SAFU (5 Start)');
     const [bnbBal,setBNBBal] = useState(0)
@@ -155,9 +156,11 @@ export default function Ownerprofile() {
     }
     
     return (
-        <>
-        <SidebarSlide />
+        <div style={{display:"flex",}}>
+            <SidebarSlide lg={lg}/>
+        <div className="globalCont">
         <PlatformHead />
+      <button id="pro-sidebar-burger" onClick={() => {setlg(!lg)}}><GiHamburgerMenu/></button>
         <div id="pagesafe-cont" className="owner-prof-cont m-auto">
             <ToastContainer />
             <div className="safe-head py-3 position-relative container-fluid" style={{margin:"auto", maxWidth:"1150px"}}>
@@ -225,7 +228,7 @@ export default function Ownerprofile() {
                 </div>
             </div>
         </div>
-        <Footer/>
-        </>
+        </div>
+        </div>
     );
 }
