@@ -19,7 +19,7 @@ export default function About() {
               <h3>An extra layer of protection</h3>
               <p>Utilizing Trap-Points system $BBT display the most legit devs and projects on the SAFE HAVEN platform. $BBT holders who invest in projects listed on that platform will see their investment insured by BoobyTrap reimbursed should any fraud take place.</p>
             </div>
-            <div className="d-flex py-3 mt-5" id='aboutList'>
+            <div className="d-flex py-3 mt-5 fw-normal" id='aboutList'>
               <ul>
                 <li>TRAP POINTS SYSTEM</li>
                 <li>COMMUNITY GOVERNANCE MODEL</li>
@@ -29,7 +29,7 @@ export default function About() {
               <ul>
                 <li>BOOBY TRAP PLATFORM</li>
                 <li>$BBT SQUARE -FREELANCING ON DeFi</li>
-                <li>INSURANCE DAO - Making Secure DeFi a Reality</li>
+                <li>INSURANCE DAO - MAKING SECURE DEFI A REALITY</li>
               </ul>
             </div>
           {/* </div> */}

@@ -57,7 +57,7 @@ export default function SectionFAQs() {
                 We have already released our first utility Safe Haven. Some
                 exciting utilities to be released in the near future, we will
                 start with Escrow payment services for the service providers in
-                DeFi space, followed by Insurance Dao, Launchpad and many more .
+                DeFi space, followed by Insurance DAO, Launchpad and many more .
                 We are working toward building whole ecosystem.
               </div>
             </div>

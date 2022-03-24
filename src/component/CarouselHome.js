@@ -29,7 +29,7 @@ export default function CarouselHome() {
         return (
             <div className='d-flex shadow-sm justify-content-evenly p-2 item' key={index}>
                 <img src={safuProject.image.asset.url} alt='' />
-                <Link style={{textDecoration:"none", color:"#000", fontSize:"16px"}} to={{ pathname: `/safehaven/safuprojects/${safuProject.slug.current}/${safuProject.id}`, state:{id:safuProject.id}}}><span className='m-auto'>{safuProject.name}</span></Link>
+                <Link style={{textDecoration:"none", color:"#000", fontSize:"16px"}} to={{ pathname: `/safehaven/safuprojects/${safuProject.slug.current}/${safuProject.id}`, state:{id:safuProject.id}}}><span className='m-auto'>{safuProject.name.length > 15 ? safuProject.name.slice(0,15) + "...": safuProject.name}</span></Link>
             </div>
         )
     }
