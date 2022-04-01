@@ -45,8 +45,10 @@ export default function Roadmap() {
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
+          contentStyle={{ background: '#441C72', color: '#fff' }}
+          contentArrowStyle={{ borderRight: '7px solid  #441C72' }}
           date="April 2022"
-          iconStyle={{ background: '#a28eb9', color: '#fff' }}
+          iconStyle={{ background: '#441C72', color: '#fff' }}
           icon={<GiPoliceBadge />}
         >
           <h3 className="vertical-timeline-element-title">PHASE III</h3>
