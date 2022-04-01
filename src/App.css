@@ -135,6 +135,9 @@ body.active-modal {
 .navbar-brand img {
   max-height: 80px;
 }
+.nav-link{
+  color: #fff !important;
+}
 .mob-nav {
   display: none;
 }
@@ -205,7 +208,7 @@ body.active-modal {
 }
 #hero-container p{
   font-size: 18px;
-  color: #95a2b3;
+  color: #c9d3df;
 }
 .heroBtn{
   display: flex;
@@ -373,6 +376,7 @@ body.active-modal {
 }
 #buy-cont .col-md-6 ul{
   padding: 0;
+  font-size: 20px;
   list-style-type: none;
 }
 #buy-cont .col-md-6 ul li{
@@ -386,7 +390,7 @@ a{
 }
 #buy-cont .col-md-6 ul button{
   border-radius: 50%;
-  padding: 0px 13px;
+  padding: 0px 11px;
   background-color: #292c3a;
   color: #12141D;
   border: none;
@@ -549,15 +553,57 @@ a{
 }
 
 /* SIDEBAR SLIDER */
-.sidebarSlide .active{
-  padding: 5px 20px;
-  background-color: #FFCC00;
-  border-radius: 2px;
-  color: #000 !important;
+.pro-sidebar{
+  min-height: 100vh !important;
+  z-index: 2 !important;
+  position: fixed !important;
 }
-.sidebarSlide .bm-item:hover{
-  padding-left: 5px;
-  transition-duration: 0.2s;
+.pro-sidebar-inner .pro-sidebar-layout .active {
+  background: linear-gradient(0deg, #fece00 0%, #ffe172 100%);
+}
+.pro-sidebar-header{
+  padding-bottom: 25px;
+}
+#pro-sidebar-brand{
+  margin-left: 25px;
+}
+#pro-sidebar-brand img{
+  width: 225px;
+}
+.pro-sidebar-content button{
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  text-align: end;
+  position: absolute;
+  right: 0;
+  top: 40px;
+}
+.pro-sidebar-inner{
+  padding: 25px 0px;
+}
+.pro-sidebar-social{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.pro-sidebar-footer a{
+  color: #ADADAD;
+}
+.pro-sidebar-footer a:hover{
+  color: #ffcc00;
+}
+#pro-sidebar-burger{
+  display: none;
+}
+.globalCont{
+  width: 100%;
+  margin-left: 270px;
+}
+.pro-menu .active #pro-sidebar-link{
+  color: #000;
+  font-weight: 500;
 }
 
 /* PLATFORM */

@@ -13,10 +13,11 @@ import { addReview, getProfile, BNBBalance } from "./../Web3_connection/Contract
 import { initInstance } from './../Web3_connection/web3_methods'
 import PlatformHead from "./PlatformHead";
 import SidebarSlide from "./SidebarSlide";
-import Footer from "./Footer";
+import {GiHamburgerMenu} from 'react-icons/gi'
 
 export default function Ownerprofile() {
 
+    const [lg, setlg] = useState(false)
     const [singleOwner, setSingleOwner] = useState([]);
     const [rating, setRating] = useState('SAFU (5 Start)');
     const [bnbBal,setBNBBal] = useState(0)
@@ -33,7 +34,7 @@ export default function Ownerprofile() {
             `*[slug.current == "${slug}"] {
               name,
               alias,
-              trapPoints,
+              trappoints,
               numProjects,
               experience,
               slug,
@@ -155,9 +156,11 @@ export default function Ownerprofile() {
     }
     
     return (
-        <>
-        <SidebarSlide />
+        <div style={{display:"flex",}}>
+            <SidebarSlide lg={lg}/>
+        <div className="globalCont">
         <PlatformHead />
+      <button id="pro-sidebar-burger" onClick={() => {setlg(!lg)}}><GiHamburgerMenu/></button>
         <div id="pagesafe-cont" className="owner-prof-cont m-auto">
             <ToastContainer />
             <div className="safe-head py-3 position-relative container-fluid" style={{margin:"auto", maxWidth:"1150px"}}>
@@ -167,13 +170,13 @@ export default function Ownerprofile() {
                         <Breadcrumb.Item href="/safehaven/projectowner">
                         Safe Haven
                         </Breadcrumb.Item>
-                        <Breadcrumb.Item active>Profile</Breadcrumb.Item>
+                        <Breadcrumb.Item active>{singleOwner.name}</Breadcrumb.Item>
                     </Breadcrumb>
                     <div className="col-lg-8">
                         <div className="dev-main text-light">
                             <h1>{name}</h1>
                             <div className="fs-6 fw-normal"><span className="review-star fs-5"> {start(avgRating)} </span> ({countreview} Reviews)</div>
-                            <p className="my-1">{trappoint} Trap Points</p>
+                            <p className="my-1">{singleOwner.trappoints} Trap Points</p>
                             <p className='fw-normal fs-6'>
                                 0 Trap Points means the safest! lower trap points means safer! Read
                                 more about{" "}
@@ -225,7 +228,7 @@ export default function Ownerprofile() {
                 </div>
             </div>
         </div>
-        <Footer/>
-        </>
+        </div>
+        </div>
     );
 }

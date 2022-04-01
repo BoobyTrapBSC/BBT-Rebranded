@@ -113,18 +113,25 @@ button:active {
   #platform-cont .row .col-md-3 {
     margin: 10px auto;
   }
-  .sidebar {
-    display: none !important;
+  .globalCont{
+    margin-left: 0px !important;
+    padding-bottom: 70px;
   }
-  .safe-collapse {
+  #pro-sidebar-burger{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
     display: block !important;
-    color: #264b8c;
-    right: 0;
-    margin: 5px;
   }
-  .side-categories,
-  .filter-points {
-    margin: auto;
+  .pro-sidebar.collapsed{
+    width: 0px !important;
+    min-width: 0px !important;
+  }
+  .pro-sidebar-layout{
+    padding-bottom: 50px;
   }
   .breadcrumb {
     margin-top: 15px !important;
@@ -270,13 +277,20 @@ button:active {
 }
 @media only screen and (max-width: 420px) {
   .topBar {
-    flex-direction: column-reverse !important;
+    /* flex-direction: column-reverse !important; */
     justify-content: end;
   }
   .topBar .btn {
     width: fit-content;
     align-self: flex-end;
     margin-left: 0 !important;
+    padding: 5px 15px;
+    font-size: 14px;
+    margin-right: 5px;
+  }
+  .globalCont{
+    width: 90% !important;
+    margin: auto !important;
   }
 }
 @media only screen and (max-width: 350px) {

@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import PlatformHead from "./PlatformHead";
 import SidebarSlide from "./SidebarSlide";
+import {GiHamburgerMenu} from 'react-icons/gi'
 
 export default function ComingSoon() {
+
+  const [lg, setlg] = useState(false)
+
   return (
-    <>
-      <SidebarSlide />
+    <div style={{display:"flex",}}>
+      <SidebarSlide lg={lg}/>
+    <div className="globalCont">
       <PlatformHead />
+      <button id="pro-sidebar-burger" onClick={() => {setlg(!lg)}}><GiHamburgerMenu/></button>
       <div
         style={{
           position: "absolute",
@@ -24,6 +30,7 @@ export default function ComingSoon() {
           <a href="/">Home</a>
         </p>
       </div>
-    </>
+    </div>
+    </div>
   );
 }

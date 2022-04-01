@@ -52,7 +52,7 @@ export default function Roadmap() {
           <h3 className="vertical-timeline-element-title">PHASE III</h3>
           <h4 className="vertical-timeline-element-subtitle">FREELANCING &amp; ESCROW</h4>
           <p>
-          • Launch of $BBT Square (Freelancing pllatform with escrow payment services)<br/>
+          • Launch of $BBT Square (Freelancing platform with escrow payment services)<br/>
           • Marketing campaign for $BBT Square<br/>
           • Partnerships with popular freelancers
           </p>

@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from "react";
 import Chart from './Chart';
-import Footer from './Footer';
 import PlatformHead from "./PlatformHead";
 import SidebarSlide from "./SidebarSlide";
+import {GiHamburgerMenu} from 'react-icons/gi'
 
 export default function Faqs() {
+
+    const [lg, setlg] = useState(false)
+
     return (
-        <>
-            <SidebarSlide />
+        <div style={{display:"flex",}}>
+            <SidebarSlide lg={lg}/>
+        <div className="globalCont">
             <PlatformHead />
+      <button id="pro-sidebar-burger" onClick={() => {setlg(!lg)}}><GiHamburgerMenu/></button>
             <div className='container my-3'>
                 <div className="accordion border rounded accordion-flush" id="accordionFlushExample">
                     <div className="accordion-item">
@@ -196,8 +201,8 @@ export default function Faqs() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <Footer/>   
-        </>
+            </div> 
+        </div>
+        </div>
     )
 }

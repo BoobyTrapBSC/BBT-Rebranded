@@ -13,7 +13,7 @@ export default function SafeOwners() {
           `*[_type=="owners" && trappoints < 6] | order(trapPoints asc) {
               name,
               alias,
-              trapPoints,
+              trappoints,
               numProjects,
               experience,
               slug,
@@ -34,7 +34,7 @@ export default function SafeOwners() {
         return(
             <div className="ownerCard my-5 mb-5 col-md-3 shadow" key={index}>
                 <img src={owner.image.asset.url} alt="" />
-                <div id="trap-points" className='mt-1'>{owner.trapPoints} Trap Points</div>
+                <div id="trap-points" className='mt-1'>{owner.trappoints} Trap Points</div>
                 <div id="dev-name" className='mb-0 lh-sm'>{owner.name}</div>
                 <div id="alias" className='lh-sm'>{owner.alias}</div>
                 <div id="social-dev"><a href={owner.telegram} target="_blank" rel="noreferrer"><FaTelegramPlane size={25} fill={"#fff"}/></a> &nbsp;<a href={owner.twitter}><FaTwitter size={25} fill={"#fff"}/></a></div>
