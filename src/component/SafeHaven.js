@@ -32,7 +32,7 @@ export default function SafeHaven() {
     }
   }, [window.provide])
 
-  // console.log("Balance is safeheaver", bbtBalance)
+  console.log("Balance is safeheaver", bbtBalance)
   const [lg, setlg] = useState(false)
 
   return (
@@ -41,7 +41,7 @@ export default function SafeHaven() {
       <div className="globalCont">
       <PlatformHead/>
       <button id="pro-sidebar-burger" onClick={() => {setlg(!lg)}}><GiHamburgerMenu/></button>
-        {bbtBalance != 0 ?
+        {bbtBalance && bbtBalance >= 15000 ?
           <div
           id="safehaven-cont"
           className="pt-5 position-relative text-light"
