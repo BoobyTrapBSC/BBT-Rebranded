@@ -50,7 +50,7 @@ export default function SidebarSlide(props) {
           <MenuItem active={window.location.pathname.includes("/influencers") ? true : false} icon={<SiCrowdsource fontSize={20} />}><Link id="pro-sidebar-link" to="/influencers">INFLUENCERS</Link></MenuItem>
           <MenuItem active={window.location.pathname.includes("/promoters") ? true : false} icon={<GiBugleCall fontSize={20} />}><Link id="pro-sidebar-link" to="/promoters">AMA/CALL CHANNELS</Link></MenuItem>
           <MenuItem icon={<FaSuitcase fontSize={20} />}><Link id="pro-sidebar-link" to="/comingsoon">OTHER SERVICES</Link></MenuItem>
-          <MenuItem icon={<GiPayMoney fontSize={20} />}><Link id="pro-sidebar-link" to="/comingsoon">BBT SQUARE</Link></MenuItem>
+          <MenuItem active={window.location.includes("bbtsquare") ? true : false} icon={<GiPayMoney fontSize={20} />}><a id="pro-sidebar-link" href="https://bbtsquare.boobytrap.live/" target="_blank" rel="noopener noreferrer">BBT SQUARE</a></MenuItem>
           <MenuItem icon={<BsFillFileEarmarkLockFill fontSize={20} />}><Link id="pro-sidebar-link" to="/comingsoon">INSURANCE DAO</Link></MenuItem>
           <MenuItem icon={<MdOutlineCastForEducation fontSize={20} />}><Link id="pro-sidebar-link" to="/comingsoon">IEP</Link></MenuItem>
           <MenuItem active={window.location.pathname.includes("/docs") ? true : false} icon={<HiOutlineDocumentText fontSize={20} />}><Link id="pro-sidebar-link" to="/docs">DOCS</Link></MenuItem>
